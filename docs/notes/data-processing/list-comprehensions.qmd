@@ -1,0 +1,96 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# List Comprehensions
+
+When we perform [mapping](./mapping.qmd) and [filtering](./filtering.qmd) operations, we see these techniques involve a long-way [list looping](for-loops.qmd) technique, which may span multiple lines.
+
+
+A [**list comprehension**](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions) is a powerful Python technique that allows us to perform mapping and/or filtering operations using a succinct one-liner syntax.
+
+For the examples below, we will consider this simple list of numbers:
+
+```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+print(my_numbers)
+```
+
+## List Comprehension for Mapping
+
+Mapping, the long way:
+
+```{python}
+transformed_nums = []
+
+for n in my_numbers:
+    transformed_nums.append(n * 100) # MAPPING
+
+print(transformed_nums)
+```
+
+Mapping, the short way, using a list comprehension (equivalent):
+
+```{python}
+# NEW_LIST = [VALUE_TO_COLLECT for ITEM in EXISTING_LIST]
+
+transformed_nums = [n * 100 for n in my_numbers]
+print(transformed_nums)
+```
+
+## List Comprehension for Filtering
+
+
+We optionally add an `if` clause to also implement filtering:
+
+Filtering, the long way:
+
+```{python}
+matching_nums = []
+
+for n in my_numbers:
+    if n > 3: # FILTER CONDITION
+        matching_nums.append(n)
+
+print(matching_nums)
+```
+
+Filtering, the short way, using a list comprehension (equivalent):
+
+```{python}
+# NEW_LIST = [VALUE_TO_COLLECT for ITEM in EXISTING_LIST if CONDITION]
+
+matching_nums = [n for n in my_numbers if n > 3]
+print(matching_nums)
+```
+
+## List Comprehension for Mapping and Filtering
+
+We can mix and match techniques to perform both mapping and filtering, as desired:
+
+Filtering and mapping, the long way:
+
+```{python}
+matching_nums = []
+
+for n in my_numbers:
+    if n > 3: # FILTER CONDITION
+        matching_nums.append(n * 100) # MAPPING
+
+print(matching_nums)
+```
+
+Filtering and mapping, the short way, using a list comprehension (equivalent):
+
+```{python}
+new_nums = [n * 100 for n in my_numbers if n > 3]
+print(new_nums)
+```
+
+
+Hopefully these examples help you pick up the patterns, and get comfortable using list comprehensions to process data in a variety of ways.

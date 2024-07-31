@@ -1,0 +1,43 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Booleans
+
+Computers operate on the basis of binary logic, where truth is the opposite of false.
+
+![Binary logic (ones and zeros)](../../../images/binary-logic.png){height=350}
+
+One of the beautiful things about computer programming, as opposed to other disciplines, is that the truth is universal. In other words, there is no question about what is true. There is no blurring the lines or grey area or different subjective experiences. In programming, truth is objective.
+
+## Characteristics
+
+In Python, there are two **boolean** values: either `True` or `False`, with a capital letter, and no quotes:
+
+```{python}
+print(True)
+```
+
+```{python}
+print(False)
+```
+
+They are the opposite of each other.
+
+## Operations
+
+To exemplify the concept of universal truth, we can use the double equals operator (`==`) to check if these two values are equal to each other:
+
+
+```{python}
+True == False
+```
+
+We see a result of `False`, in other words it is not the case that they are equal.
+
+See the [Python Operators overview](../python-operators.qmd) for many more example logical operators to use in conjunction with boolean values.

@@ -1,0 +1,6 @@
+# Container Datatypes
+
+Let's study container datatypes in more detail, focusing on the list and dictionary:
+
+  + [Lists](./lists.qmd)
+  + [Dictionaries](./dictionaries.qmd)

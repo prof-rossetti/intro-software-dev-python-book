@@ -1,0 +1,63 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+
+# Python Modules
+
+Some functionality in Python comes from built-in libraries called [modules](https://docs.python.org/3/library/index.html).
+
+## Import Strategies and Namespaces
+
+When we use a variable or function that has been defined within one of these modules, we must **import** that functionality, using an `import` statement.
+
+There are two different ways to import in Python.
+
+First, we can import the entire module. If we do, this loads all the functions defined within, and we'll access those functions through the module **namespace**:
+
+```python
+# EXAMPLE HYPOTHETICAL PSEUDOCODE
+import module_name
+
+module_name.function_name()
+```
+
+Alternatively, we can import only the function(s) we care about. This is slightly more performant, as unused functions are not loaded. If we do, we can invoke the functions directly:
+
+```python
+# EXAMPLE HYPOTHETICAL PSEUDOCODE
+from module_name import function_name
+
+function_name()
+```
+
+With either approach, we can use an **alias** to give the module or function(s) a short-hand name. If we do, we'll access those functions through the short-hand namespace:
+
+
+```python
+# EXAMPLE HYPOTHETICAL PSEUDOCODE
+import module_name as m
+
+m.function_name()
+```
+
+```python
+# EXAMPLE HYPOTHETICAL PSEUDOCODE
+from module_name import function_name as fn
+
+fn()
+```
+
+## Survey of Python Modules
+
+Here are some common modules in Python, and more information about how to use each:
+
+  + [The `math` Module](./math.qmd)
+  + [The `random` Module](./random.qmd)
+  + [The `statistics` Module](./statistics.qmd)
+  + [The `datetime` Module](./datetime.qmd)

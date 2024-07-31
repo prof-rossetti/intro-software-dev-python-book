@@ -1,0 +1,83 @@
+---
+format:
+  html:
+    code-fold: false
+    #code-line-numbers: true
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+
+# Function Documentation
+
+## Docstrings
+
+**Docstrings** allow Python developers to document their code in a way which can be interpreted by other computers and humans alike.
+
+> "The docstring for a function or method should summarize its behavior and document its arguments, return value(s), side effects, exceptions raised, and restrictions on when it can be called (all if applicable). Optional arguments should be indicated. It should be documented whether keyword arguments are part of the interface." - [PEP 257](https://www.python.org/dev/peps/pep-0257/)
+
+
+Before documentation:
+
+```py
+def enlarge(n):
+    return n * 100
+
+```
+
+Complete, with documentation:
+
+```py
+def enlarge(n):
+    """
+    Enlarges a number.
+
+    Params:
+
+        n : (numeric, like int or float) the number to be enlarged
+
+    Examples:
+
+        enlarge(8)
+
+        enlarge(4.5)
+    """
+    return n * 100
+```
+
+The multiline string can look intimidating, but docstrings have practical benefits. Python tools and text editors will recognize the docstring and show a helper message to anyone who is trying to use / invoke that function:
+
+![Example of how a docstring is displayed by development tools, to provide context about that function](../../../images/function-docs.png){height=350}
+
+
+
+## Type Hints
+
+Another way of documenting your functions more formally is a [type hint](https://docs.python.org/3/library/typing.html).
+
+Type hints allow us to specify:
+
+  1. Which datatypes are expected for each parameter, by using a colon (`:`) to the right of each parameter name
+  2. Which datatype will be returned by the function, by using a right arrow (`->`) to the right of the function definition
+
+
+```{python}
+
+# FUNCTION DEFINITION:
+
+def enlarge(n:float) -> float: # OBSERVE THE TYPE HINTS
+    return n * 100.0
+
+# FUNCTION INVOCATIONS:
+
+print(enlarge(9))
+
+print(enlarge(3))
+
+x = 10
+print(enlarge(x))
+```
+
+
+Ultimately these type hints are just suggestions, and they won't prevent someone from passing parameters of different datatypes.

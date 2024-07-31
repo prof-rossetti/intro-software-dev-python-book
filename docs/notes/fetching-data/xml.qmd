@@ -1,0 +1,113 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+
+# Fetching XML Data
+
+If the data you want to fetch is in XML format, including in an RSS feed, we can use the `requests` package to fetch it, and the `beautifulsoup4` package to process it.
+
+Let's consider this example \"students.xml\" file we have hosted on the Internet:
+
+```xml
+<GradeReport>
+    <DownloadDate>2018-06-05</DownloadDate>
+    <ProfessorId>123</ProfessorId>
+    <Students>
+        <Student>
+            <StudentId>1</StudentId>
+            <FinalGrade>76.7</FinalGrade>
+        </Student>
+        <Student>
+            <StudentId>2</StudentId>
+            <FinalGrade>85.1</FinalGrade>
+        </Student>
+        <Student>
+            <StudentId>3</StudentId>
+            <FinalGrade>50.3</FinalGrade>
+        </Student>
+        <Student>
+            <StudentId>4</StudentId>
+            <FinalGrade>89.8</FinalGrade>
+        </Student>
+        <Student>
+            <StudentId>5</StudentId>
+            <FinalGrade>97.4</FinalGrade>
+        </Student>
+        <Student>
+            <StudentId>6</StudentId>
+            <FinalGrade>75.5</FinalGrade>
+        </Student>
+        <Student>
+            <StudentId>7</StudentId>
+            <FinalGrade>87.2</FinalGrade>
+        </Student>
+        <Student>
+            <StudentId>8</StudentId>
+            <FinalGrade>88.0</FinalGrade>
+        </Student>
+        <Student>
+            <StudentId>9</StudentId>
+            <FinalGrade>93.9</FinalGrade>
+        </Student>
+        <Student>
+            <StudentId>10</StudentId>
+            <FinalGrade>92.5</FinalGrade>
+        </Student>
+    </Students>
+</GradeReport>
+```
+
+First we note the URL of where the data resides. Then we pass that as a parameter to the `get` function from the `requests` package, to issue an HTTP GET request (as usual):
+
+```{python}
+import requests
+
+# the URL of some XML data we stored online:
+request_url = "https://raw.githubusercontent.com/prof-rossetti/python-for-finance/main/docs/data/gradebook.xml"
+
+response = requests.get(request_url)
+print(type(response))
+```
+
+Then we pass the response text (an HTML or XML formatted string) to the `BeautifulSoup` class constructor.
+
+```{python}
+from bs4 import BeautifulSoup
+
+soup = BeautifulSoup(response.text)
+type(soup)
+```
+
+The soup object is able to intelligently process the data.
+
+
+We can invoke a `find` or `find_all` method on the soup object to find elements or tags based on their names or other attributes. For example, finding all the student tags in this structure:
+
+```{python}
+students = soup.find_all("student")
+print(type(students))
+print(len(students))
+```
+
+
+```{python}
+# examining the first item for reference:
+print(type(students[0]))
+students[0]
+```
+
+```{python}
+# looping through all the items:
+for student in students:
+    print("-----------")
+    print(type(student))
+    student_id = student.studentid.text
+    final_grade = student.finalgrade.text
+    print(student_id, final_grade)
+```

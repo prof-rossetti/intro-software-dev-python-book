@@ -1,0 +1,20 @@
+# Python Development Tools
+
+So you want to develop programs and applications in Python?
+
+You'll need to familiarize yourself with a Python development environment. One of the hardest parts of computer programming can be installing the language, and getting up and running with local development tools. But we will help guide you through the process, and recommend using tools that offer a low learning curve for beginners.
+
+
+## Notebooks vs Local Development
+
+In Python, we have a general choice between two development environments: Python notebooks vs local development, each offering its own strengths and trade-offs.
+
+Python notebooks (\".ipynb\" documents) provide an easy and intuitive learning experience for beginners. They have code \"cells\" we can "play" to see the results and learn along the way. The integration of visual outputs along with code provides strengths in terms of presentation. Notebooks are also a popular choice among data science and machine learning practitioners, especially for quick prototypes, and rapid development. However for larger applications they might not be as suitable.
+
+Local development environments are used primarily for software development purposes, and for larger-scale applications which may span across dozens of files. The local development environment involves command-line programming tools that can be tricky to install and configure for beginners. For some types of applications, such as web applications, local development may be the only suitable option.
+
+![An example of local development tools](../../images/local-development.png)
+
+## Recommended Tools
+
+In this book, we will conduct all exercises using [Google Colab Notebooks](./google-colab/overview.qmd), which are a specific type of Python Notebook document that can be executed in the cloud and managed via Google Drive. Google Drive makes it easy to copy and share the documents, and provides a familiar experience for most students. Colab offers GPU and TPU resources which can be helpful when working with large scale data. And because Colab is accessed via the browser and requires no local installations, it is a perfect tool for beginners to use to get up and running quickly.

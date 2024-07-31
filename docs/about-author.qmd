@@ -1,0 +1,21 @@
+# About the Author {.unnumbered}
+
+Michael Rossetti is a data scientist and software engineer. He has worked as a data analyst for a winning US Presidential campaign, an analytics director for a Silicon Valley startup, and a technology consultant for the US Government.
+
+As an adjunct professor, he has taught courses in data science, computer science, and software development at universities including New York University, Georgetown University, and the George Washington University.
+
+He has honed and adapted his Python educational materials based on lessons learned from teaching Python programming to thousands of students over the past decade.
+
+## More Information
+
+Academic Website:
+<https://prof-rossetti.org/>
+
+Connect on LinkedIn:
+<https://www.linkedin.com/in/mikerossetti/>
+
+Follow on GitHub:
+<https://github.com/prof-rossetti/>
+
+Subscribe on YouTube:
+<https://www.youtube.com/@prof-rossetti>

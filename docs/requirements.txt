@@ -1,0 +1,28 @@
+
+
+
+# packages to facilitate quarto execution of IPYNB notebooks, with execute: true
+# ... or if you use jupyter: python3 to execute python inside code blocks in your .qmd file
+jupyter
+
+
+# cached execution:
+# https://quarto.org/docs/projects/code-execution.html#cache
+jupyter-cache
+
+
+# packages required by any python code / notebooks:
+#numpy
+#matplotlib
+plotly
+#statsmodels # used by plotly for trendline parameter
+requests
+pandas
+beautifulsoup4
+lxml # bs4 needs this to parse XML
+
+#scipy
+
+
+
+#gspread==6.0.2

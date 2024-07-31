@@ -1,0 +1,46 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# The `random` Module
+
+The [`random` module](https://docs.python.org/3/library/random.html) contains randomness related functions.
+
+Random number generator:
+
+```{python}
+import random
+
+print(random.random())
+print(random.random())
+print(random.random())
+```
+
+Random integer between lower and upper bound:
+
+```{python}
+print(random.randint(1, 100))
+print(random.randint(1, 100))
+print(random.randint(1, 100))
+```
+
+
+Choose an item from a list at random:
+
+```{python}
+options = ["van", "choc", "straw"]
+
+flavor = random.choice(options)
+print("FLAVOR:", flavor)
+
+flavor = random.choice(options)
+print("FLAVOR:", flavor)
+
+flavor = random.choice(options)
+print("FLAVOR:", flavor)
+```

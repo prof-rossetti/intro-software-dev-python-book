@@ -1,0 +1,98 @@
+---
+format:
+  html:
+    code-fold: false
+    #code-line-numbers: true
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+
+# Conditional Logic
+
+With conditional logic, the program will behave one way under certain conditions, and another way under different conditions.
+
+### "If" Statements
+
+The primary implementation of conditional logic in Python is the "if" statement.
+
+You may be familiar with the "IF" function in spreadsheet software, but in Python we implement an "if" statement using some special syntax, like this:
+
+
+```{python}
+print("TOP")
+
+if 2 + 2 == 4:
+    print("THEY ARE EQUAL")
+    print("MORE STUFF")
+
+print("BOTTOM")
+```
+
+When we study "if" statements, we encounter the concept of "scope". In Python, scope is represented by indentation level. Some indentation levels may only be reached under certain conditions, while some may never be reached at all.
+
+```{python}
+# | code-line-numbers: true
+
+print("TOP")
+
+if 2 + 2 == 5:
+    print("THEY ARE EQUAL") # NEVER REACHED
+    print("MORE STUFF") # NEVER REACHED
+
+print("BOTTOM")
+```
+
+In this case, because the condition was not met, we never reach lines four and five.
+
+Observe that the "else" clause is optional, and will represent a catch-all condition if the above conditions are not met.
+
+
+```{python}
+print("TOP")
+
+if 2 + 2 == 4:
+    print("THEY ARE EQUAL")
+    print("MORE STUFF")
+else:
+    print("THEY ARE NOT EQUAL") # NEVER REACHED
+
+print("BOTTOM")
+```
+
+To implement multiple conditions, we can optionally include any number of "elif" clauses. They must come AFTER the "if", and BEFORE the "else":
+
+```{python}
+print("TOP")
+
+if 2 + 2 == 5:
+    print("EQUAL TO FIVE") # NEVER REACHED
+elif 2 + 2 == 10:
+    print("EQUAL TO TEN") # NEVER REACHED
+elif 2 + 2 == 4:
+    print("EQUAL TO FOUR")
+else:
+    print("OOPS") # NEVER REACHED
+
+print("BOTTOM")
+```
+
+Observe that if more than one condition evaluates to being true, whichever is listed FIRST will be reached:
+
+```{python}
+print("TOP")
+
+if 2 + 2 == 5:
+    print("EQUAL TO FIVE") # NEVER REACHED
+elif 2 + 2 == 10:
+    print("EQUAL TO TEN") # NEVER REACHED
+elif 2 + 2 == 4:
+    print("EQUAL TO FOUR")
+elif 2 * 4 == 8:
+    print("ALSO TRUE") # NEVER REACHED
+else:
+    print("OOPS") # NEVER REACHED
+
+print("BOTTOM")
+```

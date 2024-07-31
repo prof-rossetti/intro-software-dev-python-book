@@ -1,0 +1,89 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Numbers
+
+
+Congratulations, you are already probably familiar with numbers!
+
+
+## Characteristics
+
+In Python, there are two kinds of [numbers](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex): **integers** and **floats**. Integers are whole numbers without a decimal component, while floats have decimal component (even if it is X.0):
+
+
+```{python}
+x = 2
+print(type(x))
+print(x)
+```
+
+```{python}
+x = 4.5
+print(type(x))
+print(x)
+```
+
+```{python}
+x = 2 / 3
+print(type(x))
+print(x)
+```
+
+```{python}
+x = 2.0
+print(type(x))
+print(x)
+```
+
+When dealing with large numbers, it may be helpful to visually separate using underscores. These variants are treated as if the underscores were not there:
+
+
+```{python}
+x = 120_000
+print(type(x))
+print(x)
+```
+
+
+```{python}
+x = 120_000.0
+print(type(x))
+print(x)
+```
+
+
+
+
+## Operations
+
+### Arithmetic Operations
+
+It is no surprise, we can use Python as a glorified calculator, to perform arithmetic operations:
+
+
+```{python}
+print(2 + 10)
+print(2 - 10)
+print(2 * 10)
+print(2 / 10)
+```
+
+### Rounding
+
+It is possible to round numbers using the [`round` function](https://docs.python.org/3/library/functions.html#round):
+
+```{python}
+print(round(6.675555, 0))
+print(round(6.675555, 1))
+print(round(6.675555, 2))
+print(round(6.675555, 3))
+print(round(6.675555, 4))
+print(round(6.675555, 5))
+```

@@ -1,0 +1,9 @@
+
+.DS_Store
+
+.jupyter_cache
+
+# HTML files recursive:
+
+docs/.quarto
+docs/_build

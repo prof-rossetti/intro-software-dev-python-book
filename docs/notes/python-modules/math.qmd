@@ -1,0 +1,31 @@
+
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# The `math` Module
+
+The [`math` module](https://docs.python.org/3/library/math.html) contains mathematical functions.
+
+Constants such as PI:
+
+```{python}
+import math
+
+math.pi
+```
+
+Floor or ceiling operations:
+
+```{python}
+math.floor(6.2)
+```
+
+```{python}
+math.ceil(6.2)
+```

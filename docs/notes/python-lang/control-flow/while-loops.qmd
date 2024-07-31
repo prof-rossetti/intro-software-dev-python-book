@@ -1,0 +1,58 @@
+---
+format:
+  html:
+    code-fold: false
+    #code-line-numbers: true
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+
+
+# While Loops, Counters, and Accumulators
+
+As mentioned, with a \"while\" loop, we can execute a statement of code over and over as long as some condition is true.
+
+It is possible to set up an infinite loop, although this will never stop and is problematic in practice:
+
+
+```python
+while True: # INFINITE LOOP (PROBLEMATIC)
+    print("-------")
+    print("Hello")
+```
+
+For this reason, we can use a condition to tell the loop when to stop. Often this is used in conjunction with a counter variable:
+
+
+```{python}
+print("TOP")
+
+counter = 0
+while counter < 5: # CONDITION
+    print("-------")
+    print(counter, "Hello")
+    counter += 1 # INCREMENT THE COUNTER
+
+print("BOTTOM")
+```
+
+
+
+We can alternatively use control statements like `break` (to break out of the loop), and `continue` (to go to the next iteration of the loop):
+
+```{python}
+print("TOP")
+
+counter = 0
+while True: # RETURN OF THE INFINITE LOOP
+    print("-------")
+    print(counter, "Hello")
+    counter += 1 # INCREMENT THE COUNTER
+
+    if counter >= 5:
+        break # BUT WHEN THIS CONDITION IS REACHED WE STOP
+
+print("BOTTOM")
+```

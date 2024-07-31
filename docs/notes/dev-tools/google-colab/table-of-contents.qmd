@@ -1,0 +1,53 @@
+# Table of Contents in Google Colab
+
+The "Table of contents" menu in the Google Colab sidebar shows a document outline, similar to a table of contents you may be familiar with in word processing software.
+
+The heading structure of your markdown cells will govern the document structure displayed in the table of contents. It is helpful to practice your ability to implement a document outline by implementing different [Markdown heading levels](https://www.markdownguide.org/basic-syntax/#headings) in your text cells.
+
+
+```md
+# Section 1
+
+This is some text.
+
+## Section 1.1
+
+This is some text.
+
+## Section 1.2
+
+This is some text.
+
+### Section 1.2.1
+
+This is some text.
+
+### Section 1.2.2
+
+This is some text.
+
+# Section 2
+
+This is some text.
+
+## Section 2.1
+
+This is some text.
+
+## Section 2.2
+
+This is some text.
+
+### Section 2.2.1
+
+This is some text.
+
+### Section 2.2.2
+
+This is some text.
+
+```
+
+::: {.callout-tip title="Note"}
+You may need to place each of the headings in its own separate text cell, for the document outline to collapse properly.
+:::

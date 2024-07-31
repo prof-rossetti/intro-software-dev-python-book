@@ -1,0 +1,116 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Sorting Lists
+
+A sorting operation will arrange items in a specific order.
+
+In Python, we can use the [`sorted` function](https://docs.python.org/3/library/functions.html#sorted) to sort a list. To use the `sorted` function, we pass in as the first parameter the list we want to sort.
+
+In the case of simple lists, this is sufficient:
+
+
+```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+print(type(symbols))
+print(symbols)
+```
+
+```{python}
+sorted(symbols)
+```
+
+Notice, this is not a mutating operation, so if we want to use the results, we'll need to store the sorted list in a variable for later:
+
+```{python}
+print(symbols)
+
+print(sorted(symbols))
+
+print(symbols) # ORIGINAL, UNSORTED LIST
+```
+
+```{python}
+print(symbols)
+
+sorted_symbols = sorted(symbols) # STORING THE RESULT FOR LATER
+
+print(sorted_symbols) # NOW ITS SORTED
+```
+There are some optional parameters we can use, for example, after consulting the function documentation, we see the `reverse` parameter takes a boolean value to determine which order the list should be sorted in (ascending or descending):
+
+```{python}
+sorted(symbols, reverse=False) # ASCENDING ORDER, SAME AS DEFAULT
+```
+
+```{python}
+sorted(symbols, reverse=True) # DESCENDING ORDER
+```
+
+### Sorting Complex Lists
+
+We see that if we have a simple list, such as a list of numbers or list of strings, the `sorted` function will know how to sort the items. It understands numeric order in which 2 is greater than 1, and it understands alphabetical order in which "b" is greater than "a".
+
+
+```{python}
+print(1 < 2)
+print("a" < "b")
+```
+But it is not possible to compare dictionaries using greater than or less than operators:
+
+```{python}
+# print({} < {}) # INVALID
+#> TypeError: '<' not supported between instances of 'dict' and 'dict'
+```
+
+So if we have a complex list, such as a list of dictionaries, we need to specify on the basis of which key we should sort on.
+
+
+```{python}
+teams = [
+    {"city": "New York", "name": "Yankees"},
+    {"city": "New York", "name": "Mets"},
+    {"city": "Boston", "name": "Red Sox"},
+    {"city": "New Haven", "name": "Ravens"}
+]
+```
+
+```python
+#sorted(teams) # INVALID
+#> TypeError: '<' not supported between instances of 'dict' and 'dict'
+```
+
+
+The `key` parameter is used for this purpose. In practice, when specifying what key to sort on, we can use a `lambda` statement, a custom function, or the `itemgetter` function from the `operator` module. All of the following approaches are equivalent:
+
+
+
+```{python}
+# itemgetter function approach:
+
+from operator import itemgetter
+
+sorted(teams, key=itemgetter("name"))
+```
+
+```{python}
+# custom function approach:
+
+def sort_by_name(team):
+    return team["name"]
+
+sorted(teams, key=sort_by_name)
+```
+
+
+```{python}
+# lambda syntax approach:
+
+sorted(teams, key= lambda team: team["name"])
+```

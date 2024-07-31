@@ -1,0 +1,137 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Dictionaries
+
+A [**dictionary** datatype](https://docs.python.org/3/library/stdtypes.html#dict) is a container for many values, in which each value is described by a named attribute known as a \"key\". In this way, a dictionary is said to have \"key value pairs\".
+
+## Characteristics
+
+A dictionary has squiggly braces (`{}`) on the extremities, and comma-separated key-value pairs inside, where each key is separated from it's corresponding value by a colon (`:`).
+
+A dictionary may have zero or more key-value pairs.
+
+```{python}
+my_empty_dict = {}
+print(type(my_empty_dict))
+```
+
+```{python}
+dog = {
+    "breed": "Lab",
+    "name": "Murphy",
+    "weight_lbs": 45,
+    "age_yrs": 6,
+    "well_behaved": True
+}
+print(type(dog))
+print(dog)
+```
+
+In order to access the values inside, we'll need to reference the corresponding \"key\". So whenever we are working with a dictionary, it will be helpful to first ask, \"what are its keys?\". Sometimes we can do this visually. However especially in the case of nested structures, it may be helpful to explicitly ask for the key names using the dictionary's `keys` method (with trailing parentheses because it is a method):
+
+```{python}
+dog.keys()
+```
+
+In the same way, we can access just the values:
+
+```{python}
+dog.values()
+```
+
+Or finally, we can access the key-value pairs as associated tuples:
+
+```{python}
+dog.items()
+```
+
+## Accessing Items
+
+We use square brackets to access a specific value, by designating the name of that value's key:
+
+```{python}
+print(dog["breed"])
+print(dog["name"])
+#print(dog["fav_food"]) # INVALID (KeyError)
+```
+
+## Operations
+
+Adding items to a dictionary:
+
+```{python}
+dog["best_friend"] = "Bella"
+
+print(dog["best_friend"])
+```
+
+Updating items in a dictionary:
+
+```{python}
+print(dog["age_yrs"])
+
+dog["age_yrs"] = 7
+
+print(dog["age_yrs"])
+```
+
+Removing items from a dictionary:
+
+```{python}
+print(dog.keys())
+
+del dog["best_friend"]
+
+print(dog.keys())
+```
+
+## Nested Structures
+
+It is common to encounter nested structures, where one object is nested inside another. Let's consider the following example (dictionary of dictionaries):
+
+```{python}
+summary_profile = {
+    'AAPL': {
+        'address1': 'One Apple Park Way',
+        'city': 'Cupertino',
+        'state': 'CA',
+        'zip': '95014',
+        'country': 'United States',
+    },
+    'GOOGL': {
+        'address1': '1600 Amphitheatre Parkway',
+        'city': 'Mountain View',
+        'state': 'CA',
+        'zip': '94043',
+        'country': 'United States',
+    },
+    'MSFT': {
+        'address1': 'One Microsoft Way',
+        'city': 'Redmond',
+        'state': 'WA',
+        'zip': '98052-6399',
+        'country': 'United States',
+    }
+}
+```
+
+If we have a nested structure, we start on the extremities and go down one level at a time, to reach the value we are interested in:
+
+```{python}
+# chained accessors:
+print(summary_profile["AAPL"]["address1"])
+```
+
+```{python}
+# one step at a time (equivalent):
+apple = summary_profile["AAPL"]
+address = apple["address1"]
+print(address)
+```

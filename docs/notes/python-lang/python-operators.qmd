@@ -1,0 +1,167 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+
+# Python Operators
+
+
+We have seen examples of arithmetic operators, and the double equals sign, but let's cover a wide range of operators in Python.
+
+The [Python Operators page from W3 Schools](https://www.w3schools.com/python/python_operators.asp) provides an excellent overview. Contents copied below for reference.
+
+
+
+
+
+
+
+
+
+### Arithmetic Operators
+
+![Arithmetic Operators. Source: [W3 Schools](https://www.w3schools.com/python/python_operators.asp)](../../images/operators-arithmetic.png)
+
+Examples (with numbers):
+
+```{python}
+print(2 + 10)
+print(2 - 10)
+print(2 * 10)
+print(2 / 10)
+```
+
+### Comparison Operators
+
+![Comparison Operators. Source: [W3 Schools](https://www.w3schools.com/python/python_operators.asp)](../../images/operators-comparison.png)
+
+```{python}
+print(2 == 10)
+print(2 != 10)
+
+print(2 < 10)
+print(2 <= 10)
+
+print(2 > 10)
+print(2 >= 10)
+```
+
+
+
+
+
+### Assignment Operators
+
+![Assignment Operators. Source: [W3 Schools](https://www.w3schools.com/python/python_operators.asp)](../../images/operators-assignment.png)
+
+
+Examples:
+
+```{python}
+x = 5
+print(x)
+
+x = x + 1
+print(x)
+
+x += 1
+print(x)
+```
+
+### Membership Operators
+
+![Membership Operators. Source: [W3 Schools](https://www.w3schools.com/python/python_operators.asp)](../../images/operators-membership.png)
+
+
+
+Examples (with strings):
+
+```{python}
+print("H" in "Hello World")
+print("H" not in "Hello World")
+```
+
+
+Examples (with lists):
+
+```{python}
+print(5 in [1,2,5])
+print(5 not in [1,2,5])
+```
+
+
+
+
+### Logical Operators
+
+![Logical Operators. Source: [W3 Schools](https://www.w3schools.com/python/python_operators.asp)](../../images/operators-logical.png)
+
+
+Examples (for compound expressions):
+
+```{python}
+x = 5
+
+print(x > 0 and x > 20)
+print(x > 0 or x > 20)
+```
+
+The `and` operator will return `True` if BOTH sides are true.
+
+```{python}
+print(True and True)
+print(True and False)
+print(False and True)
+print(False and False)
+```
+
+The `or` operator will return `True` if EITHER side is true.
+
+
+```{python}
+print(True or True)
+print(True or False)
+print(False or True)
+print(False or False)
+```
+
+
+
+
+#### Truthiness
+
+
+Another way of using the `or` operator is within the concept of "truthiness".
+
+In this context, the `or` operator will return the first "truthy" value.
+
+
+Values that are considered "truthy" are `True`, or any other object that is present or non-empty, or non-blank.
+
+Values that are considered "falsy" are `False`, `None`, empty string (`""`), empty list (`[]`), etc.
+
+```{python}
+0 or "" or [] or False or None or 4 or "Hello World" or True
+```
+
+In this case, we see `4` returned because it is the first truthy value.
+
+In practice, we usually use "truthiness" to set a value if it is not null:
+
+
+```{python}
+original = "My Old Value"
+new = original or "My New Value"
+print(new)
+```
+
+```{python}
+original = None
+new = original or "My New Value"
+print(new)
+```

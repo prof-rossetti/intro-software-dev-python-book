@@ -1,0 +1,203 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Strings
+
+The [**`string`** datatype](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) represents textual messages, comprised of any number of alphanumeric characters.
+
+## Characteristics
+
+There are three ways to construct a string: by using single quotes, double quotes, or a multi-line string.
+
+Single quotes (`'`) on the extremities:
+
+```{python}
+message = 'HELLO WORLD'
+print(message)
+```
+
+Double quotes (`"`) on the extremities:
+
+```{python}
+message = "HELLO WORLD"
+print(message)
+```
+
+
+Multiline string, uses triple quotes (`"""`) on the extremities:
+
+
+```{python}
+message = """
+This is a menu for our trading platform.
+
+To get started, follow these instructions:
+
+  1. __________
+  2. ____________
+  3. _____________
+
+"""
+print(message)
+```
+
+
+In practice, for single line strings, we can prefer to default to double quotes, because it allows us to use single quotes for contractions, whereas the reverse would break the quoting level:
+
+```{python}
+message = "It's awesome!"
+print(message)
+```
+
+```{python}
+#message = 'It's awesome!' # NOT VALID (BREAKS QUOTING LEVEL)
+#print(message)
+```
+
+## Operations
+
+In practice, some common operations we perform with strings include concatenation, case manipulation, and substring checking, among others.
+
+### Concatenation
+
+```{python}
+message = "HELLO" + "WORLD"
+print(message)
+
+message = "HELLO " + "WORLD"
+print(message)
+
+message = "HELLO" + " WORLD"
+print(message)
+
+message = "HELLO" + " " + "WORLD"
+print(message)
+```
+
+### Format Strings
+
+As an alternative to concatenation, we can use a [format string](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting) to dynamically compile a string.
+
+Recall that we are not able to concatenate strings with non-string datatypes such as numbers. To overcome this limitation, we could use string conversion function, or more commonly, a format string.
+
+The format string allows us to inject one or more variables into a string.
+
+To implement a format string, we need the letter `f` immediately preceding the string. And we need curly braces (`{}`) inside the string. This allows us to inject a variable inside the curly braces:
+
+```{python}
+price = 4.5
+print(f"PRICE: ${price}")
+```
+
+We can use a formatting directive such as `:.2f` to format a number to two decimal places, for example to format a number as US Dollars (USD):
+
+```{python}
+price = 4.5
+print(f"PRICE: ${price:.2f}")
+```
+
+A formatting directive such as `:,` to use a thousands separator:
+
+```{python}
+shares = 120000
+print(f"SHARES: {shares:,}")
+```
+
+Notice, it is possible to inject multiple variables in the format string, and to mix and match formatting directives:
+
+
+```{python}
+price = 4.5
+shares = 120000
+stake = price * shares
+print(f"PRICE: ${price:.2f} | SHARES: {shares:,} | STAKE: ${stake:,.2f}")
+```
+
+
+### Case Manipulation
+
+Converting to all uppercase:
+
+```{python}
+"hello WorlD".upper()
+```
+
+
+Converting to all lowercase:
+
+```{python}
+"hello WorlD".lower()
+```
+
+Converting to title case, where the first letter of each word is capitalized:
+
+```{python}
+"hello WorlD".title()
+```
+
+
+
+### Substring Checking
+
+We can use the inclusion operator to perform substring checking:
+
+```{python}
+"h" in "hello world"
+```
+
+Note this is case sensitive:
+
+```{python}
+"H" in "hello world"
+```
+
+### Substring Replacement
+
+It is possible to replace all instances of a substring within a larger string:
+
+```{python}
+"hello world. as the world turns.".replace("world", "globe")
+```
+
+
+### Length Checking
+
+A string is like a list of individual characters.
+
+Like a list, we can use the [`len` function](https://docs.python.org/3/library/functions.html#len) to count the number of characters in a string:
+
+```{python}
+len("HELLO WORLD")
+```
+
+### String Indexing and Slicing
+
+Similar to list operations, we can use indices to reference a specific character in the string, or a sequence of characters (i.e. string slicing):
+
+
+```{python}
+"HELLO WORLD"[0]
+```
+
+```{python}
+"HELLO WORLD"[0:5]
+```
+
+### String Splitting
+
+The `split` method will split a string on a designated delimiter:
+
+```{python}
+"hello world".split(" ")
+```
+
+
+```{python}
+"first | second | third".split(" | ")
+```

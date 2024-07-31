@@ -1,0 +1,145 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Lists
+
+A [**`list`** datatype](https://docs.python.org/3/library/stdtypes.html#lists) represents a numbered, ordered collection of items.
+
+## Characteristics
+
+
+A list has square brackets (`[]`) on the extremities, and comma separated items inside.
+
+A list may contain zero or more items. A list can contain items of any datatype, but as a best practice, all items in a list should share a datatype and structure.
+
+```{python}
+my_empty_list = []
+print(type(my_empty_list))
+```
+
+
+```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+print(type(symbols))
+print(symbols)
+```
+
+## Accessing Items
+
+We access items in a list by their numeric position, called the **index**. In Python (and most other languages), indices are zero-based, meaning the index of the first item is zero. We use square brackets (`[]`) to denote which item we would like to access:
+
+
+```{python}
+print(symbols[0])
+print(symbols[1])
+print(symbols[2])
+print(symbols[3])
+print(symbols[4])
+#print(symbols[5]) #> ERROR (IndexError)
+```
+
+We can use a negative one to dynamically reference the last item in the list (regardless of how many there are):
+
+```{python}
+print(symbols[-1])
+```
+
+
+### List Slicing
+
+It is possible to access a subset of the items in order by denoting the numeric position of the first and last item you would like:
+
+```{python}
+print(symbols[0:1])
+print(symbols[0:2])
+print(symbols[0:3])
+```
+
+To access a subset of the items based on some condition, we will use a [filter operation](../../data-processing/filtering.qmd) instead.
+
+
+## Operations
+
+Here are some additional common [list operations](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists).
+
+Adding items, using the `append` method:
+
+```{python}
+print(symbols)
+
+symbols.append("NVDA")
+
+print(symbols)
+```
+Updating an item, by its numeric position:
+
+```{python}
+print(symbols)
+
+symbols[-1] = "UPDATED"
+
+print(symbols)
+```
+
+Removing an item, by its numeric position:
+
+```{python}
+print(symbols)
+
+del symbols[-1]
+
+print(symbols)
+```
+
+Removing an item, using the `remove` method:
+
+```{python}
+flavors = ["vanilla", "chocolate", "strawberry"]
+
+flavors.remove("chocolate")
+
+print(flavors)
+```
+
+Concatenating lists:
+
+```{python}
+all_symbols = symbols + ["SPOT", "NVDA"]
+print(all_symbols)
+```
+
+
+
+
+### Length Checking
+
+We will commonly ask how many items a list contains, using the [`len` function](https://docs.python.org/3/library/functions.html#len):
+
+```{python}
+len(symbols)
+```
+
+### Inclusion Checking
+
+We can use membership operators to check if an item is present in the list:
+
+```{python}
+print("NFLX" in symbols)
+print("NFLX" not in symbols)
+```
+
+## Data Processing Operations
+
+We will return to work with lists in much more detail, as we study list-based data processing techniques:
+
+   + [List Iteration and Looping](../../data-processing/for-loops.qmd)
+   + [List Sorting](../../data-processing/sorting.qmd)
+   + [List Mapping](../../data-processing/mapping.qmd)
+   + [List Filtering](../../data-processing/filtering.qmd)
+   + [List Comprehensions](../../data-processing/list-comprehensions.qmd)

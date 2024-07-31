@@ -1,0 +1,12 @@
+---
+title: "Data Processing in Python"
+---
+
+
+Let's work with lists in much more detail, as we study list-based data processing techniques:
+
+   + [Sorting Lists](./sorting.qmd)
+   + [List Iteration and Looping](./for-loops.qmd)
+   + [Mapping Lists](./mapping.qmd)
+   + [Filtering Lists](./filtering.qmd)
+   + [List Comprehensions](./list-comprehensions.qmd)

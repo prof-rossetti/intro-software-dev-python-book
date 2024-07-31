@@ -1,0 +1,94 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+
+# Fetching JSON Data
+
+If the data you want to fetch is in JSON format, we can use the [`requests` package](https://requests.readthedocs.io/en/latest/) to fetch and process it.
+
+Let's consider this example \"students.json\" file we have hosted on the Internet:
+
+
+```json
+{
+  "downloadDate": "2018-06-05",
+  "professorId": 123,
+  "students": [
+    {"studentId": 1, "finalGrade": 76.7},
+    {"studentId": 2, "finalGrade": 85.1},
+    {"studentId": 3, "finalGrade": 50.3},
+    {"studentId": 4, "finalGrade": 89.8},
+    {"studentId": 5, "finalGrade": 97.4},
+    {"studentId": 6, "finalGrade": 75.5},
+    {"studentId": 7, "finalGrade": 87.2},
+    {"studentId": 8, "finalGrade": 88.0},
+    {"studentId": 9, "finalGrade": 93.9},
+    {"studentId": 10, "finalGrade": 92.5}
+  ]
+}
+```
+
+
+
+First we note the URL of where the data resides. Then we pass that as a parameter to the `get` function from the `requests` package, to issue an HTTP GET request:
+
+```{python}
+import requests
+
+# the URL of some JSON data we stored online:
+request_url = "https://raw.githubusercontent.com/prof-rossetti/python-for-finance/main/docs/data/gradebook.json"
+
+response = requests.get(request_url)
+print(type(response))
+```
+
+We receive a response object from the server. The response object has a few methods and properties we care about. First, the status code tells us if the request was generally successful:
+
+```{python}
+response.status_code
+```
+
+The `text` property is a string that looks like it could one day be some data:
+
+```{python}
+print(type(response.text))
+response.text
+```
+
+The final step is to convert this JSON-formatted string to actual Python data. We can do this using the `json` method of the response object, or by leveraging the `loads` function from the [`json` module](https://docs.python.org/3/library/json.html):
+
+
+```{python}
+data = response.json()
+print(type(data))
+data
+```
+
+```{python}
+import json
+
+data = json.loads(response.text)
+print(type(data))
+data
+```
+
+Once we have the data, we can work with it in the ways we know how. For example, looping through a list of dictionaries:
+
+```{python}
+students = data["students"]
+print(type(students))
+len(students)
+```
+
+```{python}
+for student in students:
+    print(student["studentId"], student["finalGrade"])
+```
+
+This data happens to be dictionary-like at the top level. However be aware, when we fetch JSON, it can be either list-like, or dictionary-like on the top level. So you must observe the structure of your particular data before processing it further.

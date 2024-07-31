@@ -1,0 +1,217 @@
+---
+format:
+  html:
+    code-fold: false
+    #toc: true
+    #toc-depth: 4
+    #toc-expand: 5
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Fetching HTML Data (i.e. "Web Scraping")
+
+If the data you want to fetch is in HTML format, like most web pages, we can use the `requests` package to fetch it, and the `beautifulsoup4` package to process it.
+
+Before moving on to process HTML formatted data, it will be important to first review [Basic HTML](https://www.w3schools.com/html/html_basic.asp), [HTML Lists](https://www.w3schools.com/html/html_lists.asp), and [HTML Tables](https://www.w3schools.com/html/html_tables.asp).
+
+
+## HTML Lists
+
+Let's consider this \"my_lists.html\" file we have hosted on the Internet, which is a simplified web page containing a few HTML list elements:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML List Parsing Exercise</title>
+    </head>
+    <body>
+        <h1>HTML List Parsing Exercise</h1>
+
+        <p>This is an HTML page.</p>
+
+        <h2>Favorite Ice cream Flavors</h2>
+        <ol id="my-fav-flavors">
+            <li>Vanilla Bean</li>
+            <li>Chocolate</li>
+            <li>Strawberry</li>
+        </ol>
+
+        <h2>Skills</h2>
+        <ul id="my-skills">
+            <li class="skill">HTML</li>
+            <li class="skill">CSS</li>
+            <li class="skill">JavaScript</li>
+            <li class="skill">Python</li>
+        </ul>
+    </body>
+</html>
+```
+
+First we note the URL of where the data or webpage resides. Then we pass that as a parameter to the `get` function from the `requests` package, to issue an HTTP GET request (as usual):
+
+```{python}
+import requests
+
+# the URL of some HTML data or web page stored online:
+request_url = "https://raw.githubusercontent.com/prof-rossetti/python-for-finance/main/docs/data/my_lists.html"
+
+response = requests.get(request_url)
+print(type(response))
+```
+
+Then we pass the response text (an HTML formatted string) to the `BeautifulSoup` class constructor.
+
+```{python}
+from bs4 import BeautifulSoup
+
+soup = BeautifulSoup(response.text)
+type(soup)
+```
+
+The soup object is able to intelligently process the data. We can invoke a `find` or `find_all` method on the soup object to find elements or tags based on their names or other attributes.
+
+### Finding Elements by Identifier
+
+Since the example HTML contains an ordered list (`ol` element) with a unique identifier of \"my-fav-flavors\", we can use the following code to access it:
+
+
+```{python}
+# get first <ol> element that has a given identifier of "my-fav-flavors":
+ul = soup.find("ol", id="my-fav-flavors")
+print(type(ul))
+ul
+```
+
+```{python}
+# get all child <li> elements from that list:
+flavors = ul.find_all("li")
+print(type(flavors))
+print(len(flavors))
+flavors
+```
+
+
+
+```{python}
+for li in flavors:
+    print("-----------")
+    print(type(li))
+    print(li.text)
+```
+
+### Finding Elements by Class
+
+Since the example HTML contains an unordered list (`ul` element) of skills, where each list item shares the same class of \"skill\", we can use the following code to access the list items directly:
+
+```{python}
+# get all <li> elements that have a given class of "skill"
+skills = soup.find_all("li", "skill")
+print(type(skills))
+print(len(skills))
+skills
+```
+
+```{python}
+for li in skills:
+    print("-----------")
+    print(type(li))
+    print(li.text)
+```
+
+
+## HTML Tables
+
+Let's consider this \"my_tables.html\" file we have hosted on the Internet, which is a simplified web page containing an HTML table element:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Table Parsing Exercise</title>
+    </head>
+    <body>
+        <h1>HTML Table Parsing Exercise</h1>
+
+        <p>This is an HTML page.</p>
+
+        <h2>Products</h2>
+
+        <table id="products">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Chocolate Sandwich Cookies</td>
+                <td>3.50</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>All-Seasons Salt</td>
+                <td>4.99</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Robust Golden Unsweetened Oolong Tea</td>
+                <td>2.49</td>
+            </tr>
+        </table>
+    </body>
+</html>
+```
+
+We repeat the process of fetching this data, as previously exemplified:
+
+
+```{python}
+import requests
+from bs4 import BeautifulSoup
+
+# the URL of some HTML data or web page stored online:
+request_url = "https://raw.githubusercontent.com/prof-rossetti/python-for-finance/main/docs/data/my_tables.html"
+
+response = requests.get(request_url)
+
+soup = BeautifulSoup(response.text)
+type(soup)
+```
+
+Since the example HTML contains a `table` element with a unique identifier of \"products\", we can use the following code to access it:
+
+
+```{python}
+# get first <table> element that has a given identifier of "products":
+table = soup.find("table", id="products")
+print(type(ul))
+table
+```
+
+```{python}
+# get all child <tr> elements from that list:
+rows = table.find_all("tr")
+print(type(rows))
+print(len(rows))
+rows
+```
+
+This gets us a list of the rows, where the first is the header row. We can then loop through the rows, ignoring the header row:
+
+```{python}
+for tr in rows:
+    cells = tr.find_all("td") # skip header row, which contains <th> elements instead
+    if any(cells):
+        print("-----------")
+        # makes assumptions about the order of the cells:
+        product_id = cells[0].text
+        product_name = cells[1].text
+        product_price = cells[2].text
+        print(product_id, product_name, product_price)
+
+```

@@ -1,0 +1,46 @@
+# Why Python? {.unnumbered}
+
+
+Many students and professionals already possess a deep knowledge of spreadsheet software. So why is it helpful to learn [Python](https://www.python.org/) as well?
+
+![Python logo](./images/python-logo.png){height=150}
+
+Like any computer programming language, Python offers benefits of automation. And among programming languages, Python is a popular, easy to use, powerful, and versatile choice.
+
+## Automation and Scalability
+
+Computer programming offers significant benefits of automation, enhancing efficiency, precision, and scalability. By automating repetitive and time-consuming tasks, programming allows professionals to save valuable time, enabling them to focus on more strategic and creative activities. Automation ensures a high level of accuracy by minimizing human errors that can occur during manual processes. Furthermore, programming enables operations to be scaled effortlessly, handling large volumes of data and complex computations with ease. This scalability is crucial in today's fast-paced and data-driven world, where the ability to quickly adapt and manage growing demands is essential for maintaining a competitive edge.
+
+
+## Popularity
+
+Python is one of the most popular programming languages. According to recent reports and developer surveys, it is the second most popular language, behind JavaScript.
+
+![Top programming languages. Source: [GitHub Octoverse 2022](https://octoverse.github.com/2022/top-programming-languages)](./images/popular-langs-2022.png)
+
+This popularity translates into a strong and vibrant community that contributes to the language's development and support.
+
+For finance professionals, this means a wealth of resources, tutorials, and community support is readily available. Sites like [Stack Overflow](https://stackoverflow.com/) are great for asking and answering programming related questions.
+
+Additionally, the high demand for Python skills in the job market creates numerous career opportunities for analysts and programmers proficient in Python, especially in the world of Finance.
+
+![Top jobs related to Python programming and Finance. Source: [US News and World Report](https://money.usnews.com/careers/best-jobs/rankings/the-100-best-jobs)](./images/python-top-jobs.png)
+
+
+## Ease of Use
+
+Python is beloved for its simple and readable syntax, which closely resembles plain English. This simplicity reduces the learning curve for beginners and enhances productivity for experienced programmers.
+
+The language is well-documented, providing extensive resources and help when needed. Python's comprehensive [documentation](https://docs.python.org/3/) and active community forums ensure that solutions to problems are often just a quick search away.
+
+## Developer Ecosystem
+
+Python boasts a rich ecosystem of open-source third-party libraries or plugins known as *packages*. These packages provide users with a wide array of tools and functionalities that extend the core capabilities of Python. This extensibility makes it easier to perform complex tasks without needing to write code from scratch, thereby saving time and effort for developers and analysts.
+
+Python packages offer powerful capabilities in data processing, analysis, visualization, and modeling. For financial applications, this means professionals can efficiently handle large datasets, perform sophisticated analyses, create insightful visualizations, and train predictive models. This robust ecosystem makes Python an indispensable tool in the finance industry, empowering users to make data-driven decisions and develop advanced financial solutions.
+
+## Versatility
+
+Python is a versatile language, making it a good choice for a variety of applications, from software development, to data science, and machine learning.
+
+Because Python is a single language that can be used to tackle challenges across a variety of domains, this increases the return on investment of time spent learning the language.

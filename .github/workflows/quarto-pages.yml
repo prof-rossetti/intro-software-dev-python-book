@@ -1,0 +1,86 @@
+
+# https://jupyterbook.org/en/stable/publish/gh-pages.html
+
+name: quarto-pages
+
+on:
+  push:
+    branches:
+    - main
+    # If your git repository has the Jupyter Book within some-subfolder next to
+    # unrelated files, you can make this run only if a file within that specific
+    # folder has been modified.
+    #
+    #paths:
+    #- docs/**
+
+  # make this workflow manually runnable
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
+  workflow_dispatch:
+
+
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+    - uses: actions/checkout@v3
+
+    #
+    # PYTHON STUFF
+    #
+
+    # INSTALL PYTHON
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    # INSTALL PACKAGE DEPENDENCIES (IF YOU ARE DOCUMENTING YOUR PACKAGE)
+    #- name: Install dependencies
+    #  run: |
+    #    pip install -r requirements.txt
+
+    # INSTALL DOCUMENTATION DEPENDENCIES
+    - name: Install docs dependencies
+      run: |
+        pip install -r docs/requirements.txt
+
+    #
+    # QUARTO STUFF
+    #
+
+    # INSTALL QUARTO
+    # https://github.com/quarto-dev/quarto-actions/blob/main/examples/quarto-publish-example.yml
+    - name: Set up Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      #env:
+      #  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        # To install LaTeX to build PDF book
+        # (to get past errors on the CI build)
+        tinytex: true
+        # uncomment below and fill to pin a version
+        # version: SPECIFIC-QUARTO-VERSION-HERE
+
+    # RENDER WEBSITE CONTENTS TO DOCS/_BUILD
+    - name: Build the book
+      run: |
+        quarto render docs/
+
+    #
+    # GITHUB PAGES STUFF
+    #
+
+    # UPLOAD CONTENTS OF DOCS/_BUILD
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: "docs/_build"
+
+    # DEPLOY WEBSITE CONTENTS TO GITHUB PAGES
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2

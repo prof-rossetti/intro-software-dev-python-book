@@ -1,0 +1,179 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Custom Functions
+
+We saw earlier how we have access to a number of built-in functions provided by Python.
+
+But we have the ability to create our own functions as well.
+
+When we create our own functions, in practice we define the function once, specifying what parameters it should accept and which operations it should perform.
+
+```{python}
+# FUNCTION DEFINITION:
+
+def say_hello():
+    print("----------")
+    print("Hello")
+
+```
+
+After defining the function, we can call or "invoke" it as many times as we want:
+
+```{python}
+# FUNCTION INVOCATIONS:
+
+say_hello()
+
+say_hello()
+
+say_hello()
+```
+
+Notice, the code inside the function is never reached until or unless we invoke the function.
+
+## Parameters
+
+A function may accept input arguments called **parameters** which are essentially variable references for whatever values are passed in.
+
+### Single Parameter
+
+```{python}
+
+# FUNCTION DEFINITION:
+
+def display_heading(message):
+    print("------------------")
+    print(message.upper())
+    print("------------------")
+
+
+# FUNCTION INVOCATIONS:
+
+display_heading("hello")
+
+display_heading("hello again")
+
+m = "hello world"
+display_heading(m)
+```
+
+### Multiple Parameters
+
+For a function that accepts multiple parameters, order matters. By default, the function assumes we are passing the parameters in the same order as specified during the function definition.
+
+```{python}
+# FUNCTION DEFINITION:
+
+def display_height(feet, inches):
+    print("THE HEIGHT IS:", feet, "FEET AND", inches, "INCHES")
+
+# FUNCTION INVOCATIONS:
+
+display_height(6, 3)
+
+display_height(3, 6) # OOPS, WRONG ORDER!
+```
+
+However it is also possible to pass the parameters in a different order, by explicitly specifying the parameter name during function invocation.
+
+
+```{python}
+# FUNCTION INVOCATIONS:
+
+display_height(feet=6, inches=3)
+
+display_height(inches=3, feet=6) # NICE!
+```
+
+### Default Parameters
+
+It is possible to specify default parameter values that should be used if the parameter is omitted during invocation:
+
+
+```{python}
+
+# FUNCTION DEFINITION:
+
+def motivate(name="everyone"):
+    print("ROW FASTER,", name.upper())
+
+# FUNCTION INVOCATIONS:
+
+motivate() # USES DEFAULT PARAMETER
+
+motivate("Cam")
+
+motivate("Ben")
+
+motivate("Grant")
+
+motivate("Michael")
+
+```
+
+When we define a function that has default parameters, if it also has required parameters, within the function definition the required parameters must be listed first, and the default parameters must be listed last:
+
+
+```{python}
+
+# FUNCTION DEFINITION:
+
+def format_temp(temp, temp_unit="F"): # OBSERVE ORDER OF PARAMS
+    DEGREE_SIGN = u"\N{DEGREE SIGN}"
+    print(f"{round(temp)} {DEGREE_SIGN}{temp_unit}")
+
+# FUNCTION INVOCATIONS:
+
+format_temp(90.3)
+
+format_temp(90.3, "C")
+```
+
+
+
+
+## Return Values
+
+So far in all the function examples provided above, we are printing some values, but after the function completes, we lose access to the values.
+
+A function can pass back a value to its caller by using the `return` keyword. This is a crucially important technique that allows us store the results in a variable for later.
+
+```{python}
+
+# FUNCTION DEFINITION:
+
+def enlarge(n):
+    return n * 100
+
+# FUNCTION INVOCATIONS:
+
+print(enlarge(3))
+
+result = enlarge(5)
+print(result)
+
+my_number = 7
+bigger_number = enlarge(my_number)
+print(bigger_number)
+```
+
+
+
+## Function Documentation
+
+When defining our own functions, we'll want to include some documentation / helpful notes to help other people understand what the function is about, and how to invoke it.
+
+See the notes on [Function Documentation](./function-docs.qmd) for more info.
+
+## Function Testing
+
+When we define our own functions, we will endeavor to test them, to ensure they are working as desired.
+
+See the notes on [Unit Testing](./unit-testing.qmd) for more info.

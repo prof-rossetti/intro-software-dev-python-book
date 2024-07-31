@@ -1,0 +1,23 @@
+# Control Flow
+
+**Control flow** refers to the order in which individual statements, instructions, or function calls are executed or evaluated. In other words, not all code is executed. Sometimes code is only reached under certain conditions, and some code may never be reached or executed.
+
+
+It's essential to understand that Python relies heavily on **indentation** to define the structure and flow of the code. This indentation-based syntax distinguishes code blocks and dictates how different parts of the code interact with each other.
+
+
+
+To grasp control flow, you can think of it as a series of decisions and repetitions that guide the program from start to finish. For instance, an **\"if\" statement** allows the program to choose a path based on a condition: if the condition is true, a block of code executes; otherwise, it is skipped. In Python, the scope of this decision-making is defined by indentation.
+
+![Diagram depicting conditional logic flow. Source: [Zen Flowchart](https://www.zenflowchart.com/guides/if-else-flowchart)](../../../images/control-flow-if-else.png){height=350}
+
+Similarly, loops enable the program to repeat a block of code multiple times. A **\"for\" loop** iterates over a sequence (like a list or range), while a **\"while\" loop** continues as long as a condition remains true. Indentation in these loops indicates which statements are part of the loop body.
+
+![Diagram depicting loop flow. Source: [Zen Flowchart](https://www.zenflowchart.com/blog/for-loop-flowchart)](../../../images/control-flow-loops.png){height=350}
+
+Understanding how indentation controls scope helps us write clean, readable code and avoid common errors or unexpected behaviors due to incorrect nesting of code blocks.
+
+
+
+
+Control flow structures in Python include [conditionals](onditional-logic.qmd) (\"if\" statements), [custom functions](custom-functions.qmd), [error handling](errors.qmd), and loops (\"for" loops vs [\"while\" loops](while-loops.qmd)). We will study most of these structures in this chapter, then we will return later to cover [\"for\" loops](../../data-processing/for-loops.qmd) after studying the [`list` datatype](../container-datatypes/lists.qmd) in more detail.

@@ -1,0 +1,57 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Mapping Lists
+
+A mapping operation involves transforming each item in a list, using the same transformation operation. We wind up with a list of transformed values, where we have the same number of values as the original list, except their values are different.
+
+We saw when we perform a loop, we can access each item within the loop, and perform operations to transform the values (for example the lowercasing operation below). However after the loop finishes, we lose access to the transformed items later.
+
+```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+print(type(symbols))
+print(symbols)
+```
+
+
+```{python}
+for symbol in symbols:
+    print(symbol.lower())
+```
+
+To retain a list of the transformed items, we'll need to store them for later.
+
+In practice, to perform a mapping operation, we start with an empty list that will contain the transformed values. Then we loop through the original list as normal, but within the loop we can collect or append each transformed item into the new list. Then when the loop is finished, our new list will be full.
+
+```{python}
+new_list = []
+
+for symbol in symbols:
+    #print(symbol.lower())
+    new_list.append(symbol.lower()) # COLLECT FOR LATER
+
+print(new_list)
+```
+
+To illustrate the iterative collection of items, we can print the full list within the scope of the loop, and see it incrementally grow with each passing of the loop (however we will seldom do this in practice):
+
+
+
+```{python}
+new_list = []
+
+for symbol in symbols:
+    #print(symbol.lower())
+    new_list.append(symbol.lower()) # COLLECT FOR LATER
+    print(new_list) # JUST FOR ILLUSTRATIVE PURPOSES
+
+print("---------")
+print("BOTTOM")
+print(new_list)
+```

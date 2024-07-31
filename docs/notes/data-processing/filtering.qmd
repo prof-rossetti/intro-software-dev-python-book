@@ -1,0 +1,75 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Filtering Lists
+
+A **filter operation** applies a filter condition to arrive at a subset of the data, where only the items that match the filter condition are retained.
+
+
+We saw we can access a particular item in a list by its numeric position, and we can access a sequential subset using list slicing, but a filter condition will allow us to access only the items that match some condition.
+
+The simplest way to implement this is by introducing an \"if\" statement into the scope of the loop:
+
+```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+print("ORIGINAL:", my_numbers)
+```
+
+```{python}
+for n in my_numbers:
+    if n > 3: # FILTER CONDITION
+        print(n)
+```
+
+We see we are only printing numbers that match the condition.
+
+However in this case we lose access to the matching items. To retain access for later, we can implement a familiar collection operation using the `append` method, similar to the [mapping](./mapping.qmd) operation:
+
+```{python}
+matching_nums = []
+
+for n in my_numbers:
+    if n > 3: # FILTER CONDITION
+        #print(n)
+        matching_nums.append(n)
+
+print(matching_nums)
+```
+
+After performing a filter operation, we wind up with a subset of the data.  Depending on the condition, is possible for the resulting list to contain no items, one item, some items, or all items:
+
+```{python}
+matching_nums = []
+
+for n in my_numbers:
+    if n > 0:
+        matching_nums.append(n)
+
+print(matching_nums)
+```
+
+```{python}
+matching_nums = []
+
+for n in my_numbers:
+    if n == 5:
+        matching_nums.append(n)
+
+print(matching_nums)
+```
+
+```{python}
+matching_nums = []
+
+for n in my_numbers:
+    if n > 100:
+        matching_nums.append(n)
+
+print(matching_nums)
+```

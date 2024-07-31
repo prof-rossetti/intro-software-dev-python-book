@@ -1,0 +1,25 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Dates and Times with the `datetime` Module
+
+
+```{python}
+from datetime import date, datetime
+
+today = date.today()
+print(type(today))
+print(today)
+```
+
+```{python}
+now = datetime.now()
+print(type(now))
+print(now)
+```
