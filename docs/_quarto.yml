@@ -5,10 +5,23 @@ project:
     port: 3456 # use the same port instead of a new one each time
     browser: true
 
-#jupyter: python3
-#execute:
-#  #cache: true # re-render only when source changes
-# # eval: false
+
+# https://quarto.org/docs/books/
+# https://quarto.org/docs/reference/projects/books.html
+# book:
+#   title: "My Book"
+#   author: "Norah Jones"
+#   date: "last-modified" # "7/24/2024"
+#   date-format: "iso"
+#   #doi: "...."
+#   #isbn: "..."
+#   #issn: "..."
+#   #edition: "v2"
+#
+#   #downloads: [pdf, epub, docx]
+#   #cover-image: cover.png
+
+
 
 # https://quarto.org/docs/reference/projects/websites.html#section
 website:
@@ -16,25 +29,41 @@ website:
   site-url: https://prof-rossetti.github.io/intro-software-dev-python-book/
   repo-url: https://github.com/prof-rossetti/intro-software-dev-python-book
   repo-branch: main
-  repo-actions: [edit, issue, source]
   repo-subdir: docs
-  #downloads: ["pdf", "epub", "docx"]
-  #sharing: ["facebook", "twitter", "linkedin"]
+  repo-actions: [edit, issue, source]
+
   #code-links:
-  search: true
   reader-mode: true
   page-navigation: true
   back-to-top-navigation: false
   bread-crumbs: true
+
+  #favicon: favicon.ico
+
+  # https://quarto.org/docs/websites/website-tools.html#google-analytics
+  #google-analytics: "G-..."
+
+  # https://quarto.org/docs/websites/website-tools.html#open-graph
+  open-graph: true
+  #sharing: ["facebook", "twitter", "linkedin"]
+
+  # https://quarto.org/docs/reference/projects/books.html#search
+  #search: true
+  #  location: sidebar # navbar, sidebar
+  #  #type: textbox # overlay, textbox
+  search:
+    location: sidebar
 
   # https://quarto.org/docs/reference/projects/websites.html#navbar
   navbar:
     right:
       - about-author.qmd
 
+  # https://quarto.org/docs/websites/website-navigation.html#side-navigation
   # https://quarto.org/docs/reference/projects/websites.html#sidebar
   # NOTE: all sections need href, or else their links don't appear properly in the left sidebar!  https://github.com/quarto-dev/quarto-cli/issues/10102
   sidebar:
+    logo: images/python-banner.jpeg
     contents:
       - section:
         href: index.qmd
@@ -42,31 +71,58 @@ website:
         href: why-python.qmd
 
       #- "---------"
+      #- section:
+      #  href: notes/dev-tools/index.qmd
+      #  text: "Python Development Tools"
+      #  contents:
+      #    - section:
+      #      href: notes/dev-tools/google-colab/overview.qmd
+      #      contents:
+      #        - section:
+      #          href: notes/dev-tools/google-colab/table-of-contents.qmd
+      #          text: "Table of Contents"
+      #        - section:
+      #          href: notes/dev-tools/google-colab/filesystem.ipynb
+      #          text: "Accessing the Filesystem"
+      #        - section:
+      #          href: notes/dev-tools/google-colab/form-inputs.ipynb
+      #          text: "Forms and Inputs"
+      #        - section:
+      #          href: notes/dev-tools/google-colab/notebook-secrets.qmd
+      #          text: "Notebook Secrets"
+      #        - section:
+      #          href: notes/dev-tools/google-colab/advanced-integrations.ipynb
+      #          text: "Advanced Integrations"
+      #    - section:
+      #      href: notes/dev-tools/pip.ipynb
+      #      text: "Installing Packages with Pip"
+
       - section:
         href: notes/dev-tools/index.qmd
         text: "Python Development Tools"
+
+      - section:
+        href: notes/dev-tools/google-colab/overview.qmd
+        #text: "Python Development Tools"
         contents:
           - section:
-            href: notes/dev-tools/google-colab/overview.qmd
-            contents:
-              - section:
-                href: notes/dev-tools/google-colab/table-of-contents.qmd
-                text: "Table of Contents"
-              - section:
-                href: notes/dev-tools/google-colab/filesystem.ipynb
-                text: "Accessing the Filesystem"
-              - section:
-                href: notes/dev-tools/google-colab/form-inputs.ipynb
-                text: "Forms and Inputs"
-              - section:
-                href: notes/dev-tools/google-colab/notebook-secrets.qmd
-                text: "Notebook Secrets"
-              - section:
-                href: notes/dev-tools/google-colab/advanced-integrations.ipynb
-                text: "Advanced Integrations"
+            href: notes/dev-tools/google-colab/table-of-contents.qmd
+            text: "Table of Contents"
           - section:
-            href: notes/dev-tools/pip.ipynb
+            href: notes/dev-tools/google-colab/pip.ipynb
             text: "Installing Packages with Pip"
+          - section:
+            href: notes/dev-tools/google-colab/filesystem.ipynb
+            text: "Accessing the Filesystem"
+          - section:
+            href: notes/dev-tools/google-colab/form-inputs.ipynb
+            text: "Forms and Inputs"
+          - section:
+            href: notes/dev-tools/google-colab/notebook-secrets.qmd
+            text: "Notebook Secrets"
+          - section:
+            href: notes/dev-tools/google-colab/advanced-integrations.ipynb
+            text: "Advanced Integrations"
 
       #- "---------"
 
@@ -161,13 +217,14 @@ website:
       - section:
         href: notes/dataviz/overview.qmd
         text: "Data Visualization"
-        contents:
-          - section:
-            href: notes/dataviz/trendlines.qmd
-            text: "Charts with Trendlines"
-          - section:
-            href: notes/dataviz/candlestick-charts.qmd
-            text: "Candlestick Charts"
+        #contents:
+        #  - section:
+        #    href: notes/dataviz/trendlines.qmd
+        #    text: "Charts with Trendlines"
+        #  - section:
+        #    href: notes/dataviz/candlestick-charts.qmd
+        #    text: "Candlestick Charts"
+
       #
       # FETCHING DATA FROM THE INTERNET
       #
@@ -194,9 +251,9 @@ format:
   # https://quarto.org/docs/reference/formats/html.html#table-of-contents
   html:
     # https://bootswatch.com/
-    theme: pulse #cerulean #cosmo
+    theme: pulse #cerulean #pulse #cerulean #cosmo
       #light: pulse
-      #dark: superhero
+      #dark: darkly #superhero
     code-copy: true
     code-fold: false #show
     #code-line-numbers: true
