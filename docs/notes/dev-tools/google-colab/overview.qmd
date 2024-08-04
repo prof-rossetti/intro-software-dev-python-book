@@ -32,7 +32,7 @@ Recommended editor settings:
   + **Enable code folding**: so you can focus on certain parts of the code, and make the code more manageable to navigate.
 
 
-![Recommended editor settings in Google Colab](../../../images/colab-settings.png){height=450}
+![Recommended editor settings in Google Colab](../../../images/colab-settings.png){.img-fluid style="max-height:450;"}
 
 Remember to save your preferences before moving on.
 

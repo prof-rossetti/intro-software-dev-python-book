@@ -48,7 +48,7 @@ def enlarge(n):
 
 The multiline string can look intimidating, but docstrings have practical benefits. Python tools and text editors will recognize the docstring and show a helper message to anyone who is trying to use / invoke that function:
 
-![Example of how a docstring is displayed by development tools, to provide context about that function](../../../images/function-docs.png){height=350}
+![Example of how a docstring is displayed by development tools, to provide context about that function](../../../images/function-docs.png){.img-fluid style="max-height:350;"}
 
 
 

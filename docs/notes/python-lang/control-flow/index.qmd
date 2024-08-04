@@ -13,7 +13,7 @@ To grasp control flow, you can think of it as a series of decisions and repetiti
 
 Similarly, loops enable the program to repeat a block of code multiple times. A **\"for\" loop** iterates over a sequence (like a list or range), while a **\"while\" loop** continues as long as a condition remains true. Indentation in these loops indicates which statements are part of the loop body.
 
-![Diagram depicting loop flow. Source: [Zen Flowchart](https://www.zenflowchart.com/blog/for-loop-flowchart)](../../../images/control-flow-loops.png){height=350}
+![Diagram depicting loop flow. Source: [Zen Flowchart](https://www.zenflowchart.com/blog/for-loop-flowchart)](../../../images/control-flow-loops.png){.img-fluid style="max-height:350;"}
 
 Understanding how indentation controls scope helps us write clean, readable code and avoid common errors or unexpected behaviors due to incorrect nesting of code blocks.
 
