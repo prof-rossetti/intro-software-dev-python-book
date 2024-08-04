@@ -20,4 +20,4 @@ Understanding how indentation controls scope helps us write clean, readable code
 
 
 
-Control flow structures in Python include [conditionals](onditional-logic.qmd) (\"if\" statements), [custom functions](custom-functions.qmd), [error handling](errors.qmd), and loops (\"for" loops vs [\"while\" loops](while-loops.qmd)). We will study most of these structures in this chapter, then we will return later to cover [\"for\" loops](../../data-processing/for-loops.qmd) after studying the [`list` datatype](../container-datatypes/lists.qmd) in more detail.
+Control flow structures in Python include [conditionals](conditional-logic.qmd) (\"if\" statements), [custom functions](custom-functions.qmd), [error handling](errors.qmd), and loops (\"for" loops vs [\"while\" loops](while-loops.qmd)). We will study most of these structures in this chapter, then we will return later to cover [\"for\" loops](../../data-processing/for-loops.qmd) after studying the [`list` datatype](../container-datatypes/lists.qmd) in more detail.
