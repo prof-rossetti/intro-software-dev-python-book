@@ -1,8 +1,8 @@
 project:
-  type: website # book
+  type: book # website # book
   output-dir: _build
   preview:
-    port: 3456 # use the same port instead of a new one each time
+    port: 3243 # use the same port instead of a new one each time
     browser: true
 
 
@@ -24,246 +24,378 @@ project:
 
 
 # https://quarto.org/docs/reference/projects/websites.html#section
-website:
-  title: "Intro to Software Development in Python"
+###website:
+###  title: "Intro to Software Development in Python"
+###  site-url: https://prof-rossetti.github.io/intro-software-dev-python-book/
+###  repo-url: https://github.com/prof-rossetti/intro-software-dev-python-book
+###  repo-branch: main
+###  repo-subdir: docs
+###  repo-actions: [edit, issue, source]
+###
+###  #code-links:
+###  reader-mode: true
+###  page-navigation: true
+###  back-to-top-navigation: false
+###  bread-crumbs: true
+###
+###  #favicon: favicon.ico
+###
+###  # https://quarto.org/docs/websites/website-tools.html#google-analytics
+###  #google-analytics: "G-..."
+###
+###  # https://quarto.org/docs/websites/website-tools.html#open-graph
+###  open-graph: true
+###  #sharing: ["facebook", "twitter", "linkedin"]
+###
+###  # https://quarto.org/docs/reference/projects/books.html#search
+###  #search: true
+###  #  location: sidebar # navbar, sidebar
+###  #  #type: textbox # overlay, textbox
+###  search:
+###    location: sidebar
+###
+###  # https://quarto.org/docs/reference/projects/websites.html#navbar
+###  navbar:
+###    right:
+###      - about-author.qmd
+###
+###  # https://quarto.org/docs/websites/website-navigation.html#side-navigation
+###  # https://quarto.org/docs/reference/projects/websites.html#sidebar
+###  # NOTE: all sections need href, or else their links don't appear properly in the left sidebar!  https://github.com/quarto-dev/quarto-cli/issues/10102
+###  sidebar:
+###    logo: images/python-banner.jpeg
+###    contents:
+###      - section:
+###        href: index.qmd
+###      - section:
+###        href: why-python.qmd
+###
+###      - section:
+###        href: notes/dev-tools/index.qmd
+###        text: "Python Development Tools"
+###
+###      - section:
+###        href: notes/dev-tools/google-colab/overview.qmd
+###        #text: "Python Development Tools"
+###        contents:
+###          - section:
+###            href: notes/dev-tools/google-colab/table-of-contents.qmd
+###            text: "Table of Contents"
+###          - section:
+###            href: notes/dev-tools/google-colab/pip.ipynb
+###            text: "Installing Packages with Pip"
+###          - section:
+###            href: notes/dev-tools/google-colab/filesystem.ipynb
+###            text: "Accessing the Filesystem"
+###          - section:
+###            href: notes/dev-tools/google-colab/form-inputs.ipynb
+###            text: "Forms and Inputs"
+###          - section:
+###            href: notes/dev-tools/google-colab/notebook-secrets.qmd
+###            text: "Notebook Secrets"
+###          - section:
+###            href: notes/dev-tools/google-colab/advanced-integrations.ipynb
+###            text: "Advanced Integrations"
+###
+###      #- "---------"
+###
+###      #
+###      # PYTHON LANGUAGE OVERVIEW
+###      #
+###      - section:
+###        href: notes/python-lang/overview.ipynb
+###        text: "Python Language Overview"
+###        contents:
+###
+###          - section:
+###            href: notes/python-lang/basic-datatypes/index.qmd
+###            text: "Basic Datatypes"
+###            contents:
+###              # basic datatypes here:
+###              - section:
+###                href: notes/python-lang/basic-datatypes/booleans.qmd
+###              - section:
+###                href: notes/python-lang/basic-datatypes/numbers.qmd
+###              - section:
+###                href: notes/python-lang/basic-datatypes/strings.qmd
+###
+###          - section:
+###            href: notes/python-lang/python-operators.qmd
+###
+###          - section:
+###            href: notes/python-lang/control-flow/index.qmd
+###            contents:
+###              - section:
+###                href: notes/python-lang/control-flow/conditional-logic.qmd
+###              - section:
+###                href: notes/python-lang/control-flow/custom-functions.qmd
+###                #contents:
+###                #- section:
+###                #  href: notes/python-lang/control-flow/function-docs.qmd
+###                #- section:
+###                #  href: notes/python-lang/control-flow/unit-testing.qmd
+###              #- section:
+###              #  href: notes/python-lang/control-flow/errors.qmd
+###              - section:
+###                href: notes/python-lang/control-flow/while-loops.qmd
+###
+###          - section:
+###            href: notes/python-lang/container-datatypes/index.qmd
+###            text: "Container Datatypes"
+###            contents:
+###              - section:
+###                href: notes/python-lang/container-datatypes/lists.qmd
+###              - section:
+###                href: notes/python-lang/container-datatypes/dictionaries.qmd
+###
+###          - section:
+###            href: notes/python-modules/index.qmd
+###            text: "Python Modules"
+###            contents:
+###              - section:
+###                href: notes/python-modules/math.qmd
+###              - section:
+###                href: notes/python-modules/random.qmd
+###              - section:
+###                href: notes/python-modules/statistics.qmd
+###              - section:
+###                href: notes/python-modules/datetime.qmd
+###
+###      #
+###      # DATA PROCESSING
+###      #
+###      - section:
+###        href: notes/data-processing/index.qmd
+###        text: "Data Processing"
+###        contents:
+###          - section:
+###            href: notes/data-processing/for-loops.qmd
+###            text: "List Iteration and Looping"
+###          - section:
+###            href: notes/data-processing/sorting.qmd
+###            text: "Sorting Lists"
+###          - section:
+###            href: notes/data-processing/mapping.qmd
+###            text: "Mapping Lists"
+###          - section:
+###            href: notes/data-processing/filtering.qmd
+###            text: "Filtering Lists"
+###          - section:
+###            href: notes/data-processing/list-comprehensions.qmd
+###            text: "List Comprehensions"
+###
+###      #
+###      # DATAVIZ
+###      #
+###      - section:
+###        href: notes/dataviz/overview.qmd
+###        text: "Data Visualization"
+###        #contents:
+###        #  - section:
+###        #    href: notes/dataviz/trendlines.qmd
+###        #    text: "Charts with Trendlines"
+###        #  - section:
+###        #    href: notes/dataviz/candlestick-charts.qmd
+###        #    text: "Candlestick Charts"
+###
+###      #
+###      # FETCHING DATA FROM THE INTERNET
+###      #
+###      - section:
+###        href: notes/fetching-data/overview.qmd
+###        text: "Fetching Data from the Internet"
+###        contents:
+###          - section:
+###            href: notes/fetching-data/json-data.qmd
+###          - section:
+###            href: notes/fetching-data/csv-data.qmd
+###          - section:
+###            href: notes/fetching-data/xml.qmd
+###          - section:
+###            href: notes/fetching-data/html-web-scraping.qmd
+###            #text: "HTML Data (Web Scraping)"
+###          #- section:
+###          #  href: notes/fetching-data/apis.qmd
+###          #  text: "APIs"
+###
+###
+###format:
+###  # https://quarto.org/docs/reference/formats/html.html#table-of-contents
+###  html:
+###    # https://bootswatch.com/
+###    theme: pulse #cerulean #pulse #cerulean #cosmo
+###      #light: pulse
+###      #dark: darkly #superhero
+###    code-copy: true
+###    code-fold: false #show
+###    #code-line-numbers: true
+###    toc: true
+###    #toc-depth: 3 # specify the number of section levels to include in the table of contents
+###    #toc-expand: 3 # specify how much of the table of contents to show initially (defaults to 1 with auto-expansion as the user scrolls)
+###    toc-expand: true # show all levels?
+###    #toc-location: left
+###    #number-sections: false
+###    #number-depth: 1
+###
+###  #pdf:
+###  #  documentclass: scrreprt
+###
+
+
+# https://quarto.org/docs/books/
+# https://quarto.org/docs/reference/projects/books.html
+book:
+  title: "Intro to Python Programming"
+  author: "Michael J Rossetti"
+  date: "last-modified" # "7/24/2024"
+  date-format: "iso"
+  #doi: "...."
+  #isbn: "..."
+  #issn: "..."
+  #edition: "v2"
+
   site-url: https://prof-rossetti.github.io/intro-software-dev-python-book/
-  repo-url: https://github.com/prof-rossetti/intro-software-dev-python-book
+  repo-url: https://github.com/prof-rossetti/intro-software-dev-python-book/
   repo-branch: main
   repo-subdir: docs
   repo-actions: [edit, issue, source]
+  downloads: [pdf, epub, docx]
 
-  #code-links:
-  reader-mode: true
-  page-navigation: true
-  back-to-top-navigation: false
-  bread-crumbs: true
-
+  #cover-image: cover.png
   #favicon: favicon.ico
+
+  #sharing: [twitter, facebook]
+
+  # https://quarto.org/docs/websites/website-tools.html#open-graph
+  #open-graph: true
 
   # https://quarto.org/docs/websites/website-tools.html#google-analytics
   #google-analytics: "G-..."
 
-  # https://quarto.org/docs/websites/website-tools.html#open-graph
-  open-graph: true
-  #sharing: ["facebook", "twitter", "linkedin"]
-
   # https://quarto.org/docs/reference/projects/books.html#search
-  #search: true
-  #  location: sidebar # navbar, sidebar
-  #  #type: textbox # overlay, textbox
-  search:
-    location: sidebar
-
-  # https://quarto.org/docs/reference/projects/websites.html#navbar
-  navbar:
-    right:
-      - about-author.qmd
+  search: true
+    #location: sidebar # navbar, sidebar
+    #type: textbox # overlay, textbox
 
   # https://quarto.org/docs/websites/website-navigation.html#side-navigation
-  # https://quarto.org/docs/reference/projects/websites.html#sidebar
-  # NOTE: all sections need href, or else their links don't appear properly in the left sidebar!  https://github.com/quarto-dev/quarto-cli/issues/10102
   sidebar:
     logo: images/python-banner.jpeg
-    contents:
-      - section:
-        href: index.qmd
-      - section:
-        href: why-python.qmd
-
-      #- "---------"
-      #- section:
-      #  href: notes/dev-tools/index.qmd
-      #  text: "Python Development Tools"
-      #  contents:
-      #    - section:
-      #      href: notes/dev-tools/google-colab/overview.qmd
-      #      contents:
-      #        - section:
-      #          href: notes/dev-tools/google-colab/table-of-contents.qmd
-      #          text: "Table of Contents"
-      #        - section:
-      #          href: notes/dev-tools/google-colab/filesystem.ipynb
-      #          text: "Accessing the Filesystem"
-      #        - section:
-      #          href: notes/dev-tools/google-colab/form-inputs.ipynb
-      #          text: "Forms and Inputs"
-      #        - section:
-      #          href: notes/dev-tools/google-colab/notebook-secrets.qmd
-      #          text: "Notebook Secrets"
-      #        - section:
-      #          href: notes/dev-tools/google-colab/advanced-integrations.ipynb
-      #          text: "Advanced Integrations"
-      #    - section:
-      #      href: notes/dev-tools/pip.ipynb
-      #      text: "Installing Packages with Pip"
-
-      - section:
-        href: notes/dev-tools/index.qmd
-        text: "Python Development Tools"
-
-      - section:
-        href: notes/dev-tools/google-colab/overview.qmd
-        #text: "Python Development Tools"
-        contents:
-          - section:
-            href: notes/dev-tools/google-colab/table-of-contents.qmd
-            text: "Table of Contents"
-          - section:
-            href: notes/dev-tools/google-colab/pip.ipynb
-            text: "Installing Packages with Pip"
-          - section:
-            href: notes/dev-tools/google-colab/filesystem.ipynb
-            text: "Accessing the Filesystem"
-          - section:
-            href: notes/dev-tools/google-colab/form-inputs.ipynb
-            text: "Forms and Inputs"
-          - section:
-            href: notes/dev-tools/google-colab/notebook-secrets.qmd
-            text: "Notebook Secrets"
-          - section:
-            href: notes/dev-tools/google-colab/advanced-integrations.ipynb
-            text: "Advanced Integrations"
-
-      #- "---------"
-
-      #
-      # PYTHON LANGUAGE OVERVIEW
-      #
-      - section:
-        href: notes/python-lang/overview.ipynb
-        text: "Python Language Overview"
-        contents:
-
-          - section:
-            href: notes/python-lang/basic-datatypes/index.qmd
-            text: "Basic Datatypes"
-            contents:
-              # basic datatypes here:
-              - section:
-                href: notes/python-lang/basic-datatypes/booleans.qmd
-              - section:
-                href: notes/python-lang/basic-datatypes/numbers.qmd
-              - section:
-                href: notes/python-lang/basic-datatypes/strings.qmd
-
-          - section:
-            href: notes/python-lang/python-operators.qmd
-
-          - section:
-            href: notes/python-lang/control-flow/index.qmd
-            contents:
-              - section:
-                href: notes/python-lang/control-flow/conditional-logic.qmd
-              - section:
-                href: notes/python-lang/control-flow/custom-functions.qmd
-                #contents:
-                #- section:
-                #  href: notes/python-lang/control-flow/function-docs.qmd
-                #- section:
-                #  href: notes/python-lang/control-flow/unit-testing.qmd
-              #- section:
-              #  href: notes/python-lang/control-flow/errors.qmd
-              - section:
-                href: notes/python-lang/control-flow/while-loops.qmd
-
-          - section:
-            href: notes/python-lang/container-datatypes/index.qmd
-            text: "Container Datatypes"
-            contents:
-              - section:
-                href: notes/python-lang/container-datatypes/lists.qmd
-              - section:
-                href: notes/python-lang/container-datatypes/dictionaries.qmd
-
-          - section:
-            href: notes/python-modules/index.qmd
-            text: "Python Modules"
-            contents:
-              - section:
-                href: notes/python-modules/math.qmd
-              - section:
-                href: notes/python-modules/random.qmd
-              - section:
-                href: notes/python-modules/statistics.qmd
-              - section:
-                href: notes/python-modules/datetime.qmd
-
-      #
-      # DATA PROCESSING
-      #
-      - section:
-        href: notes/data-processing/index.qmd
-        text: "Data Processing"
-        contents:
-          - section:
-            href: notes/data-processing/for-loops.qmd
-            text: "List Iteration and Looping"
-          - section:
-            href: notes/data-processing/sorting.qmd
-            text: "Sorting Lists"
-          - section:
-            href: notes/data-processing/mapping.qmd
-            text: "Mapping Lists"
-          - section:
-            href: notes/data-processing/filtering.qmd
-            text: "Filtering Lists"
-          - section:
-            href: notes/data-processing/list-comprehensions.qmd
-            text: "List Comprehensions"
-
-      #
-      # DATAVIZ
-      #
-      - section:
-        href: notes/dataviz/overview.qmd
-        text: "Data Visualization"
-        #contents:
-        #  - section:
-        #    href: notes/dataviz/trendlines.qmd
-        #    text: "Charts with Trendlines"
-        #  - section:
-        #    href: notes/dataviz/candlestick-charts.qmd
-        #    text: "Candlestick Charts"
-
-      #
-      # FETCHING DATA FROM THE INTERNET
-      #
-      - section:
-        href: notes/fetching-data/overview.qmd
-        text: "Fetching Data from the Internet"
-        contents:
-          - section:
-            href: notes/fetching-data/json-data.qmd
-          - section:
-            href: notes/fetching-data/csv-data.qmd
-          - section:
-            href: notes/fetching-data/xml.qmd
-          - section:
-            href: notes/fetching-data/html-web-scraping.qmd
-            #text: "HTML Data (Web Scraping)"
-          #- section:
-          #  href: notes/fetching-data/apis.qmd
-          #  text: "APIs"
 
 
+
+  chapters:
+    - index.qmd
+    - why-python.qmd
+
+    - part: "Python Dev Tools"
+      #href:  notes/dev-tools/index.qmd
+      chapters:
+        - href:  notes/dev-tools/index.qmd
+          text: "Python Dev Tools Overview"
+        - notes/dev-tools/google-colab/overview.qmd
+        - notes/dev-tools/google-colab/pip.ipynb
+
+    - part: "Python Language"
+      #href: notes/python-lang/overview.ipynb
+      chapters:
+        - href: notes/python-lang/overview.ipynb
+          text: "Python Language Overview"
+        - notes/python-lang/python-operators.qmd
+
+
+    - part: "Python Datatypes"
+      chapters:
+        - href: notes/python-lang/basic-datatypes/index.qmd
+          text: "Python Datatypes Overview"
+
+        - notes/python-lang/basic-datatypes/booleans.qmd
+        - notes/python-lang/basic-datatypes/numbers.qmd
+        - notes/python-lang/basic-datatypes/strings.qmd
+
+        #- "Container Datatypes"
+        - notes/python-lang/container-datatypes/lists.qmd
+        - notes/python-lang/container-datatypes/dictionaries.qmd
+
+
+    - part: "Control Flow"
+      href: notes/python-lang/control-flow/index.qmd
+      chapters:
+        - notes/python-lang/control-flow/conditional-logic.qmd
+        - notes/python-lang/control-flow/custom-functions.qmd
+        - notes/python-lang/control-flow/while-loops.qmd
+        - notes/python-lang/control-flow/errors.qmd
+
+
+
+
+
+    - part: "Data Processing"
+      #href: notes/python-lang/container-datatypes/index.qmd
+      chapters:
+        - href: notes/data-processing/for-loops.qmd
+          text: "List Iteration and Looping"
+        - href: notes/data-processing/sorting.qmd
+          text: "Sorting Lists"
+        - href: notes/data-processing/mapping.qmd
+          text: "Mapping Lists"
+        - href: notes/data-processing/filtering.qmd
+          text: "Filtering Lists"
+        - href: notes/data-processing/list-comprehensions.qmd
+          text: "List Comprehensions"
+
+
+
+
+
+
+
+
+
+
+
+
+    - "-----------------"
+
+  appendices:
+    - part: "Google Colab In-Depth"
+      chapters:
+        - notes/dev-tools/google-colab/table-of-contents.qmd
+        - notes/dev-tools/google-colab/filesystem.ipynb
+        - notes/dev-tools/google-colab/form-inputs.ipynb
+        - notes/dev-tools/google-colab/notebook-secrets.qmd
+        - notes/dev-tools/google-colab/advanced-integrations.ipynb
+
+    - part: "Survey of Python Modules"
+      href: notes/python-modules/index.qmd
+      chapters:
+        - notes/python-modules/math.qmd
+        - notes/python-modules/random.qmd
+        - notes/python-modules/statistics.qmd
+        - notes/python-modules/datetime.qmd
+    - part: "Custom Functions In-Depth"
+      chapters:
+        - notes/python-lang/control-flow/function-docs.qmd
+        - notes/python-lang/control-flow/unit-testing.qmd
+
+
+
+
+  # shows up at bottom of page
+  #body-footer: "&copy; Copyright 2024, Your Name Here"
+
+  #page-footer:
+  #  center: "&copy; Copyright 2024, Your Name Here"
+
+
+#bibliography: references.bib
 
 format:
-  # https://quarto.org/docs/reference/formats/html.html#table-of-contents
   html:
-    # https://bootswatch.com/
-    theme: pulse #cerulean #pulse #cerulean #cosmo
-      #light: pulse
-      #dark: darkly #superhero
-    code-copy: true
-    code-fold: false #show
-    #code-line-numbers: true
-    toc: true
-    #toc-depth: 3 # specify the number of section levels to include in the table of contents
-    #toc-expand: 3 # specify how much of the table of contents to show initially (defaults to 1 with auto-expansion as the user scrolls)
-    toc-expand: true # show all levels?
-    #toc-location: left
-    #number-sections: false
-    #number-depth: 1
+    # https://quarto.org/docs/output-formats/html-themes.html
+    theme:
+      light: default #flatly
+      dark: darkly
 
-  #pdf:
-  #  documentclass: scrreprt
+    #css: styles/my-style.css
+  pdf:
+    documentclass: scrreprt
