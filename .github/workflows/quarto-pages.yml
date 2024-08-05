@@ -69,6 +69,7 @@ jobs:
     - name: Build the book
       run: |
         quarto render docs/
+      continue-on-error: true # for diagnosing build issue related to image file
 
     #
     # GITHUB PAGES STUFF

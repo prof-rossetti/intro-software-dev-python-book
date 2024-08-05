@@ -40,36 +40,51 @@ book:
     #location: sidebar # navbar, sidebar
     #type: textbox # overlay, textbox
 
+  #navbar:
+  #  right:
+  #    - about-author.qmd
+
   # https://quarto.org/docs/websites/website-navigation.html#side-navigation
   sidebar:
     logo: images/python-banner.jpeg
 
-
+  page-footer:
+    left: |
+      Copyright 2024, <a href="https://prof-rossetti.org/">Michael J Rossetti</a>
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
 
   chapters:
     - index.qmd
     - why-python.qmd
 
-    - part: "Python Dev Tools"
+    - part: "Development Tools"
       #href:  notes/dev-tools/index.qmd
       chapters:
         - href:  notes/dev-tools/index.qmd
-          text: "Python Dev Tools Overview"
-        - notes/dev-tools/google-colab/overview.qmd
+          text: "Development Tools Overview"
+        - href: notes/dev-tools/google-colab/overview.qmd
+          text: "Google Colab Notebooks"
         - notes/dev-tools/google-colab/pip.ipynb
 
-    - part: "Python Language"
+    - part: "Language Basics"
       #href: notes/python-lang/overview.ipynb
       chapters:
         - href: notes/python-lang/overview.ipynb
-          text: "Python Language Overview"
-        - notes/python-modules/index.qmd
-        - notes/python-lang/python-operators.qmd
+          text: "Comments, Variables, and Functions"
+        #- href: notes/python-lang/basic-datatypes/index.qmd
+        #  text: "Python Datatypes Overview"
+        - href: notes/python-lang/python-operators.qmd
+          text: "Operators"
+        #- href: notes/python-lang/control-flow/index.qmd
+        #  text: "Control Flow Overview"
+        - href: notes/python-modules/index.qmd
+          text: "Modules and Imports"
 
-    - part: "Python Datatypes"
+    - part: "Datatypes"
       chapters:
         - href: notes/python-lang/basic-datatypes/index.qmd
-          text: "Python Datatypes Overview"
+          text: "Datatypes Overview"
         # "Basic Datatypes"
         - notes/python-lang/basic-datatypes/booleans.qmd
         - notes/python-lang/basic-datatypes/numbers.qmd
@@ -78,29 +93,37 @@ book:
         - notes/python-lang/container-datatypes/lists.qmd
         - notes/python-lang/container-datatypes/dictionaries.qmd
 
+    #- part: "Basic Datatypes"
+    #  chapters:
+    #    - notes/python-lang/basic-datatypes/booleans.qmd
+    #    - notes/python-lang/basic-datatypes/numbers.qmd
+    #    - notes/python-lang/basic-datatypes/strings.qmd
+
     - part: "Control Flow"
-      href: notes/python-lang/control-flow/index.qmd
+      #href: notes/python-lang/control-flow/index.qmd
       chapters:
+        - href: notes/python-lang/control-flow/index.qmd
+          text: "Control Flow Overview"
         - notes/python-lang/control-flow/conditional-logic.qmd
         - notes/python-lang/control-flow/custom-functions.qmd
         - notes/python-lang/control-flow/errors.qmd
         - notes/python-lang/control-flow/while-loops.qmd
 
-
-
-
+    #- part: "Container Datatypes"
+    #  chapters:
+    #    - notes/python-lang/container-datatypes/lists.qmd
+    #    - notes/python-lang/container-datatypes/dictionaries.qmd
 
     - part: "Data Processing"
-      #href: notes/python-lang/container-datatypes/index.qmd
       chapters:
         - href: notes/data-processing/for-loops.qmd
           text: "List Iteration and Looping"
         - href: notes/data-processing/sorting.qmd
-          text: "Sorting Lists"
+          text: "List Sorting"
         - href: notes/data-processing/mapping.qmd
-          text: "Mapping Lists"
+          text: "List Mapping"
         - href: notes/data-processing/filtering.qmd
-          text: "Filtering Lists"
+          text: "List Filtering"
         - href: notes/data-processing/list-comprehensions.qmd
           text: "List Comprehensions"
 
@@ -135,6 +158,8 @@ book:
 
 
 
+    - "-----------------"
+    - about-author.qmd
     - "-----------------"
 
   appendices:
@@ -180,9 +205,9 @@ format:
   html:
     # https://quarto.org/docs/output-formats/html-themes.html
     # https://bootswatch.com/
-    theme:
-      light: default #flatly
-      dark: darkly
+    theme: cosmo
+      #light: default #flatly
+      #dark: darkly
     #css: styles/my-style.css
 
   pdf:

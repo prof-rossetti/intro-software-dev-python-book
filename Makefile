@@ -14,3 +14,6 @@ render:
 
 open:
 	open docs/_build/index.html
+
+open-pdf:
+	open docs/_build/Intro-to-Python-Programming.pdf
