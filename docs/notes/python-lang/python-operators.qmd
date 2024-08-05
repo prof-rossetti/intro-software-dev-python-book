@@ -23,7 +23,7 @@ The [Python Operators page from W3 Schools](https://www.w3schools.com/python/pyt
 
 
 
-### Arithmetic Operators
+## Arithmetic Operators
 
 ![Arithmetic Operators. Source: [W3 Schools](https://www.w3schools.com/python/python_operators.asp)](../../images/operators-arithmetic.png)
 
@@ -36,7 +36,7 @@ print(2 * 10)
 print(2 / 10)
 ```
 
-### Comparison Operators
+## Comparison Operators
 
 ![Comparison Operators. Source: [W3 Schools](https://www.w3schools.com/python/python_operators.asp)](../../images/operators-comparison.png)
 
@@ -55,7 +55,7 @@ print(2 >= 10)
 
 
 
-### Assignment Operators
+## Assignment Operators
 
 ![Assignment Operators. Source: [W3 Schools](https://www.w3schools.com/python/python_operators.asp)](../../images/operators-assignment.png)
 
@@ -73,7 +73,7 @@ x += 1
 print(x)
 ```
 
-### Membership Operators
+## Membership Operators
 
 ![Membership Operators. Source: [W3 Schools](https://www.w3schools.com/python/python_operators.asp)](../../images/operators-membership.png)
 
@@ -97,7 +97,7 @@ print(5 not in [1,2,5])
 
 
 
-### Logical Operators
+## Logical Operators
 
 ![Logical Operators. Source: [W3 Schools](https://www.w3schools.com/python/python_operators.asp)](../../images/operators-logical.png)
 
@@ -133,7 +133,7 @@ print(False or False)
 
 
 
-#### Truthiness
+### Truthiness
 
 
 Another way of using the `or` operator is within the concept of "truthiness".
