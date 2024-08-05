@@ -22,7 +22,7 @@ book:
   repo-branch: main
   repo-subdir: docs
   repo-actions: [edit, issue, source]
-  downloads: [pdf, epub, docx]
+  #downloads: [pdf, epub, docx] # need to fix image-related build issue for deployment to resolve and this to work on GH pages
 
   #cover-image: cover.png
   #favicon: favicon.ico
