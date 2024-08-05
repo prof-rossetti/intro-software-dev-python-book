@@ -25,6 +25,8 @@ In other words, knowing what datatype an object is allows us to understand exact
 
 Here is an example of each of the most popular datatypes. We will cover many of these datatypes and their operations in more detail, but for now just know what these datatypes look like.
 
+#### Basic Datatypes
+
 Basic (\"scalar\") datatypes that involve a single value:
 
 | Datatype | Description  |  Example |
@@ -34,6 +36,8 @@ Basic (\"scalar\") datatypes that involve a single value:
 | [Float](./numbers.qmd#floats) | Numeric data with a decimal component.  | `3.5` |
 | [String](./strings.qmd)  | Textual data, within quotes. |  `"HELLO WORLD"` |
 | [None Type](https://docs.python.org/3/library/constants.html#None)  | Absence of a value, or a "null" value. |  `None` only |
+
+#### Container Datatypes
 
 \"Container\" datatypes that can hold many values:
 

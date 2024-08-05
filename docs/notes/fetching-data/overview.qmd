@@ -16,6 +16,7 @@ In practice, when we fetch data from the internet, it may come in one of a handf
 
   + XML and HTML contain structured \"tags\" to denote the document structure. Like a webpage.
 
+### JSON Data Format
 
 Example JSON:
 
@@ -29,6 +30,8 @@ Example JSON:
 ]
 ```
 
+### CSV Data Format
+
 Example CSV:
 
 ```csv
@@ -39,6 +42,8 @@ Boston,Red Sox,Major
 Washington,Nationals,Major
 New Haven,Ravens,Minor
 ```
+
+### XML Data Format
 
 Example XML:
 
@@ -73,6 +78,8 @@ Example XML:
 </teams>
 ```
 
+## Data Fetching Strategies
+
 The strategy we use to fetch data depends on the format of the data we are requesting:
 
   + If we have JSON data, we will use the `requests` package to fetch and parse it.
@@ -84,6 +91,7 @@ The strategy we use to fetch data depends on the format of the data we are reque
 
 Let's dive into each one of these methods in detail:
 
-  + [Fetching JSON Data from the Internet](./json-data.qmd)
-  + [Fetching CSV Data from the Internet](./csv-data.qmd)
-  + [Fetching HTML Data from the Internet (\"Web Scraping\")](./html-web-scraping.qmd)
+  + [Fetching JSON Data from the Internet](./json.qmd)
+  + [Fetching CSV Data from the Internet](./csv.qmd)
+  + [Fetching XML Data from the Internet](./xml.qmd)
+  + [Fetching HTML Data from the Internet (i.e. \"Web Scraping\")](./html-web-scraping.qmd)
