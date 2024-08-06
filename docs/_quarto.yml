@@ -210,8 +210,8 @@ format:
       #dark: darkly
     #css: styles/my-style.css
 
-  pdf:
-    documentclass: scrreprt
+  #pdf:
+  #  documentclass: scrreprt
 
 
 
