@@ -22,7 +22,7 @@ book:
   repo-branch: main
   repo-subdir: docs
   repo-actions: [edit, issue, source]
-  #downloads: [pdf, epub, docx] # need to fix image-related build issue for deployment to resolve and this to work on GH pages
+  downloads: [pdf, epub, docx]
 
   #cover-image: cover.png
   #favicon: favicon.ico
@@ -48,11 +48,11 @@ book:
   sidebar:
     logo: images/python-banner.jpeg
 
-  page-footer:
-    left: |
-      Copyright 2024, <a href="https://prof-rossetti.org/">Michael J Rossetti</a>
-    right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  #page-footer:
+  #  left: |
+  #    Copyright 2024, <a href="https://prof-rossetti.org/">Michael J Rossetti</a>
+  #  right: |
+  #    This book was built with <a href="https://quarto.org/">Quarto</a>.
 
   chapters:
     - index.qmd
@@ -209,29 +209,16 @@ format:
       #light: default #flatly
       #dark: darkly
     #css: styles/my-style.css
+    code-copy: true
+    #code-fold: false #show
+    ##code-line-numbers: true
+    #toc: true
+    ##toc-depth: 3 # specify the number of section levels to include in the table of contents
+    ##toc-expand: 3 # specify how much of the table of contents to show initially (defaults to 1 with auto-expansion as the user scrolls)
+    #toc-expand: true # show all levels?
+    ##toc-location: left
+    ##number-sections: false
+    ##number-depth: 1
 
-  #pdf:
-  #  documentclass: scrreprt
-
-
-
-###format:
-###  # https://quarto.org/docs/reference/formats/html.html#table-of-contents
-###  html:
-###    theme: pulse #cerulean #pulse #cerulean #cosmo
-###      #light: pulse
-###      #dark: darkly #superhero
-###    code-copy: true
-###    code-fold: false #show
-###    #code-line-numbers: true
-###    toc: true
-###    #toc-depth: 3 # specify the number of section levels to include in the table of contents
-###    #toc-expand: 3 # specify how much of the table of contents to show initially (defaults to 1 with auto-expansion as the user scrolls)
-###    toc-expand: true # show all levels?
-###    #toc-location: left
-###    #number-sections: false
-###    #number-depth: 1
-###
-###  #pdf:
-###  #  documentclass: scrreprt
-###
+  pdf:
+    documentclass: scrreprt

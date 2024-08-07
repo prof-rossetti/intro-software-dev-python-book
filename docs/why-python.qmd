@@ -3,7 +3,7 @@
 
 Many students and professionals already possess a deep knowledge of spreadsheet software. So why is it helpful to learn [Python](https://www.python.org/) as well?
 
-![Python logo](./images/python-logo.png){height=150}
+![Python logo](/images/python-logo.png){.img-fluid style="max-height:150;"}
 
 Like any computer programming language, Python offers benefits of automation. And among programming languages, Python is a popular, easy to use, powerful, and versatile choice.
 
@@ -16,7 +16,7 @@ Computer programming offers significant benefits of automation, enhancing effici
 
 Python is one of the most popular programming languages. According to recent reports and developer surveys, it is the second most popular language, behind JavaScript.
 
-![Top programming languages. Source: [GitHub Octoverse 2022](https://octoverse.github.com/2022/top-programming-languages)](./images/popular-langs-2022.png)
+![Top programming languages. Source: [GitHub Octoverse 2022](https://octoverse.github.com/2022/top-programming-languages)](/images/popular-langs-2022.png)
 
 This popularity translates into a strong and vibrant community that contributes to the language's development and support.
 
@@ -24,7 +24,7 @@ For finance professionals, this means a wealth of resources, tutorials, and comm
 
 Additionally, the high demand for Python skills in the job market creates numerous career opportunities for analysts and programmers proficient in Python, especially in the world of Finance.
 
-![Top jobs related to Python programming and Finance. Source: [US News and World Report](https://money.usnews.com/careers/best-jobs/rankings/the-100-best-jobs)](./images/python-top-jobs.png)
+![Top jobs related to Python programming and Finance. Source: [US News and World Report](https://money.usnews.com/careers/best-jobs/rankings/the-100-best-jobs)](/images/python-top-jobs.png)
 
 
 ## Ease of Use
