@@ -45,8 +45,8 @@ book:
   #    - about-author.qmd
 
   # https://quarto.org/docs/websites/website-navigation.html#side-navigation
-  sidebar:
-    logo: images/python-banner.jpeg
+  #sidebar:
+  #  logo: images/python-banner.jpeg
 
   #page-footer:
   #  left: |
@@ -163,6 +163,7 @@ book:
     - "-----------------"
 
   appendices:
+
     - part: "Google Colab In-Depth"
       chapters:
         - notes/dev-tools/google-colab/table-of-contents.qmd
