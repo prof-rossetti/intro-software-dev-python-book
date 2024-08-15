@@ -22,7 +22,7 @@ book:
   repo-branch: main
   repo-subdir: docs
   repo-actions: [edit, issue, source]
-  #downloads: [pdf, epub, docx]
+  downloads: [pdf, epub, docx]
 
   #cover-image: cover.png
   #favicon: favicon.ico
@@ -151,7 +151,17 @@ book:
 
         #- href: notes/fetching-data/apis.qmd
 
-
+    #- part: "APIs and Integrations"
+    #  chapters:
+    #    - href: notes/api-integrations/google-drive-demo.ipynb
+    #    - href: notes/api-integrations/google-sheets-demo.ipynb
+    #    - href: notes/api-integrations/google-maps-api-demo.ipynb
+    #    - href: notes/api-integrations/youtube-audio-downloader-demo.ipynb
+    #    - href: notes/api-integrations/spotify-api-demo.ipynb
+    #    - href: notes/api-integrations/sending-email-demo.ipynb
+    #    - href: notes/api-integrations/openai-api-demo.ipynb
+    #    - href: notes/api-integrations/pokemon-api-demo.ipynb
+    #    - href: notes/api-integrations/alphavantage-api-crypto-dashboards-demo.ipynb
 
 
 
@@ -221,5 +231,5 @@ format:
     ##number-sections: false
     ##number-depth: 1
 
-  #pdf:
-  #  documentclass: scrreprt
+  pdf:
+    documentclass: scrreprt
