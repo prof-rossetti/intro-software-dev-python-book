@@ -22,7 +22,7 @@ book:
   repo-branch: main
   repo-subdir: docs
   repo-actions: [edit, issue, source]
-  downloads: [pdf, epub, docx]
+  #downloads: [pdf, epub, docx]
 
   #cover-image: cover.png
   #favicon: favicon.ico
@@ -221,5 +221,5 @@ format:
     ##number-sections: false
     ##number-depth: 1
 
-  pdf:
-    documentclass: scrreprt
+  #pdf:
+  #  documentclass: scrreprt
