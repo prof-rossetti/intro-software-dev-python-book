@@ -33,7 +33,7 @@ book:
   #open-graph: true
 
   # https://quarto.org/docs/websites/website-tools.html#google-analytics
-  #google-analytics: "G-..."
+  google-analytics: "G-B1MPHWM8NN"
 
   # https://quarto.org/docs/reference/projects/books.html#search
   search: true
