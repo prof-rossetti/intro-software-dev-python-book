@@ -33,7 +33,12 @@ book:
   #open-graph: true
 
   # https://quarto.org/docs/websites/website-tools.html#google-analytics
-  google-analytics: "G-B1MPHWM8NN"
+  # doesn't work for github pages?
+  # see html: include-in-header option at bottom instead ..
+  # jk use tracking id as well?
+  # https://github.com/quarto-dev/quarto-cli/discussions/9065
+  google-analytics:
+    tracking-id: "G-B1MPHWM8NN"
 
   # https://quarto.org/docs/reference/projects/books.html#search
   search: true
@@ -230,6 +235,19 @@ format:
     ##toc-location: left
     ##number-sections: false
     ##number-depth: 1
+
+    # https://quarto.org/docs/reference/formats/html.html#includes
+    #include-in-header:
+    #  text: |
+    #    <!-- Google tag (gtag.js) -->
+    #    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1MPHWM8NN"></script>
+    #    <script>
+    #      window.dataLayer = window.dataLayer || [];
+    #      function gtag(){dataLayer.push(arguments);}
+    #      gtag('js', new Date());
+    #
+    #      gtag('config', 'G-B1MPHWM8NN');
+    #    </script>
 
   pdf:
     documentclass: scrreprt
