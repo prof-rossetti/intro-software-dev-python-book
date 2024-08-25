@@ -37,8 +37,9 @@ book:
   # see html: include-in-header option at bottom instead ..
   # jk use tracking id as well?
   # https://github.com/quarto-dev/quarto-cli/discussions/9065
-  google-analytics:
-    tracking-id: "G-B1MPHWM8NN"
+  #google-analytics:
+  #  tracking-id: "G-B1MPHWM8NN"
+  # jk still doesn't work. see include-in-header option ...
 
   # https://quarto.org/docs/reference/projects/books.html#search
   search: true
@@ -237,17 +238,17 @@ format:
     ##number-depth: 1
 
     # https://quarto.org/docs/reference/formats/html.html#includes
-    #include-in-header:
-    #  text: |
-    #    <!-- Google tag (gtag.js) -->
-    #    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1MPHWM8NN"></script>
-    #    <script>
-    #      window.dataLayer = window.dataLayer || [];
-    #      function gtag(){dataLayer.push(arguments);}
-    #      gtag('js', new Date());
-    #
-    #      gtag('config', 'G-B1MPHWM8NN');
-    #    </script>
+    include-in-header:
+      text: |
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1MPHWM8NN"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-B1MPHWM8NN');
+        </script>
 
   pdf:
     documentclass: scrreprt
