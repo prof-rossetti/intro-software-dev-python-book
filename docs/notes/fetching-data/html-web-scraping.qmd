@@ -57,7 +57,7 @@ First we note the URL of where the data or webpage resides. Then we pass that as
 import requests
 
 # the URL of some HTML data or web page stored online:
-request_url = "https://raw.githubusercontent.com/prof-rossetti/python-for-finance/main/docs/data/my_lists.html"
+request_url = "https://raw.githubusercontent.com/prof-rossetti/intro-software-dev-python-book/main/docs/data/my_lists.html"
 
 response = requests.get(request_url)
 print(type(response))
@@ -175,7 +175,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # the URL of some HTML data or web page stored online:
-request_url = "https://raw.githubusercontent.com/prof-rossetti/python-for-finance/main/docs/data/my_tables.html"
+request_url = "https://raw.githubusercontent.com/prof-rossetti/intro-software-dev-python-book/main/docs/data/my_tables.html"
 
 response = requests.get(request_url)
 

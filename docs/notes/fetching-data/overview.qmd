@@ -4,7 +4,7 @@ So far, we have studied many data processing techniques using example data.
 
 But the real fun comes from working with real life data.
 
-The Internet is a boundless source of data, including financial data.
+The Internet is a boundless source of data, across a variety of domains, including financial data.
 
 ## Data Formats
 
