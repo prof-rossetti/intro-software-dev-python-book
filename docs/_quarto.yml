@@ -124,15 +124,14 @@ book:
       chapters:
         - href: notes/data-processing/for-loops.qmd
           text: "List Iteration and Looping"
-        - href: notes/data-processing/sorting.qmd
-          text: "List Sorting"
         - href: notes/data-processing/mapping.qmd
           text: "List Mapping"
         - href: notes/data-processing/filtering.qmd
           text: "List Filtering"
         - href: notes/data-processing/list-comprehensions.qmd
           text: "List Comprehensions"
-
+        - href: notes/data-processing/sorting.qmd
+          text: "List Sorting"
 
     - part: "Data Visualization"
       chapters:

@@ -20,7 +20,7 @@ print(symbols)
 
 We saw how we can print and access all items at once. And we saw we can use an index reference to access a specific item. But what if we want to access each item individually, however many there are?
 
-We can use a **\"for\" loop** to access each item one at a time:
+We can use a **\"for\" loop** to access each item, one at a time:
 
 ```{python}
 print("TOP")
@@ -33,7 +33,21 @@ for item in symbols:
 print("BOTTOM")
 ```
 
-When we use a \"for\" loop, we have to fill in some slots. We have no choice but to put the list we want to loop through in the second slot (after the `in`). But we have an absolute arbitrary choice of what variable name to use to reference each item (after the `for`). Whatever variable name we choose (e.g. `x`), we must also reference that variable within the scope of the loop:
+When we use a \"for\" loop, we have to fill in some slots. To understand the slots, see the following pseudocode:
+
+```python
+for _________ in _________:
+    _________
+```
+
+
+```python
+for VARIABLE_REFERENCE_FOR_EACH_ITEM in EXISTING_LIST:
+    DO_SOMETHING_WITH_THAT_ITEM
+```
+
+
+We have no choice but to put the list we want to loop through in the second slot (after the `in`). But we have an absolute arbitrary choice of what variable name to use to reference each item (after the `for`). Whatever variable name we choose (e.g. `x`), we must also reference that variable within the scope of the loop:
 
 ```{python}
 print("TOP")
@@ -46,7 +60,7 @@ for x in symbols:
 print("BOTTOM")
 ```
 
-In practice, if we have a list of items plural (`symbols`), we could call each item the singular version (`symbol`) to make our code readable:
+As a best practice, if we have a list of items plural (e.g. `symbols`), we could call each item the singular version (e.g. `symbol`) to make our code readable:
 
 ```{python}
 print("TOP")
@@ -59,4 +73,4 @@ for symbol in symbols:
 print("BOTTOM")
 ```
 
-Loops are essential and foundational. They will form the basis of more advanced operations, such as [mapping](./mapping.qmd) and [filtering](./filtering.qmd).
+The \"for\" loop is an essential and foundational technique, which will form the basis of more advanced operations, such as [mapping](./mapping.qmd) and [filtering](./filtering.qmd).

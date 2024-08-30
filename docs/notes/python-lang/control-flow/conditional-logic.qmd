@@ -52,16 +52,16 @@ Observe that the "else" clause is optional, and will represent a catch-all condi
 ```{python}
 print("TOP")
 
-if 2 + 2 == 4:
-    print("THEY ARE EQUAL")
-    print("MORE STUFF")
+if 2 + 2 == 5:
+    print("THEY ARE EQUAL") # NEVER REACHED
+    print("MORE STUFF") # NEVER REACHED
 else:
-    print("THEY ARE NOT EQUAL") # NEVER REACHED
+    print("THEY ARE NOT EQUAL")
 
 print("BOTTOM")
 ```
 
-To implement multiple conditions, we can optionally include any number of "elif" clauses. They must come AFTER the "if", and BEFORE the "else":
+To implement multiple conditions, we can optionally include any number of "elif" clauses. They must come AFTER the "if", and BEFORE the "else" (if there is one present):
 
 ```{python}
 print("TOP")
@@ -77,6 +77,9 @@ else:
 
 print("BOTTOM")
 ```
+
+One way you can think about the "elif" clause is that it is like an "else" clause, but with an associated condition.
+
 
 Observe that if more than one condition evaluates to being true, whichever is listed FIRST will be reached:
 

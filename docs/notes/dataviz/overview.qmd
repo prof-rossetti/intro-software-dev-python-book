@@ -100,7 +100,7 @@ print(viewers)
 ```{python}
 from plotly.express import bar
 
-fig = bar(x=dates, y=prices, height=350,
+fig = bar(x=genres, y=viewers, height=350,
           title="Viewership by Genre",
           labels={"x": "Genre", "y": "Viewers"}
 )

@@ -35,7 +35,7 @@ Multiline string, uses triple quotes (`"""`) on the extremities:
 
 ```{python}
 message = """
-This is a menu for our trading platform.
+This is a menu for our application.
 
 To get started, follow these instructions:
 
