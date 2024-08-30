@@ -126,6 +126,10 @@ print(genres)
 print(viewers)
 ```
 
+:::{.callout-warning title="Important Note"}
+When sorting the data, we have to sort BEFORE mapping, to ensure the two resulting lists are in corresponding order!
+:::
+
 With horizontal bar, we use the `orientation` parameter, and also flip the X and Y references:
 
 ```{python}
