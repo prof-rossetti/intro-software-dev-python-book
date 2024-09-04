@@ -42,12 +42,14 @@ book:
   # jk still doesn't work. see include-in-header option ...
 
   # https://quarto.org/docs/reference/projects/books.html#search
-  search: true
-    #location: sidebar # navbar, sidebar
+  search: #true
+    location: sidebar # navbar, sidebar
     #type: textbox # overlay, textbox
 
   #navbar:
   #  right:
+  #    - href: exercises/index.qmd
+  #      text: "Exercises, Assignments, and Projects"
   #    - about-author.qmd
 
   # https://quarto.org/docs/websites/website-navigation.html#side-navigation
@@ -59,6 +61,8 @@ book:
   #    Copyright 2024, <a href="https://prof-rossetti.org/">Michael J Rossetti</a>
   #  right: |
   #    This book was built with <a href="https://quarto.org/">Quarto</a>.
+
+
 
   chapters:
     - index.qmd
@@ -77,7 +81,7 @@ book:
       #href: notes/python-lang/overview.ipynb
       chapters:
         - href: notes/python-lang/overview.ipynb
-          text: "Comments, Variables, and Functions"
+          text: "Comments, Variables, and Built-in Functions"
         #- href: notes/python-lang/basic-datatypes/index.qmd
         #  text: "Python Datatypes Overview"
         - href: notes/python-lang/python-operators.qmd
@@ -171,7 +175,12 @@ book:
 
 
 
-
+    #- "-----------------"
+    ##- exercises/index.qmd
+    #- part: "Assignments and Projects"
+    #  #href: exercises/index.qmd
+    #  chapters:
+    #    - exercises/rock-paper-scissors/instructions.qmd
 
 
     - "-----------------"
@@ -195,6 +204,7 @@ book:
         - notes/python-modules/random.qmd
         - notes/python-modules/statistics.qmd
         - notes/python-modules/datetime.qmd
+        #- notes/python-modules/getpass.ipynb
 
     - part: "Custom Functions In-Depth"
       chapters:
@@ -205,7 +215,6 @@ book:
     #  chapters:
     #    - notes/fetching-data/apis/spotify-api-demo.ipynb
     #    - notes/fetching-data/apis/google-maps-api-demo.ipynb
-
 
 
 

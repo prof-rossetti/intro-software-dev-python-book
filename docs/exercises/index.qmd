@@ -1,0 +1,12 @@
+# Exercises, Assignments, and Projects {.unnumbered}
+
+## Practice Exercises
+
+  + My First Notebook
+  + Class 2 Exercises
+  + Class 3 Exercises
+
+
+## Assignments
+
+  + ["Rock, Paper, Scissors" Assignment](../exercises/rock-paper-scissors/instructions.qmd)

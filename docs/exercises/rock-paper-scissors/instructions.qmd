@@ -1,0 +1,119 @@
+---
+number-sections: false
+---
+
+
+# "Rock, Paper, Scissors" Game {.unnumbered}
+
+Develop a Python application which will allow a human user to play a game of Rock-Paper-Scissors against a computer opponent. The game's functionality should adhere to the "Requirements" section below.
+
+For this assignment specifically, all game code should exist in a single cell.
+
+## Requirements
+
+### Welcome Message
+
+The application should instruct the player via text cell to set their name as a [notebook secret](../../notes/dev-tools/google-colab/notebook-secrets.html#implementation) specifically called `PLAYER_NAME`.
+
+Then the application should then read this value from the notebook secrets, and store the value in a Python variable called `player_name`.
+
+The application should display a friendly message welcoming the user, such as "Welcome Jon, to our Rock Paper Scissors Game!" (for example if "Jon" was set as the player's name).
+
+> HINT: adapt the example code relating to `userdata`, provided at the bottom of the notebook secrets menu, but change the variable names.
+
+### Processing User Inputs
+
+The application should prompt the user to input, or otherwise select, an option (i.e. "rock", "paper", or "scissors"). It should store the user's selection in a variable for later reference.
+
+> HINT: use the [`input` function](../../notes/python-lang/overview.ipynb#the-input-function) to capture user inputs.
+
+### Validating User Inputs
+
+The application should compare the user's selection against the list of valid options (i.e. "rock", "paper", "scissors") to determine whether the user has selected a valid option.
+
+**Case Normalization**:
+
+The program should be able to handle various capitalizations of the valid options (e.g. "ROCK", "Rock", "rock", "RoCk", etc. are all valid).
+
+> HINT: use string case manipulation methods on the original user input to simplify your conditional logic
+
+**Graceful Failure**:
+
+If the selection is invalid, the program should fail gracefully by displaying a friendly message to the user, and preventing further program execution. The program should not try to further process an invalid input, as it may lead to runtime errors.
+
+**Validation Loop**:
+
+If the selection is invalid, the program should ideally continue to prompt the user to input a value until the user inputs a valid input.
+
+> HINT: ask for an input within the scope of a [`while` loop](../../notes/python-lang/control-flow/while-loops.qmd), and break out of the loop if the selection is valid.
+
+### Simulating Computer Selection
+
+The application should select one of the options (i.e. "rock", "paper", or "scissors") at random, and assign that as the computer player's choice.
+
+> HINT: use the `choice` function provided by [the `random` module](../../notes/python-modules/random.qmd).
+
+> HINT: ensure the valid choices are stored in a [list datatype](../../notes/python-lang/container-datatypes/lists.qmd), and then pass that list to the random choice function.
+
+### Determining the Winner
+
+The application should compare the user's selection to the computer player's selection, and determine which is the winner. The following logic should govern that determination:
+
+  1. Rock beats Scissors
+  2. Paper beats Rock
+  3. Scissors beats Paper
+  4. Rock vs Rock, Paper vs Paper, and Scissors vs Scissors each results in a "tie"
+
+> HINT: use one or more [`if` statements](../../notes/python-lang/control-flow/conditional-logic.qmd) (recommended approach for beginners). FYI - it may also be possible to use other pre-configured representations of the winners, for example using a nested [dictionary datatype](../../notes/python-lang/container-datatypes/dictionaries.qmd) containing all possible outcomes.
+
+### Displaying Results
+
+After determining the winner, the application should display the results to the user. Desired information outputs (from start to finish) should include at least the following:
+
+  + A friendly welcome message, including the player's name (e.g. "Player One").
+  + The user's selected option
+  + The computer's selected option
+  + Whether the user or the computer was the winner
+  + A friendly farewell message
+
+Example desired output after one round of game-play:
+
+```
+Welcome 'Player One' to my Rock-Paper-Scissors Game!
+---------
+Please choose an option ('rock', 'paper', or 'scissors'): rock
+---------
+User choice: 'rock'
+---------
+Computer choice: 'scissors'
+---------
+You won! Thanks for playing.
+```
+
+## Evaluation
+
+Submissions will be evaluated according to the "Requirements" section, as represented by the following rubric:
+
+Category | Requirement | Weight
+--- | --- | ---
+Info Inputs | Prompts the user to input their player name via notebook secrets, and reads the value from notebook secrets. | 10%
+Info Inputs | Prompts the user to input / select a choice from one of "rock", "paper", or "scissors". | 15%
+Validations | Handles user inputs of various capitalization (i.e. recognizes "rock", "Rock", "ROCK", "RoCk", etc. as valid inputs). | 15%
+Validations | Fails gracefully if encountering an invalid user input (i.e. program does not crash or malfunction if user provides an invalid input, like "OOPS"). Avoids a red / crashed cell. | 15%
+Simulation | Generates a valid choice at random for the computer player. | 15%
+Calculations | Displays accurate information about which player is the winner. | 15%
+Info Outputs | Presents all desired information outputs to the user, ideally in a clear way with clean formatting. | 15%
+
+This rubric is tentative, and may be subject to slight adjustments during the grading process.
+
+If experiencing execution error(s) while evaluating the application's required functionality, evaluators are advised to reduce the project's grade by between 4% and 25%, depending on the circumstances and severity of the error(s).
+
+### Further Exploration (Game Loop Challenges)
+
++10%: For extra credit, also implement a game loop that asks the user whether they'd like to play again. If they say "yes", play the game again, otherwise stop. The user should be able to play as many games as they want.
+
+> HINT: use an infinite `while` loop!
+
++10%: For maximum challenge and maximum bonus points, also keep track of how many games have been played, and how many games have been won, and once the user elects to stop playing, display their win percentage.
+
+> HINT: use a counter approach in conjunction with your `while` loop.
