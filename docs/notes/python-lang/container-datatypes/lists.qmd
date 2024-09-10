@@ -36,6 +36,8 @@ We access items in a list by their numeric position, called the **index**. In Py
 
 
 ```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+
 print(symbols[0])
 print(symbols[1])
 print(symbols[2])
@@ -53,75 +55,136 @@ print(symbols[-1])
 
 ### List Slicing
 
-It is possible to access a subset of the items in order by denoting the numeric position of the first and last item you would like:
+It is possible to access a subset of the items in sequence, by denoting the numeric position of the first item (inclusive) and last item (exclusive):
 
 ```{python}
-print(symbols[0:1])
-print(symbols[0:2])
-print(symbols[0:3])
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+
+print(symbols[0:1]) # FROM 0 (INCLUSIVE) to 1 (EXCLUSIVE)
+print(symbols[0:2]) # FROM 0 (INCLUSIVE) to 2 (EXCLUSIVE)
+print(symbols[0:3]) # FROM 0 (INCLUSIVE) to 3 (EXCLUSIVE)
 ```
 
-To access a subset of the items based on some condition, we will use a [filter operation](../../data-processing/filtering.qmd) instead.
+
+```{python}
+print(symbols[2:4]) # FROM 2 (INCLUSIVE) to 4 (EXCLUSIVE)
+```
+
+:::{.callout-note title="Explaining List Slicing"}
+
+
+List slicing can be confusing at first, but here's a simple way to think about it:
+
+  + **Left side** of the colon:
+
+    + This is the starting index.
+    + The slice begins at this index, and includes the item at this position.
+    + If you leave it blank, it starts from the beginning (index 0).
+
+  + **Right side** of the colon:
+
+    + This is the ending index.
+    + The slice goes up to, but does not include, this index.
+    + If you leave it blank, it goes up to the end of the list.
+
+:::
+
+By default if we omit one of the sides, it will include all members to the start or end of the list:
+
+```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+
+print(symbols[ :2]) # FROM BEGINNING TO 2 (EXCLUSIVE)
+print(symbols[2: ]) # FROM 2 (INCLUSIVE) TO THE END
+```
+
+
+
+
+
+
+
+
+
+
+Note: list slicing provides a subset of the items in sequence, however to access a subset of the items based on some condition, we will use a [filter operation](../../data-processing/filtering.qmd) instead.
 
 
 ## Operations
 
 Here are some additional common [list operations](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists).
 
+:::{.callout-note title="Mutating Operations"}
+Many of these operations are **mutating**, which means they change the underlying object in-place.
+:::
+
+### Adding Items
+
 Adding items, using the `append` method:
 
 ```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
 print(symbols)
 
-symbols.append("NVDA")
-
+symbols.append("NVDA") # MUTATING
 print(symbols)
 ```
+
+
+### Updating Items
+
 Updating an item, by its numeric position:
 
 ```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
 print(symbols)
 
-symbols[-1] = "UPDATED"
-
-print(symbols)
-```
-
-Removing an item, by its numeric position:
-
-```{python}
-print(symbols)
-
-del symbols[-1]
-
+symbols[-1] = "UPDATED" # MUTATING
 print(symbols)
 ```
 
-Removing an item, using the `remove` method:
+### Removing Items
+
+
+Removing a given item, using the `remove` method:
 
 ```{python}
-flavors = ["vanilla", "chocolate", "strawberry"]
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+print(symbols)
 
-flavors.remove("chocolate")
-
-print(flavors)
+symbols.remove("NFLX") # MUTATING
+print(symbols)
 ```
 
-Concatenating lists:
+Alternatively, removing an item by its numeric position, using the `del` keyword:
 
 ```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+print(symbols)
+
+del symbols[-1] # MUTATING
+print(symbols)
+```
+
+
+### Concatenating Lists
+
+Concatenating two lists together:
+
+```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+print(symbols)
+
 all_symbols = symbols + ["SPOT", "NVDA"]
 print(all_symbols)
 ```
-
-
-
 
 ### Length Checking
 
 We will commonly ask how many items a list contains, using the [`len` function](https://docs.python.org/3/library/functions.html#len):
 
 ```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
 len(symbols)
 ```
 
@@ -130,6 +193,8 @@ len(symbols)
 We can use membership operators to check if an item is present in the list:
 
 ```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+
 print("NFLX" in symbols)
 print("NFLX" not in symbols)
 ```
