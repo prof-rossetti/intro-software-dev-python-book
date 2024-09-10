@@ -34,6 +34,7 @@ while counter < 5: # CONDITION
     print("-------")
     print(counter, "Hello")
     counter += 1 # INCREMENT THE COUNTER
+    # NOTHING ELSE, START THE LOOP OVER
 
 print("BOTTOM")
 ```
@@ -53,6 +54,8 @@ while True: # RETURN OF THE INFINITE LOOP
 
     if counter >= 5:
         break # BUT WHEN THIS CONDITION IS REACHED WE STOP
+
+    # NOTHING ELSE, START THE LOOP OVER
 
 print("BOTTOM")
 ```
