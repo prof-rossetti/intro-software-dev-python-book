@@ -30,6 +30,8 @@ To retain a list of the transformed items, we'll need to store them for later.
 In practice, to perform a mapping operation, we start with an empty list that will contain the transformed values. Then we loop through the original list as normal, but within the loop we can collect or append each transformed item into the new list. Then when the loop is finished, our new list will be full.
 
 ```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+
 new_list = []
 
 for symbol in symbols:
@@ -44,6 +46,8 @@ To illustrate the iterative collection of items, we can print the full list with
 
 
 ```{python}
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
+
 new_list = []
 
 for symbol in symbols:
