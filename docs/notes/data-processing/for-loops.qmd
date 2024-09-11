@@ -23,7 +23,7 @@ We saw how we can print and access all items at once. And we saw we can use an i
 We can use a **\"for\" loop** to access each item, one at a time:
 
 ```{python}
-print("TOP")
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
 
 for item in symbols:
     print("--------")
@@ -42,7 +42,7 @@ for _________ in _________:
 
 
 ```python
-for VARIABLE_REFERENCE_FOR_EACH_ITEM in EXISTING_LIST:
+for EACH_ITEM in EXISTING_LIST:
     DO_SOMETHING_WITH_THAT_ITEM
 ```
 
@@ -50,11 +50,11 @@ for VARIABLE_REFERENCE_FOR_EACH_ITEM in EXISTING_LIST:
 We have no choice but to put the list we want to loop through in the second slot (after the `in`). But we have an absolute arbitrary choice of what variable name to use to reference each item (after the `for`). Whatever variable name we choose (e.g. `x`), we must also reference that variable within the scope of the loop:
 
 ```{python}
-print("TOP")
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
 
-for x in symbols:
+for x in symbols: # IF WE USE X HERE IN THE FIRST SLOT...
     print("--------")
-    print(x)
+    print(x) # ... WE HAVE TO REFERENCE X HERE AS WELL
     # NOTHING ELSE, GO TO NEXT ITEM
 
 print("BOTTOM")
@@ -63,7 +63,7 @@ print("BOTTOM")
 As a best practice, if we have a list of items plural (e.g. `symbols`), we could call each item the singular version (e.g. `symbol`) to make our code readable:
 
 ```{python}
-print("TOP")
+symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
 
 for symbol in symbols:
     print("--------")
