@@ -18,10 +18,7 @@ The simplest way to implement this is by introducing an \"if\" statement into th
 
 ```{python}
 my_numbers = [1, 2, 3, 4, 5, 6, 7]
-print("ORIGINAL:", my_numbers)
-```
 
-```{python}
 for n in my_numbers:
     if n > 3: # FILTER CONDITION
         print(n)
@@ -32,6 +29,8 @@ We see we are only printing numbers that match the condition.
 However in this case we lose access to the matching items. To retain access for later, we can implement a familiar collection operation using the `append` method, similar to the [mapping](./mapping.qmd) operation:
 
 ```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+
 matching_nums = []
 
 for n in my_numbers:
@@ -45,6 +44,8 @@ print(matching_nums)
 After performing a filter operation, we wind up with a subset of the data.  Depending on the condition, is possible for the resulting list to contain no items, one item, some items, or all items:
 
 ```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+
 matching_nums = []
 
 for n in my_numbers:
@@ -55,6 +56,8 @@ print(matching_nums)
 ```
 
 ```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+
 matching_nums = []
 
 for n in my_numbers:
@@ -65,6 +68,8 @@ print(matching_nums)
 ```
 
 ```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+
 matching_nums = []
 
 for n in my_numbers:

@@ -26,6 +26,8 @@ print(my_numbers)
 Mapping, the long way:
 
 ```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+
 transformed_nums = []
 
 for n in my_numbers:
@@ -37,6 +39,8 @@ print(transformed_nums)
 Mapping, the short way, using a list comprehension (equivalent):
 
 ```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+
 # NEW_LIST = [VALUE_TO_COLLECT for ITEM in EXISTING_LIST]
 
 transformed_nums = [n * 100 for n in my_numbers]
@@ -51,6 +55,8 @@ We optionally add an `if` clause to also implement filtering:
 Filtering, the long way:
 
 ```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+
 matching_nums = []
 
 for n in my_numbers:
@@ -63,6 +69,8 @@ print(matching_nums)
 Filtering, the short way, using a list comprehension (equivalent):
 
 ```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+
 # NEW_LIST = [VALUE_TO_COLLECT for ITEM in EXISTING_LIST if CONDITION]
 
 matching_nums = [n for n in my_numbers if n > 3]
@@ -76,6 +84,8 @@ We can mix and match techniques to perform both mapping and filtering, as desire
 Filtering and mapping, the long way:
 
 ```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+
 matching_nums = []
 
 for n in my_numbers:
@@ -88,6 +98,8 @@ print(matching_nums)
 Filtering and mapping, the short way, using a list comprehension (equivalent):
 
 ```{python}
+my_numbers = [1, 2, 3, 4, 5, 6, 7]
+
 new_nums = [n * 100 for n in my_numbers if n > 3]
 print(new_nums)
 ```
