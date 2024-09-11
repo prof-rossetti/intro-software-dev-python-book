@@ -8,4 +8,107 @@ execute:
 ---
 
 
-# APIs
+# Application Programming Interfaces (APIs)
+
+We've seen how we can fetch some static data from the Internet, but it's much more helpful to fetch some dynamic data, such as real time market data.
+
+In order to do this, we'll leverage the capabilities of a programmatic data source known as an **Application Programming Interface (API)**. When we fetch data from an API, the API is the remote server that we're making requests to. We can make a request for some data and the API will give us that data in response.
+
+There are a variety of APIs hosted by a variety of platforms. For example, the New York Times, many social media platforms, and the AlphaVantage API, which is a source of financial data.
+
+Example APIs:
+
+  + [New York Times APIs](https://developer.nytimes.com/apis)
+  + [Google APIs](https://developers.google.com/apis-explorer/#p/)
+    + Google Maps API
+    + Google Sheets API
+    + Google Drive API
+    + Gmail API
+    + YouTube API
+    + etc.
+  + [Yelp API](https://docs.developer.yelp.com/docs/fusion-intro)
+
+Social Media APIs:
+
+  + ~~[Twitter APIs](https://dev.twitter.com/rest/public)~~ (RIP)
+  + [Facebook Social Graph API](https://developers.facebook.com/docs/graph-api)
+  + [Instagram API](https://developers.facebook.com/docs/instagram-platform)
+  + [GitHub API](https://developer.github.com/v3/)
+
+Government and Financial APIs:
+
+  + [US Federal Elections Commission (FEC) API](https://api.open.fec.gov/developers)
+  + [US Securities and Exchange Commission EDGAR API](https://sec-api.io/)
+  + [Weather.gov API](https://www.weather.gov/documentation/services-web-api)
+  + [AlphaVantage API](https://www.alphavantage.co/documentation/)
+
+For fun:
+
+  + [Spotify API](https://developer.spotify.com/documentation/web-api)
+  + [CocktailDB Drinks API](https://www.thecocktaildb.com/api.php)
+  + [MovieDB API](https://developer.themoviedb.org/reference/intro/getting-started)
+  + [Edamam Food and Nutrition API](https://www.edamam.com/)
+  + [Pokemon API](https://pokeapi.co/)
+
+
+
+To learn about APIs, we're going to focus on the AlphaVantage API in more detail. In order to learn how to work with an API, we must first consult its documentation to see what capabilities it provides and see what instructions it gives us for how we can request data from that API.
+
+## API Documentation
+
+Let's go take a look at the documentation for the AlphaVantage API. The AlphaVantage API provides real time historical stock market data and other economic indicators as well.
+
+![]()
+
+## API Keys
+
+In order to use the API, we must first obtain a secret credential known as an API key. An API key is like a secret password that we'll use to associate our requests with ourselves. Let's talk about API keys within a specific example of the Instagram API. We know that when we use the Instagram app on our phone, we only have access to see videos and photos from users that we follow who have public accounts or who have authorized us to see their photos.
+
+If we're using the Instagram app and we don't have access to see someone's photos, we won't be able to see them. So why would we be able to see those photos if we're asking for that data in a programmatic way? This is the role of an API key. Imagine that if we supply An API key along with our request to the Instagram API.
+
+We're saying, "Hey, it's us who's requesting this data". And if we're supposed to have access, show us the photos. Otherwise the Instagram API can deny us access. And that's one benefit or use case for an API key. API keys are also used for security purposes to protect the API. One technique that hackers use to overwhelm a server is making too many requests in too short of a period of a time.
+
+This may overwhelm the server and cause it to crash, thus denying service to people who want to use that platform. This is known as a dedicated denial of service (DDOS) attack. APIs can prevent a dedicated denial of service attack by implementing what's known as a **rate limit**. When we specify our API key to make a request to the API, if we've made too many requests in a short period of time, the API can deny our request and tell us to wait a minute before making another request so we don't overwhelm their server.
+
+So those are the benefits of API keys and why we might use them.
+
+In order to obtain an API key for this platform, you would have to fill out this form, but I partnered with this API and they've provided me with API keys that I can share with you, and you'll find those in Canvas. The Alpha Vantage API keys that I share with you will give you access to all of the data that this API provides.
+
+## API Endpoints
+
+Once we have an API key, we'll continue to consult the documentation for the AlphaVantage API. With any API, it might provide us with different datasets. Each dataset is provided at a specific URL, known as an **endpoint**. We make a request to a specific endpoint to get a specific dataset, and a different endpoint to get a different dataset.
+
+Here in the documentation for the AlphaVantage API, we see a number of different endpoints in the left sidebar.
+
+![]()
+
+This API is a wealth of financial information, including endpoints related to stock data on a daily or weekly or monthly basis, news and sentiment data about a given company, fundamental data about companies, including income statements and balance sheets. Foreign exchange data, cryptocurrency prices and more.
+
+## Requesting Data from APIs
+
+Now that we have an API key, we can use it to make a request for data from the API. In order to make a request, we can consult the list of endpoints, and consult the documentation for the endpoint that we're interested in.
+
+Let's take the inflation endpoint, for example. When we consult the documentation for the inflation endpoint, we first see a description of the data source where this data comes from, which might be helpful context. We also see parameters or opportunities to customize our request, which will return to talking about in a few minutes.
+
+But most importantly, we see an example URL that we can use to request the data. Remember, when we make a request for data on the Internet, we're specifying some URL that has the data we want. Let's get started by viewing this URL in the browser. That's the simplest way that we can request this data.
+
+![]()
+
+
+We see that by default, the server responds with some JSON formatted data, which is essentially a mixture of lists and dictionaries, some nested structure that you should already be familiar working with. There are ways to customize this request further. Let's take a look at the URL. In this URL, we see that we are providing a specific demo API key.
+
+Which will work once or twice, but then will be kicked out and prevented from requesting more data. So before we move on, we should make this request using one of our API keys. I will quickly change the demo key to one of our keys. After changing the API key, we see we're still able to access the data, but now we can continue exploring the capabilities of this API and other ways to customize our request for this inflation endpoint.
+
+### URL Parameters
+
+Let's take a look back at the documentation for this inflation endpoint.
+
+We see there are some additional parameters that we can specify in the URL. For example, a parameter called `datatype`, which will allow us to request this data in a different format. By default, The datatype was JSON, leading to the data that we just saw. But alternatively, especially for those of you who are more familiar and comfortable with spreadsheet style data, we can ask for this data in CSV format, which can be imported into spreadsheet software.
+
+Let's give this a try. All we need to do is add `&datatype=csv` to the end of our URL.
+
+We introduce a new URL parameter to the URL starting with an ampersand (`&`) sign. Now we give the name of the parameter, in this case `datatype`, followed by the equals sign (`=`), and the value of `csv` as instructed by the documentation. When we press enter to make this request, you'll see the browser flicker, and a CSV file will get downloaded into your local file system.
+
+All right. Let's open the data in spreadsheet software to verify.
+
+Here we see the data in CSV format, and if you like this format better, you can use the API to collect some CSV formatted data and upload them into spreadsheet software yourself. We will return to use many additional endpoints from the AlphaVantage API, but hopefully by now you have a better sense of what it's like to use an API.

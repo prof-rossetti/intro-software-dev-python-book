@@ -126,8 +126,6 @@ book:
 
     - part: "Data Processing"
       chapters:
-        - href: notes/data-processing/sorting.qmd
-          text: "List Sorting"
         - href: notes/data-processing/for-loops.qmd
           text: "List Iteration and Looping"
         - href: notes/data-processing/mapping.qmd
@@ -136,7 +134,8 @@ book:
           text: "List Filtering"
         - href: notes/data-processing/list-comprehensions.qmd
           text: "List Comprehensions"
-
+        - href: notes/data-processing/sorting.qmd
+          text: "List Sorting"
 
     - part: "Data Visualization"
       chapters:
@@ -151,6 +150,8 @@ book:
 
     - part: "Fetching Data from the Internet"
       chapters:
+        #- href: notes/fetching-data/http.qmd
+        #  text: "HTTP Requests and Responses"
         - href: notes/fetching-data/overview.qmd
           text: "Fetching Data Overview"
         - href: notes/fetching-data/json.qmd
@@ -159,7 +160,10 @@ book:
         - href: notes/fetching-data/html-web-scraping.qmd
           #text: "HTML Data (Web Scraping)"
 
-        #- href: notes/fetching-data/apis.qmd
+    #- part: "APIs and Integrations"
+    #  chapters:
+    #    - href: notes/fetching-data/apis.qmd
+    #      text: "APIs Overview"
 
     #- part: "APIs and Integrations"
     #  chapters:

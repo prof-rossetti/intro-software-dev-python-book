@@ -8,13 +8,15 @@ The Internet is a boundless source of data, across a variety of domains, includi
 
 ## Data Formats
 
-In practice, when we fetch data from the internet, it may come in one of a handful of data formats, including JSON, CSV, XML, and HTML.
+In practice, when we fetch data from the Internet, it may come in one of a handful of data formats, including JSON, CSV, XML, and HTML.
 
   + JSON are nested structures. Like the lists and dictionaries we have studied in Python.
 
   + CSV is tabular data. Like a spreadsheet, with rows and columns.
 
   + XML and HTML contain structured \"tags\" to denote the document structure. Like a webpage.
+
+Example data structures in each format are provided below.
 
 ### JSON Data Format
 
