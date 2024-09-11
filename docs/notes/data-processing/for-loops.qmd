@@ -23,6 +23,7 @@ We saw how we can print and access all items at once. And we saw we can use an i
 We can use a **\"for\" loop** to access each item, one at a time:
 
 ```{python}
+
 symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
 
 for item in symbols:
@@ -65,9 +66,9 @@ As a best practice, if we have a list of items plural (e.g. `symbols`), we could
 ```{python}
 symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
 
-for symbol in symbols:
+for symbol in symbols: # IF WE USE SYMBOL HERE IN THE FIRST SLOT...
     print("--------")
-    print(symbol)
+    print(symbol) # ... WE HAVE TO REFERENCE SYMBOL HERE AS WELL
     # NOTHING ELSE, GO TO NEXT ITEM
 
 print("BOTTOM")
