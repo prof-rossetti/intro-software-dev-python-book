@@ -37,7 +37,7 @@ matching_nums = []
 for n in my_numbers:
     if n > 3: # FILTER CONDITION
         #print(n)
-        matching_nums.append(n)
+        matching_nums.append(n) # COLLECT FOR LATER
 
 print(matching_nums)
 ```
