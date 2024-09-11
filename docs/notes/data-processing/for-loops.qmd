@@ -53,9 +53,9 @@ We have no choice but to put the list we want to loop through in the second slot
 ```{python}
 symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
 
-for x in symbols: # IF WE USE X HERE IN THE FIRST SLOT...
+for x in symbols:
     print("--------")
-    print(x) # ... WE HAVE TO REFERENCE X HERE AS WELL
+    print(x)
     # NOTHING ELSE, GO TO NEXT ITEM
 
 print("BOTTOM")
@@ -66,9 +66,9 @@ As a best practice, if we have a list of items plural (e.g. `symbols`), we could
 ```{python}
 symbols = ["MSFT", "AAPL", "GOOGL", "AMZN", "NFLX"]
 
-for symbol in symbols: # IF WE USE SYMBOL HERE IN THE FIRST SLOT...
+for symbol in symbols:
     print("--------")
-    print(symbol) # ... WE HAVE TO REFERENCE SYMBOL HERE AS WELL
+    print(symbol)
     # NOTHING ELSE, GO TO NEXT ITEM
 
 print("BOTTOM")
