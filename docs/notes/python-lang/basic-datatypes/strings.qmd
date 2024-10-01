@@ -48,7 +48,7 @@ print(message)
 ```
 
 
-In practice, for single line strings, we can prefer to default to double quotes, because it allows us to use single quotes for contractions, whereas the reverse would break the quoting level:
+In practice, we might prefer to use double quotes by default. This allows us to use single quotes inside for contractions, whereas this would otherwise break the quoting level:
 
 ```{python}
 message = "It's awesome!"
