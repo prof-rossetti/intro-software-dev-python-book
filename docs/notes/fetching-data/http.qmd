@@ -1,7 +1,15 @@
+---
+#crossref:
+#  labels: roman
+#  title-delim: "-"
+#  tbl-prefix: "Table"
+#tbl-cap-location: top
+---
+
 # Computer Networks Overview
 
 
-Before we go fetching some financial data from the Internet, let's take a moment to talk about how the Internet works. The Internet is an example of a **Computer Network**, a system of interconnected computers which use communications media to transmit data from one device to another.
+Before we go fetching some data from the Internet, let's take a moment to talk about how the Internet works. The Internet is an example of a **computer network**, a system of interconnected computers which use communications media to transmit data from one device to another.
 
 ![A network of connected devices ([image source](http://heart000.blogspot.com/2011/12/personal-area-network-pan-ad-hoc-and.html))](../../images/networks.png)
 
@@ -9,7 +17,7 @@ Before we go fetching some financial data from the Internet, let's take a moment
 
 This data is transmitted through either wired or wireless media. An example of a wired connection would be an Ethernet cable. An example of a wireless connection would be using WiFi.
 
-**Communications Media** refer to the pathways, or methods, by which data are transmitted. **Cable Media** transmit information over physical wires or cables, whereas **Broadcast Media** (e.g. Bluetooth, WiFi, Cellular radio, Satellite radio) transmit information through electromagnetic waves.
+**Communications media** refer to the pathways, or methods, by which data are transmitted. **Cable media** transmit information over physical wires or cables, whereas **broadcast media** (e.g. Bluetooth, WiFi, Cellular radio, Satellite radio) transmit information through electromagnetic waves.
 
 
 ## Network Sizes
@@ -26,16 +34,15 @@ As the network size continues to grow, we might call it a **Wide Area Network (W
 
 The largest computer network is known as the **Internet**, which connects devices across the globe and in space.
 
-![The Internet Backbone ([source](https://user-images.githubusercontent.com/1328807/52525898-c2f75000-2c7e-11e9-9a30-d17be87fa058.png))](../../images/internet-backbone.png)
+![The Internet Backbone ([source](https://user-images.githubusercontent.com/1328807/52525898-c2f75000-2c7e-11e9-9a30-d17be87fa058.png))](../../images/internet-backbone.png){height=350}
 
 
 ## Internet Protocols
 
-The Internet is comprised of many connected devices, but how can these devices talk with each other? There are a few internet protocols to govern the rules of the road for how devices can communicate with each other. Each protocol is used for a specific purpose.
+Computers connected to the Internet communicate according to a common set of rules and procedures, or protocols. Each protocol is used for a specific purpose. Here are some of the most important Internet protocols:
 
-Computers connected to the Internet communicate according to a "common set of rules and procedures", or protocols. The following table identifies some of them:
 
-abbreviation | name | description
+Abbreviation | Name | Description
 --- | --- | ---
 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)  | Hyper Text Transfer Protocol | The foundation protocol for the Internet.
 [HTTPS](https://en.wikipedia.org/wiki/HTTPS)  | Secure Hyper Text Transfer Protocol | A widely-used Internet protocol for secure network communication over HTTP within a connection encrypted by SSL/TLS.
@@ -46,43 +53,71 @@ abbreviation | name | description
 [SSH](https://en.wikipedia.org/wiki/Secure_Shell) | Secure Shell | A cryptographic (encrypted) network protocol to allow remote login and other network services to operate securely over an unsecured network.
 [SFTP](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol) | SSH/Secure File Transfer Protocol | For transferring files over SSH.
 
+: Table 1: Internet Protocols {.striped .hover}
 
-You may be already familiar with the **Hyper Text Transfer Protocol (HTTP)** Protocol and it's secure version, HTTPS, when you view pages in the browser.
 
-There's other protocols as well. For example, SMTP for sending email or SSH for logging into a remote server. The protocol that we're going to focus on is HTTP. HTTP you can think of like the rules of the road for how two computers can communicate with each other.
 
-#### IP Addresses
+You may be already familiar with the **Hyper Text Transfer Protocol (HTTP)** and it's secure version, HTTPS, when you view pages in the browser. But there's other protocols as well. For example, SMTP for sending email, or SSH for logging into a remote server.
 
-The Internet Protocol primarily governs the routing and delivery of information from one computer to another. Computers participating in these connections each have an address, or location where the information is sent and received. Just as a street address identifies a building within a connected system of roads and highways, and as a telephone number identifies a phone's connection to a cellular network, an **Internet Protocol (IP) Address** identifies a computer's connection to the Internet. IP Address notation typically includes numbers separated by decimals in IP Version 4 (e.g. *144.228.10.74*), and numbers or letters separated by colons in IP Version 6 (e.g. *2601:37b:c211:7109:7833:f6d1:1f15:9174*).
+:::{.callout-note title="IP Addresses"}
+The Internet Protocol primarily governs the routing and delivery of information from one computer to another. Computers participating in these connections each have an address, or location where the information is sent and received. Just as a street address identifies a building within a connected system of roads and highways, and as a telephone number identifies a phone's connection to a cellular network, an **Internet Protocol (IP) address** identifies a computer's connection to the Internet. IP Address notation typically includes numbers separated by decimals in IP Version 4 (e.g. `144.228.10.74`), and numbers or letters separated by colons in IP Version 6 (e.g. `2601:37b:c211:7109:7833:f6d1:1f15:9174`).
 
 When information is traveling throughout the network, data is separated into component parts and encapsulated into packets which also contain routing information. These packets may or may not take the same route across the network and may or may not arrive at the destination at the same time. Once all the packets are received, they are re-assembled into the original information representation.
+:::
 
 
+## HTTP
 
-### HTTP
+The protocol that we're going to focus on is HTTP. HTTP is comprised of a two step process:
 
-HTTP is comprised of a two step process. The first step, one computer creates a **request** for some information and sends that request to another computer. In the second step, The second computer fulfills the request and returns a **response**.
+  1. The first step, one computer creates a **request** for some information, and sends that request to another computer.
+  2. In the second step, The second computer fulfills the request and returns a **response**.
 
-For mor information about HTTP, consult the following reference documentation:
+![HTTP Requests and Responses.](../../images/http-request-response.png){height=200}
 
-  + [Official HTTP Documentation](http://httpwg.org/specs/)
-  + [Mozilla HTTP Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+We can characterize the role of each computer in this process as client versus server, whereby the **client** computer is responsible for making the request, and the **server** is responsible for returning a response if it knows how. This is otherwise known as the **client-server model**.
+
+![Client-server Model.](../../images/client-server-model.png){height=350}
+
+For more information about HTTP, consult the following reference documentation:
+
+  + [Official HTTP Documentation](http://httpwg.org/specs/){target="blank"}
+  + [Mozilla HTTP Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP){target="blank"}
+
+### HTTP Requests
+
+In HTTP, there are certain types of requests that we can make, each for its own purpose. These are called **request methods**.
+
+Request Method | Purpose
+--- | ---
+GET | Request to receive some information from the server
+POST | Request to create some information on the server
+PUT/PATCH | Request to update some information on the server
+DELETE | Request to remove some information from the server
+
+: Table 2: HTTP Request Methods {.striped .hover}
+
+A GET request is used to ask for some information from the server. Like "Hey, could we get that data?". Whereas a POST request will allow us to send some data to the server. For example, if we wanted to programmatically create a tweet, we would send that data to the Twitter API, for Twitter to store in their database. We use a PUT or PATCH request to ask to update some data, and a DELETE request to ask to delete data from the server.
+
+When we fetch data from the Internet, the type of request that we'll be using most often is the GET request.
+
+### HTTP Responses
+
+In the same way that there are certain types of requests that the client can make, there are certain **response codes** that the server can reply with. Different response codes indicate different results relating to whether the request was successful or not.
+
+Response Code | Meaning
+--- | ---
+100s | Information
+200s (e.g. 200, 202) | Successful
+300s (e.g. 301) | Redirect
+400s (e.g. 401, 403, 404)| Client Error
+500s | Server Error
+
+: Table 3: HTTP Response Codes {.striped .hover}
 
 
-#### Client Server Model
+Generally, response codes in the 200s mean our request was successful, and the server was able to return some response. Response codes in the 400s mean that it was a client error. We made some mistake. We made the wrong request. Maybe we tried to request a page that doesn't exist. You may be familiar with the 404 error.
 
-We can characterize the role of each computer in this process as client versus server, whereby the **client** computer is responsible for making the request and the **server** is responsible for returning a response if it knows how.
+![A 404 error ([source](https://blog.thomasnet.com/hs-fs/hubfs/shutterstock_774749455.jpg?width=600&name=shutterstock_774749455.jpg)). ](../../images/404-error.webp){height=300}
 
-#### HTTP Requests
-
-In HTTP, there are certain types of requests that we can make, each for its own purpose. A GET request is used to ask for some information from the server. Hey, could we get that data? Whereas a POST request will allow us to send some data to the server. For example, if we wanted to programmatically create a tweet, we would send that data to the Twitter API for Twitter to store in their database.
-
-We use a put or patch request to ask to update some data and a delete request to ask to delete data from the server. The request type that we'll be using most often is the get request.
-
-#### HTTP Responses
-
-In the same way that there are certain types of requests that the client can make, there are certain response codes that the server can reply with. A response code denotes if that request was successful or not.
-
-Generally, response codes in the 200s mean our request was successful and the server was able to return some response. Response codes in the 400s mean that it was a client error. We made some mistake. We made the wrong request. Maybe we tried to request a page that doesn't exist. You may be familiar with the 404 error.
-
-We will see how these concepts translate into the technique that we'll need to use to request data in Python.
+We will see how these concepts regarding HTTP requests and responses translate into the techniques that we'll use to request data over the Internet in Python.

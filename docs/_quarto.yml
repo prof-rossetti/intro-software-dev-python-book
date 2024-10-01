@@ -150,8 +150,8 @@ book:
 
     - part: "Fetching Data from the Internet"
       chapters:
-        #- href: notes/fetching-data/http.qmd
-        #  text: "HTTP Requests and Responses"
+        - href: notes/fetching-data/http.qmd
+          text: "HTTP Requests and Responses"
         - href: notes/fetching-data/overview.qmd
           text: "Fetching Data Overview"
         - href: notes/fetching-data/json.qmd
