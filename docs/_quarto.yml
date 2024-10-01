@@ -159,6 +159,7 @@ book:
         - href: notes/fetching-data/xml.qmd
         - href: notes/fetching-data/html-web-scraping.qmd
           #text: "HTML Data (Web Scraping)"
+        - href: notes/fetching-data/apis.qmd
 
     #- part: "APIs and Integrations"
     #  chapters:
