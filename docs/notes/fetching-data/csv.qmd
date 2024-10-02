@@ -11,7 +11,7 @@ execute:
 # Fetching CSV Data
 
 
-If the data yweou want to fetch is in CSV format, we can use the `pandas` package to fetch and process it.
+If the data we want to fetch is in CSV format, we can use the `pandas` package to fetch and process it.
 
 Let's consider this example \"students.csv\" file we have hosted on the Internet:
 

@@ -159,24 +159,26 @@ book:
         - href: notes/fetching-data/xml.qmd
         - href: notes/fetching-data/html-web-scraping.qmd
           #text: "HTML Data (Web Scraping)"
-        - href: notes/fetching-data/apis.qmd
+        #- href: notes/fetching-data/apis.qmd
 
     #- part: "APIs and Integrations"
     #  chapters:
     #    - href: notes/fetching-data/apis.qmd
     #      text: "APIs Overview"
 
-    #- part: "APIs and Integrations"
-    #  chapters:
-    #    - href: notes/api-integrations/google-drive-demo.ipynb
-    #    - href: notes/api-integrations/google-sheets-demo.ipynb
-    #    - href: notes/api-integrations/google-maps-api-demo.ipynb
-    #    - href: notes/api-integrations/youtube-audio-downloader-demo.ipynb
-    #    - href: notes/api-integrations/spotify-api-demo.ipynb
-    #    - href: notes/api-integrations/sending-email-demo.ipynb
-    #    - href: notes/api-integrations/openai-api-demo.ipynb
-    #    - href: notes/api-integrations/pokemon-api-demo.ipynb
-    #    - href: notes/api-integrations/alphavantage-api-crypto-dashboards-demo.ipynb
+    - part: "APIs and Integrations"
+      chapters:
+        - href: notes/fetching-data/apis.qmd
+        #- href: notes/api-integrations/sending-email-demo.ipynb
+        #- href: notes/api-integrations/google-maps-api-demo.ipynb
+        #- href: notes/api-integrations/youtube-audio-downloader-demo.ipynb
+        #- href: notes/api-integrations/spotify-api-demo.ipynb
+        #- href: notes/api-integrations/pokemon-api-demo.ipynb
+
+        #- href: notes/api-integrations/google-drive-demo.ipynb
+        #- href: notes/api-integrations/google-sheets-demo.ipynb
+        #- href: notes/api-integrations/openai-api-demo.ipynb
+        #- href: notes/api-integrations/alphavantage-api-crypto-dashboards-demo.ipynb
 
 
 
