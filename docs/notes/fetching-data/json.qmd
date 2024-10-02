@@ -10,7 +10,7 @@ execute:
 
 # Fetching JSON Data
 
-If the data you want to fetch is in JSON format, we can use the [`requests` package](https://requests.readthedocs.io/en/latest/) to fetch and process it.
+If the data we want to fetch is in JSON format, we can use the [`requests` package](https://requests.readthedocs.io/en/latest/){target=blank} to fetch and process it.
 
 Let's consider this example \"students.json\" file we have hosted on the Internet:
 
@@ -61,7 +61,7 @@ print(type(response.text))
 response.text
 ```
 
-The final step is to convert this JSON-formatted string to actual Python data. We can do this using the `json` method of the response object, or by leveraging the `loads` function from the [`json` module](https://docs.python.org/3/library/json.html):
+The final step is to convert this JSON-formatted string to actual Python data. We can do this using the `json` method of the response object, or by leveraging the `loads` function from the [`json` module](https://docs.python.org/3/library/json.html){target=blank}:
 
 
 ```{python}
@@ -78,7 +78,7 @@ print(type(data))
 data
 ```
 
-Once we have the data, we can work with it in the ways we know how. For example, looping through a list of dictionaries:
+This data happens to be dictionary-like at the top level. However be aware, when we fetch JSON, it can be either list-like, or dictionary-like on the top level. So you must observe the structure of your particular data before processing it further.
 
 ```{python}
 students = data["students"]
@@ -86,9 +86,21 @@ print(type(students))
 len(students)
 ```
 
+Looping through the items:
+
 ```{python}
 for student in students:
     print(student["studentId"], student["finalGrade"])
 ```
 
-This data happens to be dictionary-like at the top level. However be aware, when we fetch JSON, it can be either list-like, or dictionary-like on the top level. So you must observe the structure of your particular data before processing it further.
+
+Calculating the average grade:
+
+```{python}
+from statistics import mean, median
+
+grades = [student["finalGrade"] for student in students]
+
+print(mean(grades))
+print(median(grades))
+```

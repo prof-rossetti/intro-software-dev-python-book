@@ -10,7 +10,7 @@ execute:
 
 # Fetching XML Data
 
-If the data you want to fetch is in XML format, including in an RSS feed, we can use the `requests` package to fetch it, and the `beautifulsoup4` package to process it.
+If the data we want to fetch is in XML format, including in an RSS feed, we can use the `requests` package to fetch it, and the [`beautifulsoup4` package](https://www.crummy.com/software/BeautifulSoup/bs4/doc/){target=blank} to process it.
 
 Let's consider this example \"students.xml\" file we have hosted on the Internet:
 
@@ -69,13 +69,13 @@ First we note the URL of where the data resides. Then we pass that as a paramete
 import requests
 
 # the URL of some XML data we stored online:
-request_url = "https://raw.githubusercontent.com/prof-rossetti/intro-software-dev-python-book/main/docs/data/gradebook.xml"
+request_url = f"https://raw.githubusercontent.com/prof-rossetti/intro-software-dev-python-book/main/docs/data/gradebook.xml"
 
 response = requests.get(request_url)
 print(type(response))
 ```
 
-Then we pass the response text (an HTML or XML formatted string) to the `BeautifulSoup` class constructor.
+Then we pass the response text (an HTML or XML formatted string) to the [`BeautifulSoup` class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#bs4.BeautifulSoup){target=blank} constructor.
 
 ```{python}
 from bs4 import BeautifulSoup
@@ -84,10 +84,11 @@ soup = BeautifulSoup(response.text)
 type(soup)
 ```
 
-The soup object is able to intelligently process the data.
+## Finding Elements
 
+The resulting soup object is able to intelligently process the data. We can use the soup's finder methods to search for specific data elements, called "tags", based on their names or other attributes. If we want to return the first matching element, we use the `find` method, whereas if we want to get all matching elements, we use the `find_all` method.
 
-We can invoke a `find` or `find_all` method on the soup object to find elements or tags based on their names or other attributes. For example, finding all the student tags in this structure:
+For example, finding all the student tags in this structure:
 
 ```{python}
 students = soup.find_all("student")
@@ -95,19 +96,33 @@ print(type(students))
 print(len(students))
 ```
 
+Examining the first item for reference:
 
 ```{python}
-# examining the first item for reference:
 print(type(students[0]))
 students[0]
 ```
 
+Looping through all the items:
+
 ```{python}
-# looping through all the items:
 for student in students:
     print("-----------")
     print(type(student))
+
     student_id = student.studentid.text
     final_grade = student.finalgrade.text
     print(student_id, final_grade)
+
+```
+
+Calculating the average grade:
+
+```{python}
+from statistics import mean, median
+
+grades = [float(student.finalgrade.text) for student in students]
+
+print(mean(grades))
+print(median(grades))
 ```

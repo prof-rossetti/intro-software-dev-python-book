@@ -52,10 +52,14 @@ assert enlarge(9.0) == 900
 
 The way the `assert` keyword works is that if expectations are met, it won't yell or raise an error. So if your test code doesn't complain, it is considered to be "passing".
 
+```{python}
+assert 2 + 2 == 4 # PASSING
+```
+
 But if the expectation is not met, it will raise an `AssertionError`.
 
 ```{python}
-#assert enlarge(9) == 900000 # FAILING
+#assert 2 + 2 == 5 # FAILING
 #> AssertionError
 ```
 

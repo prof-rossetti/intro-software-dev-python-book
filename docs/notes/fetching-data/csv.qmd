@@ -11,7 +11,7 @@ execute:
 # Fetching CSV Data
 
 
-If the data you want to fetch is in CSV format, we can use the `pandas` package to fetch and process it.
+If the data yweou want to fetch is in CSV format, we can use the `pandas` package to fetch and process it.
 
 Let's consider this example \"students.csv\" file we have hosted on the Internet:
 
@@ -30,7 +30,7 @@ student_id,final_grade
 10,92.5
 ```
 
-First we note the URL of where the data resides. Then we pass that as a parameter to the [`read_csv` function](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) from the `pandas` package, to issue an HTTP GET request:
+First we note the URL of where the data resides. Then we pass that as a parameter to the [`read_csv` function](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html){target=blank} from the `pandas` package, to issue an HTTP GET request:
 
 ```{python}
 from pandas import read_csv
@@ -43,13 +43,21 @@ print(type(df))
 df
 ```
 
-The resulting data is a [`DataFrame` object](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) from `pandas`. We will return to working with dataframes in more detail in the future. But as some foreshadowing, if we wanted to work with the column of grades, we could access them like this:
+The resulting data is a spreadsheet-like object, with rows and columns, called the [`pandas.DataFrame` datatype](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html){target=blank}.
+
+To work with the column of grades, we can access them by specifying the name of the column, which in this case is `"final_grade"`:
 
 ```{python}
-df["final_grade"]
+grades_column = df["final_grade"]
+print(type(grades_column))
+grades_column
 ```
 
+The resulting column of grades is a list-like object called the [`pandas.Series` datatype](https://pandas.pydata.org/docs/reference/api/pandas.Series.html){target=blank}.
+
+Calculating the average grade (using series aggregation methods):
+
 ```{python}
-print(df["final_grade"].mean())
-print(df["final_grade"].median())
+print(grades_column.mean())
+print(grades_column.median())
 ```

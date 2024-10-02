@@ -12,9 +12,13 @@ execute:
 
 # Fetching HTML Data (i.e. "Web Scraping")
 
-If the data you want to fetch is in HTML format, like most web pages, we can use the `requests` package to fetch it, and the `beautifulsoup4` package to process it.
+If the data we want to fetch is in HTML format, like most web pages are, we can use the `requests` package to fetch it, and the [`beautifulsoup4` package](https://www.crummy.com/software/BeautifulSoup/bs4/doc/){target=blank} to process it.
 
-Before moving on to process HTML formatted data, it will be important to first review [Basic HTML](https://www.w3schools.com/html/html_basic.asp), [HTML Lists](https://www.w3schools.com/html/html_lists.asp), and [HTML Tables](https://www.w3schools.com/html/html_tables.asp).
+Before moving on to process HTML formatted data, it will be important to first review HTML format, using these resources from W3 Schools:
+
+  + [Basic HTML](https://www.w3schools.com/html/html_basic.asp){target=blank}
+  + [HTML Lists](https://www.w3schools.com/html/html_lists.asp){target=blank}
+  + [HTML Tables](https://www.w3schools.com/html/html_tables.asp){target=blank}
 
 
 ## HTML Lists
@@ -63,7 +67,7 @@ response = requests.get(request_url)
 print(type(response))
 ```
 
-Then we pass the response text (an HTML formatted string) to the `BeautifulSoup` class constructor.
+Then we pass the response text (an HTML formatted string) to the [`BeautifulSoup` class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#bs4.BeautifulSoup){target=blank} constructor.
 
 ```{python}
 from bs4 import BeautifulSoup
@@ -72,22 +76,23 @@ soup = BeautifulSoup(response.text)
 type(soup)
 ```
 
-The soup object is able to intelligently process the data. We can invoke a `find` or `find_all` method on the soup object to find elements or tags based on their names or other attributes.
+## Finding Elements
+
+The resulting soup object is able to intelligently process the data. We can use the soup's finder methods to search for specific data elements, called "tags", based on their names or other attributes. If we want to return the first matching element, we use the `find` method, whereas if we want to get all matching elements, we use the `find_all` method.
 
 ### Finding Elements by Identifier
 
 Since the example HTML contains an ordered list (`ol` element) with a unique identifier of \"my-fav-flavors\", we can use the following code to access it:
 
-
 ```{python}
-# get first <ol> element that has a given identifier of "my-fav-flavors":
 ul = soup.find("ol", id="my-fav-flavors")
 print(type(ul))
 ul
 ```
 
+Getting all child `<li>` elements from that list:
+
 ```{python}
-# get all child <li> elements from that list:
 flavors = ul.find_all("li")
 print(type(flavors))
 print(len(flavors))
@@ -95,6 +100,7 @@ flavors
 ```
 
 
+Looping through the items:
 
 ```{python}
 for li in flavors:
@@ -105,6 +111,8 @@ for li in flavors:
 
 ### Finding Elements by Class
 
+In that first example, we accessed an item based on its unique identifier, but in this example we will access a number of items by their class. In HTML, only one element can have a given `id`, but many elements can be members of the same `class`.
+
 Since the example HTML contains an unordered list (`ul` element) of skills, where each list item shares the same class of \"skill\", we can use the following code to access the list items directly:
 
 ```{python}
@@ -114,6 +122,8 @@ print(type(skills))
 print(len(skills))
 skills
 ```
+
+Looping through the results:
 
 ```{python}
 for li in skills:
@@ -187,14 +197,14 @@ Since the example HTML contains a `table` element with a unique identifier of \"
 
 
 ```{python}
-# get first <table> element that has a given identifier of "products":
 table = soup.find("table", id="products")
 print(type(ul))
 table
 ```
 
+Getting all child rows (`tr` elements) from that table:
+
 ```{python}
-# get all child <tr> elements from that list:
 rows = table.find_all("tr")
 print(type(rows))
 print(len(rows))
