@@ -24,7 +24,7 @@ book:
   repo-actions: [edit, issue, source]
   #downloads: [pdf, epub, docx]
 
-  #cover-image: cover.png
+  cover-image: images/python-banner.jpeg
   #favicon: favicon.ico
 
   #sharing: [twitter, facebook]
@@ -228,8 +228,8 @@ book:
   # shows up at bottom of page
   #body-footer: "&copy; Copyright 2024, Your Name Here"
 
-  #page-footer:
-  #  center: "&copy; Copyright 2024, Your Name Here"
+  page-footer:
+    center: "&copy; Copyright 2024, Michael J Rossetti"
 
 
 #bibliography: references.bib

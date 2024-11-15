@@ -1,7 +1,9 @@
 
 # Welcome {.unnumbered}
 
+<!--
 ![](/images/python-banner.jpeg){fig-align="center" fig-alt="Intro to Software Development in Python (banner image)"}
+-->
 
 Welcome to the \"Intro to Software Development in Python\" book (2024 edition, online)!
 
