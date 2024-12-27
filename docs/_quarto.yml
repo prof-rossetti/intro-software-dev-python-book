@@ -141,12 +141,12 @@ book:
       chapters:
         - href: notes/dataviz/overview.qmd
           text: "Data Visualization Overview"
-        #- href: notes/dataviz/trendlines.qmd
-        #  text: "Charts with Trendlines"
+        - href: notes/dataviz/trendlines.qmd
+          text: "Charts with Trendlines"
         #- href: notes/dataviz/multiple-objects.qmd
         #  text: "Charts with Multiple Objects"
-        #- href: notes/dataviz/candlestick-charts.qmd
-        #  text: "Candlestick Charts"
+        - href: notes/dataviz/candlesticks.qmd
+          text: "Candlestick Charts"
 
     - part: "Fetching Data from the Internet"
       chapters:

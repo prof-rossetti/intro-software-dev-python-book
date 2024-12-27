@@ -1,0 +1,92 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Scatter Plot Trendlines w/ `plotly`
+
+In many cases, it may be helpful to add a trendline to a chart, to help examine relationships between variables.
+
+The [`scatter` function](https://plotly.com/python-api-reference/generated/plotly.express.scatter) in `plotly` is the only type of chart that supports trendlines.
+
+To illustrate how to add trendlines, let's revisit the previous scatter plot example:
+
+
+```{python}
+#| code-fold: true
+
+scatter_data = [
+    {"income": 30_000, "life_expectancy": 65.5},
+    {"income": 35_000, "life_expectancy": 62.1},
+    {"income": 50_000, "life_expectancy": 66.7},
+    {"income": 55_000, "life_expectancy": 71.0},
+    {"income": 70_000, "life_expectancy": 72.5},
+    {"income": 75_000, "life_expectancy": 77.3},
+    {"income": 90_000, "life_expectancy": 82.9},
+    {"income": 95_000, "life_expectancy": 80.0},
+]
+
+incomes = []
+expectancies = []
+for item in scatter_data:
+    incomes.append(item["income"])
+    expectancies.append(item["life_expectancy"])
+
+```
+
+```{python}
+from plotly.express import scatter
+
+fig = scatter(x=incomes, y=expectancies, height=350,
+                title="Life Expectancy by Income",
+                labels={"x": "Income", "y": "Life Expectancy (years)"},
+)
+fig.show()
+```
+
+Upon viewing the chart, looks like there may be evidence of a trend.
+
+## Linear Trends
+
+The [`scatter` function](https://plotly.com/python-api-reference/generated/plotly.express.scatter) has some trend-line related parameters:
+
+```{python}
+from plotly.express import scatter
+
+fig = scatter(x=incomes, y=expectancies, height=350,
+                title="Life Expectancy by Income",
+                labels={"x": "Income", "y": "Life Expectancy (years)"},
+                trendline="ols", trendline_color_override="red"
+)
+fig.show()
+```
+
+:::{.callout-note title="FYI"}
+Under the hood, `plotly` uses the `statsmodels` package to calculate the trend, so you may have to install that package as well.
+:::
+
+A linear trend assumes that there is a straight-line relationship between the independent and dependent variables. In the context of US GDP data, a linear trend suggests that GDP changes at a constant rate over time. When applying linear regression, the goal is to find the best-fit line that minimizes the residuals (differences between the predicted and actual values) under the assumption that the underlying relationship is linear.
+
+Linear regression is simple and interpretable but can be overly restrictive when the real-world data follows a more complex, non-linear pattern.
+
+
+## Non-linear Trends
+
+In addition to the \"ols\" (Ordinary Least Squares) linear trend, we can use a \"lowess\" (Locally Weighted Scatterplot Smoothing) trend, which may be a better fit for non-linear relationships.
+
+```{python}
+from plotly.express import scatter
+
+fig = scatter(x=incomes, y=expectancies, height=350,
+                title="Life Expectancy by Income",
+                labels={"x": "Income", "y": "Life Expectancy (years)"},
+                trendline="lowess", trendline_color_override="red"
+)
+fig.show()
+```
+
+[LOWESS](https://en.wikipedia.org/wiki/Local_regression) is a [non-parametric method](https://www.investopedia.com/terms/n/nonparametric-statistics.asp) that fits multiple local regressions to different segments of the data. Instead of assuming a global linear relationship, it captures local patterns by fitting simple models in small neighborhoods around each point. These local models are then combined to create a smooth curve that adjusts to non-linearities in the data. A LOWESS trend can adapt to sudden changes, curves, and other complex behaviors in the data, making it ideal for datasets where the relationship between variables changes over time.

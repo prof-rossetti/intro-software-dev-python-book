@@ -1,0 +1,58 @@
+---
+format:
+  html:
+    code-fold: false
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+# Candlestick Charts with `plotly`
+
+In financial applications, we often have access to OHLC data (containing the open, high, low, and close price on each day). We can use a candlestick chart can help us see the movement of the price within each day.
+
+
+To implement a [candlestick chart](https://plotly.com/python/candlestick-charts/), we can use the [`Candlestick` class](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Candlestick.html) from plotly's Graph Objects sub-library.
+
+We start with some OHLC data:
+
+```{python}
+ohlc_data = [
+    {"date": "2030-03-16", "open": 236.2800, "high": 240.0550, "low": 235.9400, "close": 237.7100, "volume": 28092196},
+    {"date": "2030-03-15", "open": 234.9600, "high": 235.1850, "low": 231.8100, "close": 234.8100, "volume": 26042669},
+    {"date": "2030-03-12", "open": 234.0100, "high": 235.8200, "low": 233.2300, "close": 235.7500, "volume": 22653662},
+    {"date": "2030-03-11", "open": 234.9600, "high": 239.1700, "low": 234.3100, "close": 237.1300, "volume": 29907586},
+    {"date": "2030-03-10", "open": 237.0000, "high": 237.0000, "low": 232.0400, "close": 232.4200, "volume": 29746812}
+]
+```
+
+Mapping the data to get into a format the chart likes (separate lists):
+
+```{python}
+dates = []
+opens = []
+highs = []
+lows = []
+closes = []
+
+for item in ohlc_data:
+    dates.append(item["date"])
+    opens.append(item["open"])
+    highs.append(item["high"])
+    lows.append(item["low"])
+    closes.append(item["close"])
+
+```
+
+Finally, creating the chart:
+
+
+```{python}
+from plotly.graph_objects import Figure, Candlestick
+
+stick = Candlestick(x=dates, open=opens, high=highs, low=lows, close=closes)
+
+fig = Figure(data=[stick])
+fig.update_layout(title="Example Candlestick Chart")
+fig.show()
+```

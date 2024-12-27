@@ -149,13 +149,13 @@ Starting with some example data:
 ```{python}
 scatter_data = [
     {"income": 30_000, "life_expectancy": 65.5},
-    {"income": 30_000, "life_expectancy": 62.1},
+    {"income": 35_000, "life_expectancy": 62.1},
     {"income": 50_000, "life_expectancy": 66.7},
-    {"income": 50_000, "life_expectancy": 71.0},
+    {"income": 55_000, "life_expectancy": 71.0},
     {"income": 70_000, "life_expectancy": 72.5},
-    {"income": 70_000, "life_expectancy": 77.3},
+    {"income": 75_000, "life_expectancy": 77.3},
     {"income": 90_000, "life_expectancy": 82.9},
-    {"income": 90_000, "life_expectancy": 80.0},
+    {"income": 95_000, "life_expectancy": 80.0},
 ]
 ```
 

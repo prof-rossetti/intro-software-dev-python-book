@@ -3,7 +3,7 @@
 
 Many students and professionals already possess a deep knowledge of spreadsheet software. So why is it helpful to learn [Python](https://www.python.org/) as well?
 
-![Python logo](/images/python-logo.png){.img-fluid style="max-height:150;"}
+![Python logo.](/images/python-logo.png){height=120}
 
 Like any computer programming language, Python offers benefits of automation. And among programming languages, Python is a popular, easy to use, powerful, and versatile choice.
 
@@ -24,7 +24,7 @@ Python is one of the most popular programming languages. According to recent rep
 
 Python is one of the most popular and fastest-growing programming languages. According to recent reports and developer surveys, it has overtaken JavaScript to become the most popular language.
 
-![Top programming languages. Source: [GitHub Octoverse 2024](https://github.blog/news-insights/octoverse/octoverse-2024)](/images/github-octoverse-top-langs-2024-cropped.png){height=350}
+![Top programming languages. Source: [GitHub Octoverse 2024](https://github.blog/news-insights/octoverse/octoverse-2024).](/images/github-octoverse-top-langs-2024-cropped.png){height=320}
 
 
 This popularity translates into a strong and vibrant community that contributes to the language's development and support.
@@ -33,7 +33,7 @@ This means a wealth of resources, tutorials, and community support is readily av
 
 Additionally, the high demand for Python skills in the job market creates numerous career opportunities for analysts and programmers proficient in Python, especially in the world of data science and software development.
 
-![Top jobs related to Python programming. Source: [US News and World Report](https://money.usnews.com/careers/best-jobs/rankings/the-100-best-jobs)](/images/python-top-jobs.png)
+![Top jobs related to Python programming. Source: [US News and World Report](https://money.usnews.com/careers/best-jobs/rankings/the-100-best-jobs).](/images/python-top-jobs.png)
 
 
 ## Ease of Use
