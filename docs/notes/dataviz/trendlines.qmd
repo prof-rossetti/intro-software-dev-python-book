@@ -71,8 +71,17 @@ Under the hood, `plotly` uses the `statsmodels` package to calculate the trend, 
 
 A linear trend assumes that there is a straight-line relationship between the independent and dependent variables. In the context of US GDP data, a linear trend suggests that GDP changes at a constant rate over time. When applying linear regression, the goal is to find the best-fit line that minimizes the residuals (differences between the predicted and actual values) under the assumption that the underlying relationship is linear.
 
-Linear regression is simple and interpretable but can be overly restrictive when the real-world data follows a more complex, non-linear pattern.
+For linear trends only, `plotly` provides access to the underlying regression results summary, to tell us more about how well the trend line fits the data:
 
+```{python}
+from plotly.express import get_trendline_results
+
+results = get_trendline_results(fig)
+print(results.px_fit_results.iloc[0].summary())
+```
+
+
+Linear regression is simple and interpretable but can be overly restrictive when the real-world data follows a more complex, non-linear pattern.
 
 ## Non-linear Trends
 
