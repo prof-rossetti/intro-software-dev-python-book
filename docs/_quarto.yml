@@ -223,10 +223,10 @@ book:
         - notes/python-modules/datetime.qmd
         #- notes/python-modules/getpass.ipynb
 
-    - part: "The Programming Environment"
-      #href: notes/python-modules/index.qmd
-      chapters:
-        - notes/python-lang/file-operations.qmd
+    #- part: "The Programming Environment"
+    #  #href: notes/python-modules/index.qmd
+    #  chapters:
+    #    - notes/python-lang/file-operations.qmd
 
     - part: "Custom Functions In-Depth"
       chapters:
