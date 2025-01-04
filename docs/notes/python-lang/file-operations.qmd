@@ -25,18 +25,21 @@ We can use the `open` function in "writing" mode (`"w"`) to write text contents 
 ```{python}
 filepath = "my_message.txt"
 
-# "w" means "open the file for writing":
 with open(filepath, "w") as file:
     file.write(message)
 ```
 
-Let's break this down. As the first parameter we first specify the name (or the full path) of the file we want to reference.
+Let's break this down.
 
-Then as the second parameter specifies the "mode", or the way in which we intend to open the file (i.e. reading or writing).
+When using the `open` function, we pass the name (or the full path) of the file as the first parameter, then the "mode", or the way in which we intend to open the file (i.e. reading or writing), as the second parameter.
 
+:::{.callout-note}
 FYI: the `with` statement creates a **context manager** that allows us to open the file without explicitly closing it. The file will be closed when the indentation level resets back to the left margin.
+:::
 
-FYI: here, `file` is an alias variable referencing the file object (technically a `TextIOWrapper` datatype). You can choose any variable name you like instead, just reference that same variable name inside the scope of the context manager when reading with the file's `read` method, or writing with the file's `write` method.
+:::{.callout-note}
+Here, `file` is an alias variable referencing the file object (technically a `TextIOWrapper` datatype). You can choose any variable name you like instead, just reference that same variable name inside the scope of the context manager when reading with the file's `read` method, or writing with the file's `write` method.
+:::
 
 ## Reading Files
 
@@ -45,7 +48,6 @@ To verify the contents got written to file, let's read the same file.
 Here we are use the `open` function in "reader" mode (`"r"`) to read the contents of the text file:
 
 ```{python}
-# "r" means "open the file for reading":
 with open(filepath, "r") as file:
     contents = file.read()
     print(contents)
@@ -53,7 +55,7 @@ with open(filepath, "r") as file:
 
 ## Removing Files
 
-We can use the `os` module to detect, and delete files:
+Finally, we can use the `os` module to detect, and delete files:
 
 ```{python}
 import os
