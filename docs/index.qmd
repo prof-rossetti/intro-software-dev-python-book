@@ -5,7 +5,7 @@
 ![](/images/python-banner.jpeg){fig-align="center" fig-alt="Intro to Software Development in Python (banner image)"}
 -->
 
-Welcome to the \"Intro to Software Development in Python\" book (2024 edition, online)!
+Welcome to the \"Intro to Software Development in Python\" book (<span id="auto-copyright-year">2024</span> edition, online)!
 
 
 Whether you are a professional seeking to enhance technical skills, or a student aspiring to enter the field, this book should serve as a valuable resource.
@@ -13,3 +13,15 @@ Whether you are a professional seeking to enhance technical skills, or a student
 The notes and exercises in this book are aimed to help you achieve a working knowledge of Python, and gain confidence in using Python to solve problems and create software applications.
 
 We hope this book inspires you to harness the power of Python, helps you develop marketable technology skills, and opens up new avenues for innovation and efficiency in your work.
+
+
+<script type="text/javascript">
+
+    today = new Date();
+    thisYear =  today.getFullYear();
+    console.log("THE YEAR IS: ", thisYear);
+
+    var year = document.getElementById("auto-copyright-year");
+    year.innerText = thisYear;
+
+</script>

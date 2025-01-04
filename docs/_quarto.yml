@@ -223,6 +223,11 @@ book:
         - notes/python-modules/datetime.qmd
         #- notes/python-modules/getpass.ipynb
 
+    - part: "The Programming Environment"
+      #href: notes/python-modules/index.qmd
+      chapters:
+        - notes/python-lang/file-operations.qmd
+
     - part: "Custom Functions In-Depth"
       chapters:
         - notes/python-lang/control-flow/function-docs.qmd
@@ -249,7 +254,7 @@ book:
   #body-footer: "&copy; Copyright 2024, Your Name Here"
 
   page-footer:
-    center: "&copy; Copyright 2024, Michael J Rossetti"
+    center: "&copy; Copyright 2024 - 2025, Michael J Rossetti"
 
 
 #bibliography: references.bib
