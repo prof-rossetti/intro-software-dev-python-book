@@ -77,6 +77,11 @@ book:
           text: "Google Colab Notebooks"
         - notes/dev-tools/google-colab/pip.ipynb
 
+
+    - "-----------------"
+    - part: "Part I: Python Programming"
+    - "-----------------"
+
     - part: "Language Basics"
       #href: notes/python-lang/overview.ipynb
       chapters:
@@ -136,6 +141,11 @@ book:
           text: "List Comprehensions"
         - href: notes/data-processing/sorting.qmd
           text: "List Sorting"
+
+
+    - "-----------------"
+    - part: "Part II: Python Applications"
+    - "-----------------"
 
     - part: "Data Visualization"
       chapters:
