@@ -6,48 +6,62 @@ The heading structure of your markdown cells will govern the document structure 
 
 
 ```md
-# Section 1
+# Header 1
 
 This is some text.
 
-## Section 1.1
+## Header 2
 
 This is some text.
 
-## Section 1.2
+### Heading 3
 
 This is some text.
 
-### Section 1.2.1
+#### Heading 4
 
 This is some text.
-
-### Section 1.2.2
-
-This is some text.
-
-# Section 2
-
-This is some text.
-
-## Section 2.1
-
-This is some text.
-
-## Section 2.2
-
-This is some text.
-
-### Section 2.2.1
-
-This is some text.
-
-### Section 2.2.2
-
-This is some text.
-
 ```
 
 ::: {.callout-tip title="Note"}
-You may need to place each of the headings in its own separate text cell, for the document outline to collapse properly.
+You may need to place each of these headings in its own separate text cell, for the document outline to collapse properly.
+
+![Document outline in Google Colab.](../../../images/colab-document-outline-expanded.png){height=350}
 :::
+
+
+<!--
+
+```md
+# Header 1
+```
+
+```md
+This is some text.
+```
+
+```md
+## Header 2
+```
+
+```md
+This is some text.
+```
+
+```md
+### Heading 3
+```
+
+```md
+This is some text.
+```
+
+```md
+#### Heading 4
+```
+
+```md
+This is some text.
+```
+
+-->

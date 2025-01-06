@@ -13,7 +13,7 @@ When creating a new notebook, practice giving the document a title (e.g. \"My Fi
 
 From any notebook, it is possible to create a new notebook, make a copy of the notebook, or download the notebook, using the \"File\" menu.
 
-![Google Colab File menu](../../../images/colab-file-menu.png){.img-fluid style="max-height:350;"}
+![The File menu in Google Colab.](../../../images/colab-file-menu.png){height=350}
 
 
 ::: {.callout-warning}
@@ -35,7 +35,7 @@ Recommended editor settings:
   + **Enable code folding**: so you can focus on certain parts of the code, and make the code more manageable to navigate.
 
 
-![Recommended editor settings in Google Colab](../../../images/colab-settings.png){.img-fluid style="max-height:450;"}
+![Recommended editor settings in Google Colab](../../../images/colab-settings.png){height=350}
 
 Remember to save your preferences before moving on.
 

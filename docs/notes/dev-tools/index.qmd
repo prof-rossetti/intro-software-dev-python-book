@@ -4,12 +4,22 @@ So you want to develop programs and applications in Python?
 
 You'll need to familiarize yourself with a Python development environment. One of the hardest parts of computer programming can be installing the language, and getting up and running with local development tools. But we will help guide you through the process, and recommend using tools that offer a low learning curve for beginners.
 
+In Python, we have a general choice between two development environments: Python notebooks vs local development, each offering its own strengths and trade-offs. Ultimately we recommend Google Colab notebooks for their accessibility and ease of use for beginners.
 
-## Notebooks vs Local Development
+## Python Notebooks
 
-In Python, we have a general choice between two development environments: Python notebooks vs local development, each offering its own strengths and trade-offs.
+Python notebooks (\".ipynb\" documents) provide an easy and intuitive learning experience for beginners. They have code \"cells\" we can "play" to see the results and learn along the way. The integration of visual outputs along with code provides strengths in terms of presentation.
 
-Python notebooks (\".ipynb\" documents) provide an easy and intuitive learning experience for beginners. They have code \"cells\" we can "play" to see the results and learn along the way. The integration of visual outputs along with code provides strengths in terms of presentation. Notebooks are also a popular choice among data science and machine learning practitioners, especially for quick prototypes, and rapid development. However for larger applications they might not be as suitable.
+![Python notebook with code input and dataviz output.](../../images/python-notebook-inputs-outputs.png){height=320}
+
+
+Notebooks are also a popular choice among data science and machine learning practitioners, especially for quick prototypes, and rapid development.
+
+![Rising popularity of Python notebooks. Source: [GitHub Octoverse 2024](https://github.blog/news-insights/octoverse/octoverse-2024).](../../images/python-notebook-adoption-2024.png){height=320}
+
+However for larger applications they might not be as suitable.
+
+## Local Development
 
 Local development environments are used primarily for software development purposes, and for larger-scale applications which may span across dozens of files. The local development environment involves command-line programming tools that can be tricky to install and configure for beginners. For some types of applications, such as web applications, local development may be the only suitable option.
 
