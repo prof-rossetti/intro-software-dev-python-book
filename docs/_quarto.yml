@@ -209,7 +209,8 @@ book:
     - part: "Google Colab In-Depth"
       chapters:
         - notes/dev-tools/google-colab/table-of-contents.qmd
-        - notes/dev-tools/google-colab/filesystem.ipynb
+        #- notes/dev-tools/google-colab/filesystem.ipynb
+        - notes/dev-tools/google-colab/files.qmd
         - notes/dev-tools/google-colab/form-inputs.ipynb
         - notes/dev-tools/google-colab/notebook-secrets.qmd
         - notes/dev-tools/google-colab/advanced-integrations.ipynb
@@ -223,10 +224,12 @@ book:
         - notes/python-modules/datetime.qmd
         #- notes/python-modules/getpass.ipynb
 
-    #- part: "The Programming Environment"
-    #  #href: notes/python-modules/index.qmd
-    #  chapters:
-    #    - notes/python-lang/file-operations.qmd
+    - part: "The Programming Environment"
+      #href: notes/python-modules/index.qmd
+      chapters:
+        - href: notes/python-modules/os.ipynb
+          text: "Accessing the Filesystem with the `os` Module"
+        - notes/python-lang/file-operations.qmd
 
     - part: "Custom Functions In-Depth"
       chapters:
@@ -254,7 +257,7 @@ book:
   #body-footer: "&copy; Copyright 2024, Your Name Here"
 
   page-footer:
-    center: "&copy; Copyright 2024 - 2025, Michael J Rossetti"
+    center: "&copy; Copyright 2025, Michael J Rossetti"
 
 
 #bibliography: references.bib

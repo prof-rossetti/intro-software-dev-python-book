@@ -4,11 +4,14 @@ So you want to develop programs and applications in Python?
 
 You'll need to familiarize yourself with a Python development environment. One of the hardest parts of computer programming can be installing the language, and getting up and running with local development tools. But we will help guide you through the process, and recommend using tools that offer a low learning curve for beginners.
 
+![Frustration with computers.](../../images/frustration-with-computers.png){height=320}
+
+
 In Python, we have a general choice between two development environments: Python notebooks vs local development, each offering its own strengths and trade-offs. Ultimately we recommend Google Colab notebooks for their accessibility and ease of use for beginners.
 
 ## Python Notebooks
 
-Python notebooks (\".ipynb\" documents) provide an easy and intuitive learning experience for beginners. They have code \"cells\" we can "play" to see the results and learn along the way. The integration of visual outputs along with code provides strengths in terms of presentation.
+**Python notebooks** (\".ipynb\" documents) provide an easy and intuitive learning experience for beginners. They have code \"cells\" we can "play" to see the results and learn along the way. The integration of visual outputs along with code provides strengths in terms of presentation.
 
 ![Python notebook with code input and dataviz output.](../../images/python-notebook-inputs-outputs.png){height=320}
 

@@ -55,7 +55,7 @@ with open(filepath, "r") as file:
 
 ## Removing Files
 
-Finally, we can use the `os` module to detect, and delete files:
+As we've seen, we can use the [`os` module](../python-modules/os.ipynb) to detect and delete files:
 
 ```{python}
 import os
