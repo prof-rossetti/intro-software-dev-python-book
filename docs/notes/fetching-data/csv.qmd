@@ -61,3 +61,5 @@ Calculating the average grade (using series aggregation methods):
 print(grades_column.mean())
 print(grades_column.median())
 ```
+
+The `pandas` package is a foundational component of the Python ecosystem, and provides many additional capabilities for processing tabular data. Although outside the scope of this book, working with tabular data is covered in more detail in the professor's [Applied Data Science in Python](https://prof-rossetti.github.io/applied-data-science-python-book/notes/pandas/obtaining-dataframes.html) book.

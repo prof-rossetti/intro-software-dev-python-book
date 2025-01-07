@@ -2,31 +2,32 @@
 
 Let's take a few moments to explore the \"Files\" menu in the Google Colab left sidebar.
 
-We see there are some example files in the \"sample_data\" directory.
+We see there are some example files in the \"sample_data\" directory:
 
-![Example files in the Colab filesystem](../../../images/colab-filesystem.png){height=350 fig-align="center"}
+![Example files in the Colab filesystem.](../../../images/colab-filesystem.png){height=350 fig-align="center"}
 
 ## Downloading Files
 
-Observe, it is possible to download files like these from the Colab filesystem to your local machine, by right-clicking on them.
+Observe, it is possible to download files like these from the Colab filesystem to your local machine, by right-clicking on them:
 
 
 ![Downloading files from the Colab filesystem.](../../../images/colab-file-download.png){height=350 fig-align="center"}
 
 ## Uploading Files
 
-And it is possible to upload files from your local machine to the Colab filesystem as well, using  the "Files > Upload to session storage" menu option (i.e. the button with the file upload icon).
+And it is possible to upload files from your local machine to the Colab filesystem as well, using  the "Files > Upload to session storage" menu option (i.e. the button with the file upload icon):
 
 ![Uploading files to the Colab filesystem.](../../../images/colab-file-upload.png){height=350 fig-align="center"}
 
 ## Accessing and Manipulating Files
 
-Once we have the files in the Colab filesystem, we can write Python code to access and manipulate them.
+Once we have the files in the Colab filesystem, we can write Python code to access and manipulate them:
 
   + One way of interacting with the filesystem in Python is by using the capabilities of [the `os` module](../../python-modules/os.ipynb).
 
   + For reading and writing text (\".txt\") files, we can leverage the `open` function (see [Text File Operations](../../python-lang/file-operations.qmd)).
 
-  + For reading and writing tabular data (\".csv\") files, we can leverage the `pandas` package (see [Getting Started with Pandas](https://prof-rossetti.github.io/applied-data-science-python-book/notes/pandas/obtaining-dataframes.html)).
+  + For reading and writing tabular data (\".csv\") files, we can leverage the `pandas` package. The `pandas` package is a foundational component of the Python ecosystem, and provides capabilities for processing tabular data. Although outside the scope of this book, working with tabular data is covered in more detail in the professor's [Applied Data Science in Python](https://prof-rossetti.github.io/applied-data-science-python-book/notes/pandas/obtaining-dataframes.html) book.
+
 
 Some of these examples might seem a bit complicated at the moment for beginners. For now, the main take-away is understanding there are ways for us to write Python code to interact with the surrounding environment, specifically accessing and manipulating the filesystem.
