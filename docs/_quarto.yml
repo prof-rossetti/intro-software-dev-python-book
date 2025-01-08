@@ -179,9 +179,10 @@ book:
     - part: "APIs and Integrations"
       chapters:
         - href: notes/fetching-data/apis.qmd
+        - href: notes/api-integrations/youtube-audio-downloader.ipynb
+          text: "YouTube Integrations"
         #- href: notes/api-integrations/sending-email-demo.ipynb
         #- href: notes/api-integrations/google-maps-api-demo.ipynb
-        #- href: notes/api-integrations/youtube-audio-downloader-demo.ipynb
         #- href: notes/api-integrations/spotify-api-demo.ipynb
         #- href: notes/api-integrations/pokemon-api-demo.ipynb
 
