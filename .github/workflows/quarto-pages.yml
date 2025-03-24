@@ -76,8 +76,9 @@ jobs:
     #
 
     # UPLOAD CONTENTS OF DOCS/_BUILD
+    # bump version. see: https://github.com/orgs/community/discussions/152695
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
+      uses: actions/upload-pages-artifact@v3
       with:
         path: "docs/_build"
 
