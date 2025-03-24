@@ -168,8 +168,9 @@ book:
         - href: notes/fetching-data/csv.qmd
         - href: notes/fetching-data/xml.qmd
         - href: notes/fetching-data/html-web-scraping.qmd
-          #text: "HTML Data (Web Scraping)"
-        #- href: notes/fetching-data/apis.qmd
+        #- href: notes/fetching-data/automated-browsing.ipynb
+        #  text: "Automated Browsing"
+
 
     #- part: "APIs and Integrations"
     #  chapters:
@@ -190,6 +191,7 @@ book:
         #- href: notes/api-integrations/google-sheets-demo.ipynb
         #- href: notes/api-integrations/openai-api-demo.ipynb
         #- href: notes/api-integrations/alphavantage-api-crypto-dashboards-demo.ipynb
+        #- href: notes/api-integrations/drinks.ipynb
 
 
 
