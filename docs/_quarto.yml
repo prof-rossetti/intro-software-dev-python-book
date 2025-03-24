@@ -172,10 +172,10 @@ book:
         - href: notes/fetching-data/csv.qmd
         - href: notes/fetching-data/xml.qmd
         - href: notes/fetching-data/html-web-scraping.qmd
-        #- href: notes/fetching-data/automated-browsing.ipynb
-        #  text: "Automated Browsing"
-        #- href: notes/fetching-data/automated-browsing-form-inputs.ipynb
-        #  text: "Automated Browsing w/ Form Inputs"
+        - href: notes/fetching-data/automated-browsing.ipynb
+          text: "Automated Browsing"
+        - href: notes/fetching-data/automated-browsing-form-inputs.ipynb
+          text: "Automated Browsing w/ Form Inputs"
 
     #- part: "APIs and Integrations"
     #  chapters:
