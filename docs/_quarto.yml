@@ -5,10 +5,6 @@ project:
     port: 3243 # use the same port instead of a new one each time
     browser: true
 
-execute:
-  enabled: false # don't re-run notebooks
-
-
 # https://quarto.org/docs/books/
 # https://quarto.org/docs/reference/projects/books.html
 book:
