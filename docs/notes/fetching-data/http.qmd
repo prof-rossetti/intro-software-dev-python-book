@@ -47,7 +47,7 @@ Abbreviation | Name | Description
 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)  | Hyper Text Transfer Protocol | The foundation protocol for the Internet.
 [HTTPS](https://en.wikipedia.org/wiki/HTTPS)  | Secure Hyper Text Transfer Protocol | A widely-used Internet protocol for secure network communication over HTTP within a connection encrypted by SSL/TLS.
 [SSL/TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) | Transport Layer Security (formerly and still known as Secure Sockets Layer) | For providing communication security over a network.
-[TCP/IP](#https://en.wikipedia.org/wiki/Transmission_Control_Protocol) | Transmission Control Protocol, which compliments the Internet Protocol | Provides reliable, ordered, and error-checked delivery of a stream of octets between applications running on hosts communicating over an IP network.
+[TCP/IP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) | Transmission Control Protocol, which compliments the Internet Protocol | Provides reliable, ordered, and error-checked delivery of a stream of octets between applications running on hosts communicating over an IP network.
 [FTP](https://en.wikipedia.org/wiki/File_Transfer_Protocol) | File Transfer Protocol | For transmitting large files between computers.
 [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) | Simple Mail Transfer Protocol | For transmitting electronic mail between computers.
 [SSH](https://en.wikipedia.org/wiki/Secure_Shell) | Secure Shell | A cryptographic (encrypted) network protocol to allow remote login and other network services to operate securely over an unsecured network.
