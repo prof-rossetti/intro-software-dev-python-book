@@ -87,12 +87,8 @@ book:
       chapters:
         - href: notes/python-lang/overview.ipynb
           text: "Comments, Variables, and Built-in Functions"
-        #- href: notes/python-lang/basic-datatypes/index.qmd
-        #  text: "Python Datatypes Overview"
         - href: notes/python-lang/python-operators.qmd
           text: "Operators"
-        #- href: notes/python-lang/control-flow/index.qmd
-        #  text: "Control Flow Overview"
         - href: notes/python-modules/index.qmd
           text: "Modules and Imports"
 
@@ -151,12 +147,7 @@ book:
       chapters:
         - href: notes/dataviz/overview.qmd
           text: "Data Visualization Overview"
-        #- href: notes/dataviz/trendlines.qmd
-        #  text: "Charts with Trendlines"
-        #- href: notes/dataviz/multiple-objects.qmd
-        #  text: "Charts with Multiple Objects"
-        #- href: notes/dataviz/candlesticks.qmd
-        #  text: "Candlestick Charts"
+
 
     - part: "Fetching Data from the Internet"
       chapters:
@@ -299,4 +290,6 @@ format:
         </script>
 
   #pdf:
-  #  documentclass: scrreprt
+    #documentclass: scrreprt
+    #filters:
+    #  - filters/convert_gifs.lua

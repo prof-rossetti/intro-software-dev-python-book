@@ -18,6 +18,7 @@ To access dynamic data, we'll leverage the capabilities of programmatic data sou
 
 APIs allow us to integrate a variety of data into our software applications, including weather updates, stock prices, and social media feeds. A great variety of public APIs exist, but here are just a few notable examples:
 
+::: {.content-visible when-format="html"}
   + [New York Times APIs](https://developer.nytimes.com/apis){target="blank"}
   + [Google APIs](https://developers.google.com/apis-explorer/#p/){target="blank"} (Maps, Sheets, Drive, Gmail, Calendar, YouTube, etc.)
   + [Yelp API](https://docs.developer.yelp.com/docs/fusion-intro){target="blank"}
@@ -27,7 +28,7 @@ APIs allow us to integrate a variety of data into our software applications, inc
   + [MovieDB API](https://developer.themoviedb.org/reference/intro/getting-started){target="blank"}
   + [Edamam Food and Nutrition API](https://www.edamam.com/){target="blank"}
   + [Pokemon API](https://pokeapi.co/){target="blank"}
-  + ~~[Twitter APIs](https://dev.twitter.com/rest/public){target="blank"}~~
+  + ~~[Twitter APIs](https://dev.twitter.com/rest/public){target="blank"}~~ (JK, RIP Twitter API, it was good while it lasted!)
   + [Facebook Social Graph API](https://developers.facebook.com/docs/graph-api){target="blank"}
   + [Instagram API](https://developers.facebook.com/docs/instagram-platform){target="blank"}
   + [GitHub API](https://developer.github.com/v3/){target="blank"}
@@ -35,8 +36,27 @@ APIs allow us to integrate a variety of data into our software applications, inc
   + [US Securities and Exchange Commission EDGAR API](https://sec-api.io/){target="blank"}
   + [Weather.gov API](https://www.weather.gov/documentation/services-web-api){target="blank"}
   + [WMATA APIs](https://developer.wmata.com/apis){target="blank"}
+:::
 
-
+::: {.content-visible when-format="pdf"}
+  + New York Times APIs
+  + Google APIs (Maps, Sheets, Drive, Gmail, Calendar, YouTube, etc.)
+  + Yelp API
+  + AlphaVantage API
+  + Spotify API
+  + CocktailDB Drinks API
+  + MovieDB API
+  + Edamam Food and Nutrition API
+  + Pokemon API
+  + ~~Twitter APIs~~ (JK, RIP Twitter API, it was good while it lasted!)
+  + Facebook Social Graph API
+  + Instagram API
+  + GitHub API
+  + US Federal Elections Commission (FEC) API
+  + US Securities and Exchange Commission EDGAR API
+  + Weather.gov API
+  + WMATA APIs
+:::
 
 
 To get familiar with APIs, we're going to focus on one specific API, the AlphaVantage API, in more detail.
@@ -89,7 +109,11 @@ Once we have an API key, we'll continue to consult the API documentation. A sing
 
 In the documentation for the AlphaVantage API, we see a number of different endpoints in the left sidebar.
 
+
+::: {.content-visible when-format="html"}
 ![AlphaVantage API endpoints.](../../images/alphavantage-api-endpoints.gif){height=350}
+:::
+
 
 This API is a wealth of financial information, including endpoints related to stock data (on a daily or weekly or monthly basis), fundamental data (including income statements and balance sheets), foreign exchange data, cryptocurrency prices, and more.
 

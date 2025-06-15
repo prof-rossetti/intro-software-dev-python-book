@@ -118,6 +118,6 @@ Response Code | Meaning
 
 Generally, response codes in the 200s mean our request was successful, and the server was able to return some response. Response codes in the 400s mean that it was a client error. We made some mistake. We made the wrong request. Maybe we tried to request a page that doesn't exist. You may be familiar with the 404 error.
 
-![A 404 error ([source](https://blog.thomasnet.com/hs-fs/hubfs/shutterstock_774749455.jpg?width=600&name=shutterstock_774749455.jpg)). ](../../images/404-error.webp){height=300}
+![A 404 error ([source](https://blog.thomasnet.com/hs-fs/hubfs/shutterstock_774749455.jpg?width=600&name=shutterstock_774749455.jpg)). ](../../images/404-error.png){height=300}
 
 We will see how these concepts regarding HTTP requests and responses translate into the techniques that we'll use to request data over the Internet in Python.
