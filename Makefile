@@ -1,7 +1,4 @@
 
-build:
-	quarto render docs/
-	open docs/_build/index.html
 
 preview:
 	quarto preview docs/
@@ -11,6 +8,9 @@ render:
 
 pdf:
 	quarto render docs/ --to pdf
+
+docx:
+	quarto render docs/ --to docx
 
 open:
 	open docs/_build/index.html
@@ -22,10 +22,18 @@ clean:
 	rm -rf docs/_build
 	rm -rf docs/.quarto
 
+build:
+	$(MAKE) render
+	$(MAKE) open
+
 render-fresh:
 	$(MAKE) clean
-	quarto render docs/
+	$(MAKE) render
 
 render-fresh-pdf:
 	$(MAKE) clean
-	quarto render docs/ --to pdf
+	$(MAKE) pdf
+
+render-fresh-docx:
+	$(MAKE) clean
+	$(MAKE) docx
