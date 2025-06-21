@@ -1,3 +1,9 @@
+---
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
 # Error Handling
 
 Sometimes our programs will encounter [errors](https://docs.python.org/3/tutorial/errors.html).

@@ -1,0 +1,21 @@
+% _pdf_styles.tex
+
+\usepackage{fontspec}
+
+% define \headingfont to use Source Sans Bold
+\newfontfamily\headingfont
+  [ UprightFont = *-Regular,
+    BoldFont    = *-Bold ]
+  {Source Sans 3}
+
+\usepackage{titlesec}
+
+% Chapter titles in SS3 Bold
+\titleformat{\chapter}[display]
+  {\headingfont\bfseries\huge}
+  {\chaptername\ \thechapter}{20pt}{\Huge}
+
+% Section titles in SS3 Bold
+\titleformat{\section}
+  {\headingfont\bfseries\Large}
+  {\thesection}{1em}{}

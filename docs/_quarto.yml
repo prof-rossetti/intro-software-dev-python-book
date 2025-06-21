@@ -87,12 +87,8 @@ book:
       chapters:
         - href: notes/python-lang/overview.ipynb
           text: "Comments, Variables, and Built-in Functions"
-        #- href: notes/python-lang/basic-datatypes/index.qmd
-        #  text: "Python Datatypes Overview"
         - href: notes/python-lang/python-operators.qmd
           text: "Operators"
-        #- href: notes/python-lang/control-flow/index.qmd
-        #  text: "Control Flow Overview"
         - href: notes/python-modules/index.qmd
           text: "Modules and Imports"
 
@@ -151,12 +147,7 @@ book:
       chapters:
         - href: notes/dataviz/overview.qmd
           text: "Data Visualization Overview"
-        #- href: notes/dataviz/trendlines.qmd
-        #  text: "Charts with Trendlines"
-        #- href: notes/dataviz/multiple-objects.qmd
-        #  text: "Charts with Multiple Objects"
-        #- href: notes/dataviz/candlesticks.qmd
-        #  text: "Candlestick Charts"
+
 
     - part: "Fetching Data from the Internet"
       chapters:
@@ -172,11 +163,6 @@ book:
           text: "Automated Browsing"
         - href: notes/fetching-data/automated-browsing-form-inputs.ipynb
           text: "Automated Browsing w/ Form Inputs"
-
-    #- part: "APIs and Integrations"
-    #  chapters:
-    #    - href: notes/fetching-data/apis.qmd
-    #      text: "APIs Overview"
 
     - part: "APIs and Integrations"
       chapters:
@@ -298,5 +284,19 @@ format:
           gtag('config', 'G-B1MPHWM8NN');
         </script>
 
-  #pdf:
-  #  documentclass: scrreprt
+  pdf:
+
+    # use XeLaTeX or LuaLaTeX so fontspec works:
+    latex-engine: xelatex
+
+    mainfont: "Source Sans 3" # "Merriweather"
+    sansfont: "Source Sans 3" # "Helvetica Neue"
+    monofont: "Menlo"
+    #fontsize: 11pt
+    #linestretch: 1.2
+
+    includes:
+      in-header: _pdf_styles.tex
+
+  #PrettyPDF-pdf:
+  #  keep-tex: true

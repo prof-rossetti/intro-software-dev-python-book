@@ -3,7 +3,16 @@
 
 .jupyter_cache
 
-# HTML files recursive:
-
+# HTML files:
 docs/.quarto
 docs/_build
+
+# half-way built files:
+**/**/*_files/
+**/**/*.html
+
+# pdf generation artifacts:
+index.aux
+index.log
+index.pdf
+index.toc
