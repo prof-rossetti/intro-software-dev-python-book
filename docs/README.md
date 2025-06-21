@@ -65,3 +65,26 @@ quarto render docs/ --verbose
 We are using the ["quarto-pages.yml" workflow configuration file](/.github/workflows/quarto-pages.yml) to deploy the site to GitHub Pages when new commits are pushed to the main branch.
 
 In order for this to work, you first need to configure your GitHub Pages repo settings to publish via GitHub Actions.
+
+## Publishing
+
+Install fonts:
+
+```sh
+# install font:
+brew install --cask font-merriweather
+brew install --cask font-alegreya
+brew install --cask font-source-sans-3
+brew install --cask font-source-code-pro
+
+# reset and verify font installation:
+fc-cache -fv
+fc-list | grep -i "SourceSans3"
+```
+
+
+```sh
+# not used
+quarto use template nrennie/PrettyPDF
+quarto install extension nrennie/PrettyPDF
+```

@@ -164,11 +164,6 @@ book:
         - href: notes/fetching-data/automated-browsing-form-inputs.ipynb
           text: "Automated Browsing w/ Form Inputs"
 
-    #- part: "APIs and Integrations"
-    #  chapters:
-    #    - href: notes/fetching-data/apis.qmd
-    #      text: "APIs Overview"
-
     - part: "APIs and Integrations"
       chapters:
         - href: notes/fetching-data/apis.qmd
@@ -289,7 +284,19 @@ format:
           gtag('config', 'G-B1MPHWM8NN');
         </script>
 
-  #pdf:
-    #documentclass: scrreprt
-    #filters:
-    #  - filters/convert_gifs.lua
+  pdf:
+
+    # use XeLaTeX or LuaLaTeX so fontspec works:
+    latex-engine: xelatex
+
+    mainfont: "Source Sans 3" # "Merriweather"
+    sansfont: "Source Sans 3" # "Helvetica Neue"
+    monofont: "Menlo"
+    #fontsize: 11pt
+    #linestretch: 1.2
+
+    includes:
+      in-header: _pdf_styles.tex
+
+  #PrettyPDF-pdf:
+  #  keep-tex: true
