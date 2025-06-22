@@ -3,13 +3,14 @@
 
 .jupyter_cache
 
-# HTML files:
+# rendered files:
 docs/.quarto
 docs/_build
 
 # half-way built files:
 **/**/*_files/
 **/**/*.html
+site_libs
 
 # pdf generation artifacts:
 index.aux

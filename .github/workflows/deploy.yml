@@ -1,7 +1,7 @@
 
 # https://jupyterbook.org/en/stable/publish/gh-pages.html
 
-name: quarto-pages
+name: deploy
 
 on:
   push:
@@ -68,17 +68,15 @@ jobs:
     # RENDER WEBSITE CONTENTS TO DOCS/_BUILD
     - name: Build the book
       run: |
-        quarto render docs/
-      #continue-on-error: true # for diagnosing build issue related to image file
+        quarto render docs/ --to html
 
     #
     # GITHUB PAGES STUFF
     #
 
     # UPLOAD CONTENTS OF DOCS/_BUILD
-    # bump version. see: https://github.com/orgs/community/discussions/152695
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v4
       with:
         path: "docs/_build"
 
