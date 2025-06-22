@@ -1,11 +1,8 @@
+![](/images/python-banner-2025.png){fig-align="center" fig-alt="Intro to Software Development in Python (banner image)" height=400}
 
 # Welcome {.unnumbered}
 
-<!--
-![](/images/python-banner.jpeg){fig-align="center" fig-alt="Intro to Software Development in Python (banner image)"}
--->
-
-Welcome to the \"Intro to Python Programming\" book (<span id="auto-copyright-year">2024</span> edition, online)!
+Welcome to the \"Intro to Python Programming and Applications\" book (<span id="auto-copyright-year">2025</span> edition, online)!
 
 
 Whether you are a professional seeking to enhance technical skills, or a student aspiring to enter the field, this book should serve as a valuable resource.

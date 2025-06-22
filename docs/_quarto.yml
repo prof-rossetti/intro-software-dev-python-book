@@ -8,7 +8,7 @@ project:
 # https://quarto.org/docs/books/
 # https://quarto.org/docs/reference/projects/books.html
 book:
-  title: "Intro to Python Programming"
+  title: "Intro to Python Programming and Applications"
   author: "Michael J Rossetti"
   date: "last-modified" # "7/24/2024"
   date-format: "iso"
@@ -24,7 +24,7 @@ book:
   repo-actions: [edit, issue, source]
   #downloads: [pdf, epub, docx]
 
-  cover-image: images/python-banner.jpeg
+  #cover-image: images/python-banner.jpeg
   #favicon: favicon.ico
 
   #sharing: [twitter, facebook]
@@ -53,8 +53,8 @@ book:
   #    - about-author.qmd
 
   # https://quarto.org/docs/websites/website-navigation.html#side-navigation
-  #sidebar:
-  #  logo: images/python-banner.jpeg
+  sidebar:
+    logo: images/python-banner-2025.png
 
   #page-footer:
   #  left: |
