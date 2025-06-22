@@ -16,6 +16,7 @@ jupyter-cache
 #matplotlib
 plotly
 statsmodels==0.14.2 # used by plotly for trendline parameter
+scipy==1.14.0
 requests
 pandas
 beautifulsoup4
