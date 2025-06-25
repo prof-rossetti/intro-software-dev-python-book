@@ -2,7 +2,7 @@
 
 # Welcome {.unnumbered}
 
-<img src="/images/python-banner-2025.png"
+<img src="./images/python-banner-2025.png"
     class="banner-image"
     alt="Intro to Software Development in Python (banner image)."
     >
