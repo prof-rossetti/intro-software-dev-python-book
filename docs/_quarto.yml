@@ -46,22 +46,23 @@ book:
     location: sidebar # navbar, sidebar
     #type: textbox # overlay, textbox
 
-  #navbar:
-  #  right:
-  #    - href: exercises/index.qmd
-  #      text: "Exercises, Assignments, and Projects"
-  #    - about-author.qmd
+  reader-mode: true
+
+  # top nav (need all these links to also be hidden chapters):
+  navbar:
+    right:
+      - text: "Exercises"
+        href: exercises/index.qmd
+
+      - text: "Assignments"
+        menu:
+          - exercises/rock-paper-scissors/instructions.qmd
+
+      - about-author.qmd
 
   # https://quarto.org/docs/websites/website-navigation.html#side-navigation
   sidebar:
     logo: images/python-banner-2025.png
-
-  #page-footer:
-  #  left: |
-  #    Copyright 2024, <a href="https://prof-rossetti.org/">Michael J Rossetti</a>
-  #  right: |
-  #    This book was built with <a href="https://quarto.org/">Quarto</a>.
-
 
 
   chapters:
@@ -182,16 +183,15 @@ book:
 
 
 
-    #- "-----------------"
-    ##- exercises/index.qmd
-    #- part: "Assignments and Projects"
-    #  #href: exercises/index.qmd
-    #  chapters:
-    #    - exercises/rock-paper-scissors/instructions.qmd
-
 
     - "-----------------"
     - about-author.qmd
+    - "-----------------"
+
+    - exercises/index.qmd
+    - part: "Assignments"
+      chapters:
+      - exercises/rock-paper-scissors/instructions.qmd
     - "-----------------"
 
   appendices:
@@ -256,9 +256,9 @@ format:
   html:
     # https://quarto.org/docs/output-formats/html-themes.html
     # https://bootswatch.com/
-    theme: cosmo
-      #light: default #flatly
-      #dark: darkly
+    theme: #cosmo
+      light: cosmo # default #flatly
+      dark: cyborg # vapor # superhero # darkly
     css: styles/my-style.css
     code-copy: true
     #code-fold: false #show

@@ -13,47 +13,59 @@ For this assignment specifically, all game code should exist in a single cell.
 
 ### Welcome Message
 
-The application should instruct the player via text cell to set their name as a [notebook secret](../../notes/dev-tools/google-colab/notebook-secrets.html#implementation) specifically called `PLAYER_NAME`.
+The application should instruct the player via text cell to set their name using a [notebook secret](../../notes/dev-tools/google-colab/notebook-secrets.html#implementation) called `PLAYER_NAME`.
 
-Then the application should then read this value from the notebook secrets, and store the value in a Python variable called `player_name`.
+The application should read the player name from the notebook secrets, and store the value in a Python variable called `player_name`.
 
-The application should display a friendly message welcoming the user, such as "Welcome Jon, to our Rock Paper Scissors Game!" (for example if "Jon" was set as the player's name).
-
-> HINT: adapt the example code relating to `userdata`, provided at the bottom of the notebook secrets menu, but change the variable names.
+The application should display a friendly message welcoming the user, for example: **"Welcome Jon, to our Rock Paper Scissors Game!"** (if "Jon" was set as the player's name).
 
 ### Processing User Inputs
 
 The application should prompt the user to input, or otherwise select, an option (i.e. "rock", "paper", or "scissors"). It should store the user's selection in a variable for later reference.
 
-> HINT: use the [`input` function](../../notes/python-lang/overview.ipynb#the-input-function) to capture user inputs.
+:::{.callout-tip title="Hint" collapse="true"}
+Use the [`input` function](../../notes/python-lang/overview.ipynb#the-input-function) or [form inputs](../../notes/dev-tools/google-colab/form-inputs.ipynb) to capture user inputs. If you use form inputs, that will also satisfy the validation step below.
+:::
 
 ### Validating User Inputs
 
 The application should compare the user's selection against the list of valid options (i.e. "rock", "paper", "scissors") to determine whether the user has selected a valid option.
 
-**Case Normalization**:
-
-The program should be able to handle various capitalizations of the valid options (e.g. "ROCK", "Rock", "rock", "RoCk", etc. are all valid).
-
-> HINT: use string case manipulation methods on the original user input to simplify your conditional logic
-
-**Graceful Failure**:
+#### Graceful Failure
 
 If the selection is invalid, the program should fail gracefully by displaying a friendly message to the user, and preventing further program execution. The program should not try to further process an invalid input, as it may lead to runtime errors.
 
-**Validation Loop**:
+:::{.callout-tip title="Hint" collapse="true"}
+Check the selection option using [conditional logic](../../notes/python-lang/control-flow/conditional-logic.qmd).
+:::
 
-If the selection is invalid, the program should ideally continue to prompt the user to input a value until the user inputs a valid input.
+#### Case Normalization
 
-> HINT: ask for an input within the scope of a [`while` loop](../../notes/python-lang/control-flow/while-loops.qmd), and break out of the loop if the selection is valid.
+The program should be able to handle various capitalizations of the valid options (e.g. "ROCK", "Rock", "rock", "RoCk", etc.) Any combination of capitalization should be considered value.
+
+:::{.callout-tip title="Hint" collapse="true"}
+Modify the user input value [string case manipulation](../../notes/python-lang/basic-datatypes/strings.qmd#case-manipulation) before checking the selected option.
+:::
+
+#### Validation Loop
+
+If the selection is invalid, the program should continue to prompt the user to input a value until the user inputs a valid input.
+
+:::{.callout-tip title="Hint" collapse="true"}
+Ask for an input within the scope of a [`while` loop](../../notes/python-lang/control-flow/while-loops.qmd), and break out of the loop if the selection is valid.
+:::
+
 
 ### Simulating Computer Selection
 
 The application should select one of the options (i.e. "rock", "paper", or "scissors") at random, and assign that as the computer player's choice.
 
-> HINT: use the `choice` function provided by [the `random` module](../../notes/python-modules/random.qmd).
+:::{.callout-tip title="Hint" collapse="true"}
+Use the `choice` function provided by [the `random` module](../../notes/python-modules/random.qmd).
 
-> HINT: ensure the valid choices are stored in a [list datatype](../../notes/python-lang/container-datatypes/lists.qmd), and then pass that list to the random choice function.
+Ensure the valid choices are stored in a [list datatype](../../notes/python-lang/container-datatypes/lists.qmd), and then pass that list to the random choice function.
+:::
+
 
 ### Determining the Winner
 
@@ -64,7 +76,11 @@ The application should compare the user's selection to the computer player's sel
   3. Scissors beats Paper
   4. Rock vs Rock, Paper vs Paper, and Scissors vs Scissors each results in a "tie"
 
-> HINT: use one or more [`if` statements](../../notes/python-lang/control-flow/conditional-logic.qmd) (recommended approach for beginners). FYI - it may also be possible to use other pre-configured representations of the winners, for example using a nested [dictionary datatype](../../notes/python-lang/container-datatypes/dictionaries.qmd) containing all possible outcomes.
+:::{.callout-tip title="Hint" collapse="true"}
+Use an [`if` statement](../../notes/python-lang/control-flow/conditional-logic.qmd) or nested `if` statements (recommended approach for beginners).
+
+FYI - it is alternatively possible to use pre-configured representations of the winners, for example using a tuple of the winners, or a nested [dictionary](../../notes/python-lang/container-datatypes/dictionaries.qmd) containing all possible outcomes.
+:::
 
 ### Displaying Results
 
@@ -96,24 +112,30 @@ Submissions will be evaluated according to the "Requirements" section, as repres
 
 Category | Requirement | Weight
 --- | --- | ---
-Info Inputs | Prompts the user to input their player name via notebook secrets, and reads the value from notebook secrets. | 10%
-Info Inputs | Prompts the user to input / select a choice from one of "rock", "paper", or "scissors". | 15%
-Validations | Handles user inputs of various capitalization (i.e. recognizes "rock", "Rock", "ROCK", "RoCk", etc. as valid inputs). | 15%
-Validations | Fails gracefully if encountering an invalid user input (i.e. program does not crash or malfunction if user provides an invalid input, like "OOPS"). Avoids a red / crashed cell. | 15%
-Simulation | Generates a valid choice at random for the computer player. | 15%
-Calculations | Displays accurate information about which player is the winner. | 15%
-Info Outputs | Presents all desired information outputs to the user, ideally in a clear way with clean formatting. | 15%
+Info Inputs | Reads the player name from notebook secrets. | 10%
+Info Inputs | Prompts the user to input or select an option (one of: "rock", "paper", or "scissors"). | 15%
+Validations | Handles user inputs of various capitalization. | 15%
+Validations | Fails gracefully if encountering an invalid user input. | 15%
+Simulation | Generates a random computer choice. | 15%
+Calculations | Displays the winner accurately. | 15%
+Info Outputs | Displays all desired information. | 15%
 
 This rubric is tentative, and may be subject to slight adjustments during the grading process.
 
 If experiencing execution error(s) while evaluating the application's required functionality, evaluators are advised to reduce the project's grade by between 4% and 25%, depending on the circumstances and severity of the error(s).
 
-### Further Exploration (Game Loop Challenges)
+## Further Exploration
 
-+10%: For extra credit, also implement a game loop that asks the user whether they'd like to play again. If they say "yes", play the game again, otherwise stop. The user should be able to play as many games as they want.
+### Game Loop Challenges
 
-> HINT: use an infinite `while` loop!
+**Play Again**: The application should ask the user whether they'd like to play again. If they say "yes", it should play the game again, otherwise it should stop. The user should be able to continue playing as many games as they want.
 
-+10%: For maximum challenge and maximum bonus points, also keep track of how many games have been played, and how many games have been won, and once the user elects to stop playing, display their win percentage.
+:::{.callout-tip title="Hint" collapse="true"}
+Use an infinite `while` loop!
+:::
 
-> HINT: use a counter approach in conjunction with your `while` loop.
+**Game Stats**: The application should keep track of how many games have been played, and how many games have been won, and once the user elects to stop playing, display their win percentage.
+
+:::{.callout-tip title="Hint" collapse="true"}
+Use a counter approach in conjunction with your `while` loop.
+:::
