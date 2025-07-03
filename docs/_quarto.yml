@@ -48,6 +48,8 @@ book:
 
   reader-mode: true
 
+  bread-crumbs: true
+
   # top nav (need all these links to also be hidden chapters):
   navbar:
     right:

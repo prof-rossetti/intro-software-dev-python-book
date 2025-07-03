@@ -5,17 +5,19 @@ number-sections: false
 
 # "Rock, Paper, Scissors" Game {.unnumbered}
 
-Develop a Python application which will allow a human user to play a game of Rock-Paper-Scissors against a computer opponent. The game's functionality should adhere to the "Requirements" section below.
+Develop a Python application which allows a human user to play a game of [Rock Paper Scissors](https://en.wikipedia.org/wiki/Rock_paper_scissors) against a computer opponent. The game's functionality should adhere to the "Requirements" section below.
 
-For this assignment specifically, all game code should exist in a single cell.
+:::{.callout-warning title="Note"}
+For this assignment, all game code should exist in a single code cell!
+:::
 
 ## Requirements
 
 ### Welcome Message
 
-The application should instruct the player via text cell to set their name using a [notebook secret](../../notes/dev-tools/google-colab/notebook-secrets.html#implementation) called `PLAYER_NAME`.
+The application should instruct the player via text cell to set their name using a [notebook secret](../../notes/dev-tools/google-colab/notebook-secrets.html#implementation) called `PLAYER_NAME` specifically (using all capital letters).
 
-The application should read the player name from the notebook secrets, and store the value in a Python variable called `player_name`.
+The application should read the player name from the notebook secrets, and store the value in a Python variable called `PLAYER_NAME` specifically (using all capital letters).
 
 The application should display a friendly message welcoming the user, for example: **"Welcome Jon, to our Rock Paper Scissors Game!"** (if "Jon" was set as the player's name).
 
@@ -29,11 +31,11 @@ Use the [`input` function](../../notes/python-lang/overview.ipynb#the-input-func
 
 ### Validating User Inputs
 
-The application should compare the user's selection against the list of valid options (i.e. "rock", "paper", "scissors") to determine whether the user has selected a valid option.
+The application should compare the user's selection against the list of valid options (i.e. "rock", "paper", "scissors") to determine whether the user has selected a valid option. See additional validation requirements below.
 
 #### Graceful Failure
 
-If the selection is invalid, the program should fail gracefully by displaying a friendly message to the user, and preventing further program execution. The program should not try to further process an invalid input, as it may lead to runtime errors.
+If the selection is invalid, the program should fail gracefully by displaying a friendly message to the user, and preventing further program execution. The program should not try to further process an invalid input, as it may lead to runtime errors. In other words, the program should not move on to generating a computer choice (see "Simulating Computer Selection" section below) unless the user input is valid.
 
 :::{.callout-tip title="Hint" collapse="true"}
 Check the selection option using [conditional logic](../../notes/python-lang/control-flow/conditional-logic.qmd).
@@ -41,7 +43,7 @@ Check the selection option using [conditional logic](../../notes/python-lang/con
 
 #### Case Normalization
 
-The program should be able to handle various capitalizations of the valid options (e.g. "ROCK", "Rock", "rock", "RoCk", etc.) Any combination of capitalization should be considered value.
+The program should be able to handle various capitalizations of the valid options (e.g. "ROCK", "Rock", "rock", "RoCk", etc.) Any combination of lowercase and uppercase letters for a given option should be considered valid.
 
 :::{.callout-tip title="Hint" collapse="true"}
 Modify the user input value [string case manipulation](../../notes/python-lang/basic-datatypes/strings.qmd#case-manipulation) before checking the selected option.
@@ -89,7 +91,7 @@ After determining the winner, the application should display the results to the 
   + A friendly welcome message, including the player's name (e.g. "Player One").
   + The user's selected option
   + The computer's selected option
-  + Whether the user or the computer was the winner
+  + What the game outcome was (user wins, computer wins, or tie)
   + A friendly farewell message
 
 Example desired output after one round of game-play:
@@ -108,17 +110,19 @@ You won! Thanks for playing.
 
 ## Evaluation
 
-Submissions will be evaluated according to the "Requirements" section, as represented by the following rubric:
+Submissions will be evaluated according to the detailed "Requirements" above, as represented by the following rubric:
 
 Category | Requirement | Weight
 --- | --- | ---
 Info Inputs | Reads the player name from notebook secrets. | 10%
-Info Inputs | Prompts the user to input or select an option (one of: "rock", "paper", or "scissors"). | 15%
+Info Inputs | Prompts the user to input or select an option. | 15%
 Validations | Handles user inputs of various capitalization. | 15%
 Validations | Fails gracefully if encountering an invalid user input. | 15%
 Simulation | Generates a random computer choice. | 15%
 Calculations | Displays the winner accurately. | 15%
 Info Outputs | Displays all desired information. | 15%
+
+: {tbl-colwidths="[25,60,15]"}
 
 This rubric is tentative, and may be subject to slight adjustments during the grading process.
 
@@ -134,7 +138,13 @@ If experiencing execution error(s) while evaluating the application's required f
 Use an infinite `while` loop!
 :::
 
-**Game Stats**: The application should keep track of how many games have been played, and how many games have been won, and once the user elects to stop playing, display their win percentage.
+**Game Stats**: The application should keep track of how many games have been played, and how many games have been won, and once the user elects to stop playing, it should display their win percentage.
+
+You can count ties as losses, or remove them from the denominator. In other words, either of the following win percentage formulae would be fine:
+
+A) $$\text{win percentage} = \frac{\text{wins}}{\text{total games}}$$
+
+B) $$\text{win percentage} = \frac{\text{wins}}{\text{total games} - \text{ties}}$$
 
 :::{.callout-tip title="Hint" collapse="true"}
 Use a counter approach in conjunction with your `while` loop.
