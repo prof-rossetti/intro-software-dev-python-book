@@ -17,19 +17,20 @@ For this assignment, all game code should exist in a single code cell!
 
 ### Welcome Message
 
-The application should instruct the player via text cell to set their name using a [notebook secret](../../notes/dev-tools/google-colab/notebook-secrets.html#implementation) called `PLAYER_NAME` specifically (using all capital letters).
+The application should instruct the player via text cell to set their name using a [notebook secret](../../notes/dev-tools/google-colab/notebook-secrets.html#implementation) specifically called `PLAYER_NAME` (using all capital letters).
 
-The application should read the player name from the notebook secrets, and store the value in a Python variable called `PLAYER_NAME` specifically (using all capital letters).
+The application should read the player name from the notebook secrets, and store the value in a Python variable specifically called `PLAYER_NAME` (using all capital letters).
 
-The application should display a friendly message welcoming the user, for example: **"Welcome Jon, to our Rock Paper Scissors Game!"** (if "Jon" was set as the player's name).
+The application should display a friendly message welcoming the user, for example: "Welcome Jon, to our Rock Paper Scissors Game!" (if "Jon" was set as the player's name).
 
 ### Processing User Inputs
 
 The application should prompt the user to input, or otherwise select, an option (i.e. "rock", "paper", or "scissors"). It should store the user's selection in a variable for later reference.
 
 :::{.callout-tip title="Hint" collapse="true"}
-Use the [`input` function](../../notes/python-lang/overview.ipynb#the-input-function) or [form inputs](../../notes/dev-tools/google-colab/form-inputs.ipynb) to capture user inputs. If you use form inputs, that will also satisfy the validation step below.
+Use the [`input` function](../../notes/python-lang/overview.ipynb#the-input-function), or [form inputs](../../notes/dev-tools/google-colab/form-inputs.ipynb#colab-form-inputs), or [widgets](../../notes/dev-tools/google-colab/form-inputs.ipynb#jupyter-widgets), to capture user inputs. If you use form inputs or widgets, that should also satisfy the validation steps below. [:smile_cat:]{.content-visible when-format="html"}
 :::
+
 
 ### Validating User Inputs
 
@@ -81,9 +82,7 @@ The application should compare the user's selection to the computer player's sel
   4. Rock vs Rock, Paper vs Paper, and Scissors vs Scissors each results in a "tie"
 
 :::{.callout-tip title="Hint" collapse="true"}
-Use an [`if` statement](../../notes/python-lang/control-flow/conditional-logic.qmd) or nested `if` statements (recommended approach for beginners).
-
-FYI - it is alternatively possible to use pre-configured representations of the winners, for example using a tuple of the winners, or a nested [dictionary](../../notes/python-lang/container-datatypes/dictionaries.qmd) containing all possible outcomes.
+Beginners, feel free to use [conditional logic](../../notes/python-lang/control-flow/conditional-logic.qmd).
 :::
 
 ### Displaying Results

@@ -273,6 +273,9 @@ format:
     ##number-sections: false
     ##number-depth: 1
 
+    # show emojis :smile:
+    from: markdown+emoji
+
     # https://quarto.org/docs/reference/formats/html.html#includes
     include-in-header:
       - includes/google_analytics.html
