@@ -7,11 +7,13 @@ number-sections: false
 
 Develop a Python application which allows a human user to play a game of [Rock Paper Scissors](https://en.wikipedia.org/wiki/Rock_paper_scissors) against a computer opponent. The game's functionality should adhere to the "Requirements" section below.
 
-:::{.callout-warning title="Note"}
-For this assignment, all game code should exist in a single code cell!
-:::
+
 
 ## Requirements
+
+:::{.callout-note title="Note"}
+For this assignment, all game code should exist in a single code cell!
+:::
 
 ### Welcome Message
 

@@ -275,16 +275,8 @@ format:
 
     # https://quarto.org/docs/reference/formats/html.html#includes
     include-in-header:
-      text: |
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1MPHWM8NN"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-B1MPHWM8NN');
-        </script>
+      - includes/google_analytics.html
+      - includes/expand_hints.html
 
   pdf:
 
