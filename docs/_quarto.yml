@@ -184,16 +184,14 @@ book:
         #- href: notes/api-integrations/drinks.ipynb
 
 
-
-
     - "-----------------"
-    - about-author.qmd
-    - "-----------------"
-
     - exercises/index.qmd
     - part: "Projects"
       chapters:
       - exercises/rock-paper-scissors/instructions.qmd
+    - "-----------------"
+
+    - about-author.qmd
     - "-----------------"
 
   appendices:
