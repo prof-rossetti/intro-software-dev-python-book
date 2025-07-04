@@ -1,0 +1,21 @@
+
+<script type="text/javascript">
+
+console.log("EXPAND HINTS with: ?hints=true")
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  HINTS_MODE = window.location.href.includes("hint")
+  if (HINTS_MODE){
+    document.querySelectorAll(".callout-header").forEach(callout => {
+      callout.classList.add("collapsed");
+
+      let content = callout.parentElement.querySelector(".collapse");
+      if (content) {
+        content.classList.add("show");
+      }
+    });
+  }
+});
+
+</script>

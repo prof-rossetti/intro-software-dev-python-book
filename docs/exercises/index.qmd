@@ -1,12 +1,6 @@
-# Exercises, Assignments, and Projects {.unnumbered}
-
-## Practice Exercises
+# Exercises {.unnumbered}
 
   + My First Notebook
-  + Class 2 Exercises
-  + Class 3 Exercises
-
-
-## Assignments
-
-  + ["Rock, Paper, Scissors" Assignment](../exercises/rock-paper-scissors/instructions.qmd)
+  + [Unit 1 Notes and Exercises - Python Language Overview](https://colab.research.google.com/drive/1vvvyyJ5dm6L0BPTr9gKvDL6Xkeyz81ih?usp=sharing) (Summer 2025)
+  + [Unit 2 Notes and Exercises - Control Flow](https://colab.research.google.com/drive/1YgWAD0badO8gBVPVs-RuMkGQ5axP8esC?usp=sharing) (Summer 2025)
+  + Unit 3 Notes and Exercises - Data Processing (Summer 2025)

@@ -12,8 +12,12 @@ docs/_build
 **/**/*.html
 site_libs
 
+# keep includes html files:
+!docs/includes/*.html
+
 # pdf generation artifacts:
 index.aux
 index.log
 index.pdf
 index.toc
+index.tex
