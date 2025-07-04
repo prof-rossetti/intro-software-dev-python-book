@@ -56,7 +56,7 @@ book:
       - text: "Exercises"
         href: exercises/index.qmd
 
-      - text: "Assignments"
+      - text: "Projects"
         menu:
           - exercises/rock-paper-scissors/instructions.qmd
 
@@ -191,7 +191,7 @@ book:
     - "-----------------"
 
     - exercises/index.qmd
-    - part: "Assignments"
+    - part: "Projects"
       chapters:
       - exercises/rock-paper-scissors/instructions.qmd
     - "-----------------"
