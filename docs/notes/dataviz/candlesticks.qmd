@@ -48,11 +48,30 @@ Finally, creating the chart:
 
 
 ```{python}
+import os
+import plotly.io as pio
 from plotly.graph_objects import Figure, Candlestick
+
+# Ensure images directory exists
+os.makedirs("docs/images", exist_ok=True)
+
+# Prevent MathJax issues in PDF export
+pio.kaleido.scope.mathjax = None
 
 stick = Candlestick(x=dates, open=opens, high=highs, low=lows, close=closes)
 
 fig = Figure(data=[stick])
 fig.update_layout(title="Example Candlestick Chart")
+fig.write_image("docs/images/candlesticks-plot-0.png")
+```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
 fig.show()
 ```
+:::
+
+::: {.content-visible when-format="pdf"}
+![](images/candlesticks-plot-0.png)
+:::

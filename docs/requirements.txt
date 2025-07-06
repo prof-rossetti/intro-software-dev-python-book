@@ -24,6 +24,6 @@ lxml # bs4 needs this to parse XML
 
 #scipy
 
-
+kaleido
 
 #gspread==6.0.2

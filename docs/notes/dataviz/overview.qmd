@@ -56,14 +56,33 @@ print(prices)
 ```
 
 ```{python}
+import os
+import plotly.io as pio
 from plotly.express import line
+
+# Ensure images directory exists
+os.makedirs("docs/images", exist_ok=True)
+
+# Prevent MathJax issues in PDF export
+pio.kaleido.scope.mathjax = None
 
 fig = line(x=dates, y=prices, height=350,
           title="Stock Prices over Time",
           labels={"x": "Date", "y": "Stock Price ($)"}
 )
+fig.write_image("docs/images/overview-plot-0.png")
+```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
 fig.show()
 ```
+:::
+
+::: {.content-visible when-format="pdf"}
+![](images/overview-plot-0.png)
+:::
 
 
 ### Bar Charts
@@ -104,8 +123,19 @@ fig = bar(x=genres, y=viewers, height=350,
           title="Viewership by Genre",
           labels={"x": "Genre", "y": "Viewers"}
 )
+fig.write_image("docs/images/overview-plot-1.png")
+```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
 fig.show()
 ```
+:::
+
+::: {.content-visible when-format="pdf"}
+![](images/overview-plot-1.png)
+:::
 
 
 #### Horizontal Bar Chart
@@ -137,8 +167,19 @@ fig = bar(y=genres, x=viewers, orientation="h", height=350,
           title="Viewership by Genre",
           labels={"y": "Genre", "x": "Viewers"}
 )
+fig.write_image("docs/images/overview-plot-2.png")
+```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
 fig.show()
 ```
+:::
+
+::: {.content-visible when-format="pdf"}
+![](images/overview-plot-2.png)
+:::
 
 ### Scatter Plots
 
@@ -180,10 +221,19 @@ fig = scatter(x=incomes, y=expectancies, height=350,
           title="Life Expectancy by Income",
           labels={"x": "Income", "y": "Life Expectancy (years)"}
 )
-fig.show()
+fig.write_image("docs/images/overview-plot-3.png")
 ```
 
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
+fig.show()
+```
+:::
 
+::: {.content-visible when-format="pdf"}
+![](images/overview-plot-3.png)
+:::
 
 
 ### Pie Charts
@@ -219,10 +269,19 @@ from plotly.express import pie
 fig = pie(labels=companies, values=market_shares, height=350,
           title="Market Share by Company",
 )
-fig.show()
+fig.write_image("docs/images/overview-plot-4.png")
 ```
 
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
+fig.show()
+```
+:::
 
+::: {.content-visible when-format="pdf"}
+![](images/overview-plot-4.png)
+:::
 
 
 ### Histograms
@@ -257,5 +316,16 @@ fig = histogram(x=opinions, height=350, nbins=5,
           title="User Average Opinions",
           labels={"x": "Average Opinion"}
 )
+fig.write_image("docs/images/overview-plot-5.png")
+```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
 fig.show()
 ```
+:::
+
+::: {.content-visible when-format="pdf"}
+![](images/overview-plot-5.png)
+:::

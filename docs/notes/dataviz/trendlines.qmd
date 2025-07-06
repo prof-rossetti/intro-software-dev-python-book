@@ -39,14 +39,33 @@ for item in scatter_data:
 ```
 
 ```{python}
+import os
+import plotly.io as pio
 from plotly.express import scatter
+
+# Ensure images directory exists
+os.makedirs("docs/images", exist_ok=True)
+
+# Prevent MathJax issues in PDF export
+pio.kaleido.scope.mathjax = None
 
 fig = scatter(x=incomes, y=expectancies, height=350,
                 title="Life Expectancy by Income",
                 labels={"x": "Income", "y": "Life Expectancy (years)"},
 )
+fig.write_image("docs/images/trendlines-plot-0.png")
+```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
 fig.show()
 ```
+:::
+
+::: {.content-visible when-format="pdf"}
+![](images/trendlines-plot-0.png)
+:::
 
 Upon viewing the chart, looks like there may be evidence of a trend.
 
@@ -62,8 +81,19 @@ fig = scatter(x=incomes, y=expectancies, height=350,
                 labels={"x": "Income", "y": "Life Expectancy (years)"},
                 trendline="ols", trendline_color_override="red"
 )
+fig.write_image("docs/images/trendlines-plot-1.png")
+```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
 fig.show()
 ```
+:::
+
+::: {.content-visible when-format="pdf"}
+![](images/trendlines-plot-1.png)
+:::
 
 :::{.callout-note title="FYI"}
 Under the hood, `plotly` uses the `statsmodels` package to calculate the trend, so you may have to install that package as well.
@@ -95,7 +125,18 @@ fig = scatter(x=incomes, y=expectancies, height=350,
                 labels={"x": "Income", "y": "Life Expectancy (years)"},
                 trendline="lowess", trendline_color_override="red"
 )
+fig.write_image("docs/images/trendlines-plot-2.png")
+```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
 fig.show()
 ```
+:::
+
+::: {.content-visible when-format="pdf"}
+![](images/trendlines-plot-2.png)
+:::
 
 [LOWESS](https://en.wikipedia.org/wiki/Local_regression) is a [non-parametric method](https://www.investopedia.com/terms/n/nonparametric-statistics.asp) that fits multiple local regressions to different segments of the data. Instead of assuming a global linear relationship, it captures local patterns by fitting simple models in small neighborhoods around each point. These local models are then combined to create a smooth curve that adjusts to non-linearities in the data. A LOWESS trend can adapt to sudden changes, curves, and other complex behaviors in the data, making it ideal for datasets where the relationship between variables changes over time.
