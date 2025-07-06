@@ -69,7 +69,8 @@ First we note the URL of where the data resides. Then we pass that as a paramete
 import requests
 
 # the URL of some XML data we stored online:
-request_url = f"https://raw.githubusercontent.com/prof-rossetti/intro-software-dev-python-book/main/docs/data/gradebook.xml"
+request_url = ("https://raw.githubusercontent.com/prof-rossetti/"
+                "intro-software-dev-python-book/main/docs/data/gradebook.xml")
 
 response = requests.get(request_url)
 print(type(response))
