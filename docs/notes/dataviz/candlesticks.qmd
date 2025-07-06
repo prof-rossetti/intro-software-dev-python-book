@@ -9,20 +9,56 @@ execute:
 
 # Candlestick Charts with `plotly`
 
-In financial applications, we often have access to OHLC data (containing the open, high, low, and close price on each day). We can use a candlestick chart can help us see the movement of the price within each day.
+In financial applications, we may have access to OHLC data (containing the open, high, low, and closing prices on each day).
 
+With OHLC data, we can use a [candlestick chart](https://plotly.com/python/candlestick-charts/) to display the price movements within each day.
 
-To implement a [candlestick chart](https://plotly.com/python/candlestick-charts/), we can use the [`Candlestick` class](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Candlestick.html) from plotly's Graph Objects sub-library.
+To implement a candlestick chart, we can use the [`Candlestick` class](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Candlestick.html) from plotly's Graph Objects sub-library.
 
 We start with some OHLC data:
 
 ```{python}
 ohlc_data = [
-    {"date": "2030-03-16", "open": 236.2800, "high": 240.0550, "low": 235.9400, "close": 237.7100, "volume": 28092196},
-    {"date": "2030-03-15", "open": 234.9600, "high": 235.1850, "low": 231.8100, "close": 234.8100, "volume": 26042669},
-    {"date": "2030-03-12", "open": 234.0100, "high": 235.8200, "low": 233.2300, "close": 235.7500, "volume": 22653662},
-    {"date": "2030-03-11", "open": 234.9600, "high": 239.1700, "low": 234.3100, "close": 237.1300, "volume": 29907586},
-    {"date": "2030-03-10", "open": 237.0000, "high": 237.0000, "low": 232.0400, "close": 232.4200, "volume": 29746812}
+    {
+        "date": "2030-03-16",
+        "open": 237.8000,
+        "high": 239.2000,
+        "low": 237.0000,
+        "close": 238.6500,
+        "volume": 26800000
+    },
+    {
+        "date": "2030-03-15",
+        "open": 235.2500,
+        "high": 238.9000,
+        "low": 235.0000,
+        "close": 237.8000,
+        "volume": 27400000
+    },
+    {
+        "date": "2030-03-12",
+        "open": 236.5000,
+        "high": 237.7500,
+        "low": 234.8000,
+        "close": 235.2500,
+        "volume": 24800000
+    },
+    {
+        "date": "2030-03-11",
+        "open": 234.1000,
+        "high": 238.0000,
+        "low": 233.0000,
+        "close": 236.5000,
+        "volume": 31200000
+    },
+    {
+        "date": "2030-03-10",
+        "open": 232.0000,
+        "high": 235.5000,
+        "low": 230.2500,
+        "close": 234.1000,
+        "volume": 29500000
+    }
 ]
 ```
 
@@ -44,10 +80,12 @@ for item in ohlc_data:
 
 ```
 
-Finally, creating the chart:
+Finally, creating and displaying the chart:
 
 
 ```{python}
+#| output: false
+
 from plotly.graph_objects import Figure, Candlestick
 
 stick = Candlestick(x=dates, open=opens, high=highs, low=lows, close=closes)
@@ -56,3 +94,17 @@ fig = Figure(data=[stick])
 fig.update_layout(title="Example Candlestick Chart")
 fig.show()
 ```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
+fig.show()
+```
+:::
+
+::: {.content-visible when-format="pdf"}
+```{python}
+#| echo: false
+fig.show(renderer="png")
+```
+:::
