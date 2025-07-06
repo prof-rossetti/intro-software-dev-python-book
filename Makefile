@@ -16,7 +16,7 @@ open:
 	open docs/_build/index.html
 
 open-pdf:
-	open docs/_build/Intro-to-Python-Programming.pdf
+	open docs/_build/Intro-to-Python-Programming-And-Applications.pdf
 
 clean:
 	rm -rf docs/_build
