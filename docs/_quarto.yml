@@ -259,7 +259,7 @@ format:
     theme: #cosmo
       light: cosmo # default #flatly
       dark: cyborg # vapor # superhero # darkly
-    css: styles/my-style.css
+    css: [styles/my-style.css, styles/wrap.css]
     code-copy: true
     #code-fold: false #show
     ##code-line-numbers: true

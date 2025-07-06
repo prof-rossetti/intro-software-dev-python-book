@@ -1,0 +1,33 @@
+/*
+pre.output, .highlight pre {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+}
+*/
+
+/*
+.cell-output pre,
+.cell-output-stderr pre {
+
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+.cell-output pre code {
+  white-space: inherit !important;
+}
+*/
+
+
+.cell-output-stderr pre {
+
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  /* also break “words” if needed */
+  word-break: break-word !important;
+}
+
+.cell-output pre code {
+  white-space: inherit !important;
+}
