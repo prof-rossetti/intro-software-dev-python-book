@@ -43,7 +43,7 @@ import requests
 
 # the URL of some JSON data we stored online:
 request_url = ("https://raw.githubusercontent.com/prof-rossetti/"
-                "intro-software-dev-python-book/main/docs/data/gradebook.json")
+              "intro-software-dev-python-book/main/docs/data/gradebook.json")
 
 response = requests.get(request_url)
 print(type(response))

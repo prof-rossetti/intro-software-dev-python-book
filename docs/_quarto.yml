@@ -282,6 +282,8 @@ format:
 
   pdf:
 
+    #output-file: index.pdf
+
     # use XeLaTeX or LuaLaTeX so fontspec works:
     latex-engine: xelatex
 
@@ -291,8 +293,9 @@ format:
     #fontsize: 11pt
     #linestretch: 1.2
 
-    includes:
-      in-header: _pdf_styles.tex
+    # this sets the margin, but still overflows
+    #margin-right: 2in
 
-  #PrettyPDF-pdf:
-  #  keep-tex: true
+    includes:
+      in-header:
+        - _pdf_styles.tex
