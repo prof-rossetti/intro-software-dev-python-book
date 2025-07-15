@@ -56,6 +56,8 @@ print(prices)
 ```
 
 ```{python}
+#| output: false
+
 from plotly.express import line
 
 fig = line(x=dates, y=prices, height=350,
@@ -64,6 +66,21 @@ fig = line(x=dates, y=prices, height=350,
 )
 fig.show()
 ```
+
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
+fig.show()
+```
+:::
+
+::: {.content-visible when-format="pdf"}
+```{python}
+#| echo: false
+fig.show(renderer="png")
+```
+:::
 
 
 ### Bar Charts
@@ -98,6 +115,8 @@ print(viewers)
 ```
 
 ```{python}
+#| output: false
+
 from plotly.express import bar
 
 fig = bar(x=genres, y=viewers, height=350,
@@ -106,6 +125,20 @@ fig = bar(x=genres, y=viewers, height=350,
 )
 fig.show()
 ```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
+fig.show()
+```
+:::
+
+::: {.content-visible when-format="pdf"}
+```{python}
+#| echo: false
+fig.show(renderer="png")
+```
+:::
 
 
 #### Horizontal Bar Chart
@@ -133,12 +166,28 @@ When sorting the data, we have to sort BEFORE mapping, to ensure the two resulti
 With horizontal bar, we use the `orientation` parameter, and also flip the X and Y references:
 
 ```{python}
+#| output: false
+
 fig = bar(y=genres, x=viewers, orientation="h", height=350,
           title="Viewership by Genre",
           labels={"y": "Genre", "x": "Viewers"}
 )
 fig.show()
 ```
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
+fig.show()
+```
+:::
+
+::: {.content-visible when-format="pdf"}
+```{python}
+#| echo: false
+fig.show(renderer="png")
+```
+:::
 
 ### Scatter Plots
 
@@ -174,6 +223,8 @@ print(expectancies)
 ```
 
 ```{python}
+#| output: false
+
 from plotly.express import scatter
 
 fig = scatter(x=incomes, y=expectancies, height=350,
@@ -183,6 +234,20 @@ fig = scatter(x=incomes, y=expectancies, height=350,
 fig.show()
 ```
 
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
+fig.show()
+```
+:::
+
+::: {.content-visible when-format="pdf"}
+```{python}
+#| echo: false
+fig.show(renderer="png")
+```
+:::
 
 
 
@@ -214,6 +279,8 @@ print(market_shares)
 ```
 
 ```{python}
+#| output: false
+
 from plotly.express import pie
 
 fig = pie(labels=companies, values=market_shares, height=350,
@@ -223,6 +290,19 @@ fig.show()
 ```
 
 
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
+fig.show()
+```
+:::
+
+::: {.content-visible when-format="pdf"}
+```{python}
+#| echo: false
+fig.show(renderer="png")
+```
+:::
 
 
 ### Histograms
@@ -251,6 +331,8 @@ print(opinions)
 ```
 
 ```{python}
+#| output: false
+
 from plotly.express import histogram
 
 fig = histogram(x=opinions, height=350, nbins=5,
@@ -259,3 +341,18 @@ fig = histogram(x=opinions, height=350, nbins=5,
 )
 fig.show()
 ```
+
+
+::: {.content-visible when-format="html"}
+```{python}
+#| echo: false
+fig.show()
+```
+:::
+
+::: {.content-visible when-format="pdf"}
+```{python}
+#| echo: false
+fig.show(renderer="png")
+```
+:::

@@ -14,8 +14,9 @@ jupyter-cache
 # packages required by any python code / notebooks:
 #numpy
 #matplotlib
-plotly
+plotly==6.1.1
 statsmodels==0.14.2 # used by plotly for trendline parameter
+kaleido # used by plotly for saving figures to file and rendering as static images
 scipy==1.14.0
 requests
 pandas

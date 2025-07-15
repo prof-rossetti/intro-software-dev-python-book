@@ -66,6 +66,8 @@ In practice, some common operations we perform with strings include concatenatio
 
 ### Concatenation
 
+The concatenation operation joins two strings together, using the plus sign (`+`) operator:
+
 ```{python}
 message = "HELLO" + "WORLD"
 print(message)
@@ -79,6 +81,17 @@ print(message)
 message = "HELLO" + " " + "WORLD"
 print(message)
 ```
+
+We can alternatively use parentheses to represent a single string on multiple lines. This has a similar effect as concatenation in that it joins the component parts together:
+
+```{python}
+message = (
+  "this is a very very very very very very very very very very very very "
+  "long message!"
+)
+print(message)
+```
+
 
 ### Format Strings
 
