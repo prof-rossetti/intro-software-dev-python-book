@@ -1,7 +1,7 @@
 # Exercises {.unnumbered}
 
-  + My First Notebook
-  + [Unit 1 Notes and Exercises - Python Language Overview](https://colab.research.google.com/drive/1vvvyyJ5dm6L0BPTr9gKvDL6Xkeyz81ih?usp=sharing) (Summer 2025)
-  + [Unit 2 Notes and Exercises - Control Flow](https://colab.research.google.com/drive/1YgWAD0badO8gBVPVs-RuMkGQ5axP8esC?usp=sharing) (Summer 2025)
-  + [Unit 3 Notes and Exercises - Data Processing](https://colab.research.google.com/drive/1DUaKuN36Lut5eRw1sziGTvACGzsqPBQN?usp=sharing) (Summer 2025)
+  + [Unit 1 Exercises - Python Language Overview](https://colab.research.google.com/drive/1vvvyyJ5dm6L0BPTr9gKvDL6Xkeyz81ih?usp=sharing) (Summer 2025)
+  + [Unit 2 Exercises - Control Flow](https://colab.research.google.com/drive/1YgWAD0badO8gBVPVs-RuMkGQ5axP8esC?usp=sharing) (Summer 2025)
+  + [Unit 3 Exercises - Data Processing](https://colab.research.google.com/drive/1DUaKuN36Lut5eRw1sziGTvACGzsqPBQN?usp=sharing) (Summer 2025)
   + [Unit 4 Exercises - Data Visualization](https://colab.research.google.com/drive/1M3Ye0bD4qWUzOWUuS_Cx2-yX20CiKZKv?usp=sharing) (Summer 2025)
+  + [Unit 5 Exercises - Web Requests](https://colab.research.google.com/drive/16wEhg2Vosgr_zDC84fMWu2OYSDwe5NxN?usp=sharing) (Summer 2025)
