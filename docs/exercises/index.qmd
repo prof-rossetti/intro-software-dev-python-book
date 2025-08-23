@@ -10,3 +10,11 @@
 
   + [Crunch the Spotify Data (Taylor's Version)](https://colab.research.google.com/drive/1wTwNLsvVrWd5mrQjcCWxNey2r2lcbL50?usp=sharing)
   + [Data Dashboards](https://colab.research.google.com/drive/1pIUNbmgvQqvmBjSlenVG5JIuGW6me7WU?usp=sharing)
+
+# Demos
+
+  + [YouTube Audio Downloader](https://colab.research.google.com/drive/1_KrD7dqpXFprvyvBT-ZABGFWw80xGEj7?usp=sharing)
+  + [Spotify API Demo - Artist Top Tracks](https://colab.research.google.com/drive/1RUTpPUbjUPLnRjS78fE4QVYG4SFQn3bE?usp=sharing)
+  + [AlphaVantage API - Stocks Data to Google Sheets Pipeline](https://colab.research.google.com/drive/1tpJIGIb5uawMkxpoAkiozanwzUhwDgvo?usp=sharing)
+  + [OpenAI API Demo](https://colab.research.google.com/drive/1RY-gciK8vIqw0JW6nI3g3oIVfE-Sg0Xt?usp=sharing)
+  + [Gemini API Demo](https://colab.research.google.com/drive/1Ru0zy9ye75ihFmkuwu8P4mIM2Z8NpHEr?usp=sharing)
