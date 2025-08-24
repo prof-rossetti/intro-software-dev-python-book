@@ -13,7 +13,7 @@ execute:
 
 If the data we want to fetch is in CSV format, we can use the `pandas` package to fetch and process it.
 
-Let's consider this example \"students.csv\" file we have hosted on the Internet:
+Let's consider this example \"gradebook.csv\" file we have hosted on the Internet:
 
 
 ```csv

@@ -2,7 +2,7 @@
 format:
   html:
     code-fold: false
-    css: "../../../styles/wrap.css"
+    #css: "../../../styles/wrap.css"
 jupyter: python3
 execute:
   cache: true # re-render only when source changes

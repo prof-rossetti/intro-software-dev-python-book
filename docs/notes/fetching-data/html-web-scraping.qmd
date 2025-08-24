@@ -187,8 +187,9 @@ import requests
 from bs4 import BeautifulSoup
 
 # the URL of some HTML data or web page stored online:
-request_url = ("https://raw.githubusercontent.com/prof-rossetti/"
-                "intro-software-dev-python-book/main/docs/data/my_tables.html")
+request_url = ("https://raw.githubusercontent.com/" +
+              "prof-rossetti/intro-software-dev-python-book/main/docs/data/" +
+              "my_tables.html")
 
 response = requests.get(request_url)
 

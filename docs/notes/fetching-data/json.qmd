@@ -12,7 +12,7 @@ execute:
 
 If the data we want to fetch is in JSON format, we can use the [`requests` package](https://requests.readthedocs.io/en/latest/){target=blank} to fetch and process it.
 
-Let's consider this example \"students.json\" file we have hosted on the Internet:
+Let's consider this example \"gradebook.json\" file we have hosted on the Internet:
 
 
 ```json
