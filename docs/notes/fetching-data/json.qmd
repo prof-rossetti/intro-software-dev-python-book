@@ -34,16 +34,14 @@ Let's consider this example \"students.json\" file we have hosted on the Interne
 }
 ```
 
-
-
 First we note the URL of where the data resides. Then we pass that as a parameter to the `get` function from the `requests` package, to issue an HTTP GET request:
 
 ```{python}
 import requests
 
-# the URL of some JSON data we stored online:
-request_url = ("https://raw.githubusercontent.com/prof-rossetti/"
-              "intro-software-dev-python-book/main/docs/data/gradebook.json")
+request_url = ("https://raw.githubusercontent.com/" +
+              "prof-rossetti/intro-software-dev-python-book/main/docs/data/" +
+              "gradebook.json")
 
 response = requests.get(request_url)
 print(type(response))

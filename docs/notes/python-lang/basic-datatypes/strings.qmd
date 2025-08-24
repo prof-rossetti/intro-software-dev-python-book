@@ -82,11 +82,12 @@ message = "HELLO" + " " + "WORLD"
 print(message)
 ```
 
-We can alternatively use parentheses to represent a single string on multiple lines. This has a similar effect as concatenation in that it joins the component parts together:
+We can alternatively use parentheses to represent a single string on multiple lines. This has a similar effect as concatenation, in that it joins the component strings together:
 
 ```{python}
 message = (
-  "this is a very very very very very very very very very very very very "
+  "this is a very very very very very "
+  "very very very very very very very "
   "long message!"
 )
 print(message)
