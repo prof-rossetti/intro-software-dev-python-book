@@ -3,6 +3,9 @@
 
 .jupyter_cache
 
+__pycache__
+
+
 # rendered files:
 docs/.quarto
 docs/_build

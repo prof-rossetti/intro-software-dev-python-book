@@ -13,7 +13,7 @@ execute:
 
 If the data we want to fetch is in CSV format, we can use the `pandas` package to fetch and process it.
 
-Let's consider this example \"students.csv\" file we have hosted on the Internet:
+Let's consider this example \"gradebook.csv\" file we have hosted on the Internet:
 
 
 ```csv
@@ -36,7 +36,9 @@ First we note the URL of where the data resides. Then we pass that as a paramete
 from pandas import read_csv
 
 # the URL of some CSV data we stored online:
-request_url = "https://raw.githubusercontent.com/prof-rossetti/intro-software-dev-python-book/main/docs/data/gradebook.csv"
+request_url = ("https://raw.githubusercontent.com/" +
+              "prof-rossetti/intro-software-dev-python-book/main/docs/data/" +
+              "gradebook.csv")
 
 df = read_csv(request_url)
 print(type(df))
