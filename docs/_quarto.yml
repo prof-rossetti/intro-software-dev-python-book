@@ -8,7 +8,7 @@ project:
 # https://quarto.org/docs/books/
 # https://quarto.org/docs/reference/projects/books.html
 book:
-  title: "Intro to Python Programming and Applications"
+  title: "Intro to Python: Programming and Applications"
   author: "Michael J Rossetti"
   date: "last-modified" # "7/24/2024"
   date-format: "iso"
@@ -150,7 +150,12 @@ book:
       chapters:
         - href: notes/dataviz/overview.qmd
           text: "Data Visualization Overview"
-
+        - href: notes/dataviz/trendlines.qmd
+          text: "Charts with Trendlines"
+        #- href: notes/dataviz/multiple-objects.qmd
+        #  text: "Charts with Multiple Objects"
+        - href: notes/dataviz/candlesticks.qmd
+          text: "Candlestick Charts"
 
     - part: "Fetching Data from the Internet"
       chapters:
@@ -169,9 +174,15 @@ book:
 
     - part: "APIs and Integrations"
       chapters:
-        - href: notes/fetching-data/apis.qmd
+        - href: notes/api-integrations/overview.qmd
+        - href: notes/api-integrations/alphavantage.qmd
+          text: "AlphaVantage"
+        - href: notes/api-integrations/google-drive.ipynb
+          text: "Google Drive"
+        - href: notes/api-integrations/google-sheets.ipynb
+          text: "Google Sheets"
         - href: notes/api-integrations/youtube-audio-downloader.ipynb
-          text: "YouTube Integrations"
+          text: "YouTube"
         #- href: notes/api-integrations/sending-email-demo.ipynb
         #- href: notes/api-integrations/google-maps-api-demo.ipynb
         #- href: notes/api-integrations/spotify-api-demo.ipynb
@@ -203,7 +214,6 @@ book:
         - notes/dev-tools/google-colab/files.qmd
         - notes/dev-tools/google-colab/form-inputs.ipynb
         - notes/dev-tools/google-colab/notebook-secrets.qmd
-        - notes/dev-tools/google-colab/advanced-integrations.ipynb
 
     - part: "Survey of Python Modules"
       #href: notes/python-modules/index.qmd
@@ -225,15 +235,6 @@ book:
       chapters:
         - notes/python-lang/control-flow/function-docs.qmd
         - notes/python-lang/control-flow/unit-testing.qmd
-
-    - part: "Dataviz In-Depth"
-      chapters:
-        - href: notes/dataviz/trendlines.qmd
-          text: "Charts with Trendlines"
-        #- href: notes/dataviz/multiple-objects.qmd
-        #  text: "Charts with Multiple Objects"
-        - href: notes/dataviz/candlesticks.qmd
-          text: "Candlestick Charts"
 
 
     #- part: "API Demos"

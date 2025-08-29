@@ -95,10 +95,9 @@ After writing Python code like this in a code cell, we execute or "run" the code
 
 ## Sidebar Menus
 
-The sidebar menus provide additional functionality. The Table of Contents is fairly straightforward, but you can feel free to skip the rest and return to review other menus in the future, as instructed, when we have practical need for them.
+The sidebar menus provide additional functionality:
 
   + [Table of Contents](./table-of-contents.qmd)
   + [Filesystem](./files.qmd)
   + [Forms and Inputs](./form-inputs.ipynb)
   + [Notebook Secrets](./notebook-secrets.qmd)
-  + [Advanced Integrations](./advanced-integrations.ipynb)

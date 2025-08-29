@@ -7,7 +7,7 @@
     alt="Intro to Software Development in Python (banner image)."
     >
 
-Welcome to the \"Intro to Python Programming and Applications\" book (<span id="auto-copyright-year">2025</span> edition, online)!
+Welcome to the \"Intro to Python: Programming and Applications\" book (<span id="auto-copyright-year">2025</span> edition, online)!
 
 Whether you are a professional seeking to enhance technical skills, or a student aspiring to enter the field, this book should serve as a valuable resource.
 

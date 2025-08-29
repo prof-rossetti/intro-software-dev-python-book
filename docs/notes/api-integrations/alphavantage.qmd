@@ -1,0 +1,20 @@
+---
+format:
+  html:
+    code-fold: false
+    toc-depth: 5
+    toc-expand: true
+jupyter: python3
+execute:
+  cache: true # re-render only when source changes
+---
+
+
+# The AlphaVantage API
+
+In this chapter we will learn about APIs using the AlphaVantage API as a practical example.
+
+The AlphaVantage API provides a weather of financial and economic data, including data about stocks and economic indicators such as inflation.
+
+
+URL: `https://www.alphavantage.co/query?function=INFLATION&apikey=YOUR_KEY&datatype=csv`
