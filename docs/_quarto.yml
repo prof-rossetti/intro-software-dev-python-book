@@ -175,8 +175,8 @@ book:
     - part: "APIs and Integrations"
       chapters:
         - href: notes/api-integrations/overview.qmd
-        - href: notes/api-integrations/alphavantage.qmd
-          text: "AlphaVantage"
+        - href: notes/api-integrations/alphavantage.ipynb
+          text: "AlphaVantage API"
         - href: notes/api-integrations/google-drive.ipynb
           text: "Google Drive"
         - href: notes/api-integrations/google-sheets.ipynb
