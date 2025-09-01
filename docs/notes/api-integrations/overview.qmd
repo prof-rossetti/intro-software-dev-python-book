@@ -166,4 +166,4 @@ When we press enter to make this request in the browser, we'll see the browser f
 Here we see the data in CSV format. If you like this format better, you can always use the API to collect some CSV formatted data and upload the files into spreadsheet software.
 
 
-We will return to use many additional endpoints from the AlphaVantage API, but hopefully by now you have a better sense of what it's like to use an API.
+We will return to use additional endpoints from the AlphaVantage API, but hopefully by now you have a better sense of what it's like to use an API.
