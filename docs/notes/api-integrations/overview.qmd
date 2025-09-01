@@ -10,11 +10,13 @@ execute:
 ---
 
 
-# Application Programming Interfaces (APIs)
+# Application Programming Interfaces (APIs) Overview
 
 So far, when fetching JSON and CSV formatted data from the Internet, we've primarily explored how to fetch static data files. However accessing dynamic data, such as real-time market information, can be far more valuable.
 
 To access dynamic data, we'll leverage the capabilities of programmatic data sources known as **Application Programming Interfaces (APIs)**. APIs act as the bridge between different systems, enabling them to communicate and exchange data. In practice, we request some data from an API, and the API server provides the data in response.
+
+## Example APIs
 
 APIs allow us to integrate a variety of data into our software applications, including weather updates, stock prices, and social media feeds. A great variety of public APIs exist, but here are just a few notable examples:
 
@@ -164,4 +166,4 @@ When we press enter to make this request in the browser, we'll see the browser f
 Here we see the data in CSV format. If you like this format better, you can always use the API to collect some CSV formatted data and upload the files into spreadsheet software.
 
 
-We will return to use many additional endpoints from the AlphaVantage API, but hopefully by now you have a better sense of what it's like to use an API.
+We will return to use additional endpoints from the AlphaVantage API, but hopefully by now you have a better sense of what it's like to use an API.

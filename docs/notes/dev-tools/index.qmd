@@ -18,7 +18,7 @@ In Python, we have a general choice between two development environments: Python
 
 Notebooks are also a popular choice among data science and machine learning practitioners, especially for quick prototypes, and rapid development.
 
-![Rising popularity of Python notebooks. Source: [GitHub Octoverse 2024](https://github.blog/news-insights/octoverse/octoverse-2024).](../../images/python-notebook-adoption-2024.png){height=320}
+![Rising popularity of Python notebooks. Source: [GitHub Octoverse 2024](https://github.blog/news-insights/octoverse/octoverse-2024).](../../images/python-notebook-adoption-2024.png){height=300}
 
 However for larger applications they might not be as suitable.
 
