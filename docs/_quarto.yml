@@ -177,20 +177,21 @@ book:
         - href: notes/api-integrations/overview.qmd
         - href: notes/api-integrations/alphavantage.ipynb
           text: "AlphaVantage API"
+        #- href: notes/api-integrations/drinks.ipynb
+        #- href: notes/api-integrations/pokemon-api-demo.ipynb
+        - href: notes/api-integrations/spotify.ipynb
+          text: "Spotify API"
+        #- href: notes/api-integrations/sending-email-demo.ipynb
         - href: notes/api-integrations/google-drive.ipynb
           text: "Google Drive"
         - href: notes/api-integrations/google-sheets.ipynb
           text: "Google Sheets"
+        #- href: notes/api-integrations/google-maps-api-demo.ipynb
         - href: notes/api-integrations/youtube-audio-downloader.ipynb
           text: "YouTube"
-        - href: notes/api-integrations/spotify.ipynb
-          text: "Spotify"
-        #- href: notes/api-integrations/sending-email-demo.ipynb
-        #- href: notes/api-integrations/google-maps-api-demo.ipynb
-        #- href: notes/api-integrations/pokemon-api-demo.ipynb
+
 
         #- href: notes/api-integrations/openai-api-demo.ipynb
-        #- href: notes/api-integrations/drinks.ipynb
 
 
     - "-----------------"
