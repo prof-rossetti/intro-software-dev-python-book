@@ -37,6 +37,8 @@ Basic (\"scalar\") datatypes that involve a single value:
 | [String](./strings.qmd)  | Textual data, within quotes. |  `"HELLO WORLD"` |
 | [None Type](https://docs.python.org/3/library/constants.html#None)  | Absence of a value, or a "null" value. |  `None` only |
 
+: Table 1: Basic "Scalar" Datatypes {.striped .hover tbl-colwidths="[10,55,35]"}
+
 #### Container Datatypes
 
 \"Container\" datatypes that can hold many values:
@@ -48,6 +50,7 @@ Basic (\"scalar\") datatypes that involve a single value:
 | [Set](https://docs.python.org/3/tutorial/datastructures.html#sets)  | Like a list, but without a particular order, and cannot contain duplicates. | `{5, 3, 1}`|
 | [<span style="white-space:nowrap;">Dictionary</span>](../container-datatypes/dictionaries.qmd)  | An object with named attributes, otherwise known as "key value pairs". |  `{"first_name": "Michael", "last_name": "Jordan"}` |
 
+: Table 2: Container Datatypes {.striped .hover tbl-colwidths="[10,55,35]"}
 
 
 ## Why Datatypes Matter
@@ -160,7 +163,7 @@ print(type(result))
 print(result)
 ```
 ```{python}
-result = set([5, 3, 1, 3, 7]) # set conversion will remove duplicates from the list
+result = set([5, 3, 1, 3, 7]) # set conversion will remove duplicates
 print(type(result))
 print(result)
 ```

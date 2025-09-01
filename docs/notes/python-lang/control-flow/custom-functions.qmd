@@ -51,7 +51,6 @@ A function may accept input arguments called **parameters** which are essentiall
 def display_heading(message):
     print("------------------")
     print(message.upper())
-    print("------------------")
 
 
 # FUNCTION INVOCATIONS:

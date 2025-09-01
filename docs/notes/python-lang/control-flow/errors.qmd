@@ -58,10 +58,11 @@ If we find the need to trigger our own errors to stop program execution (less co
 ```python
 options = ["rock", "paper", "scissors"]
 
-choice = "hoya" # input("Please choose either 'rock', 'paper', or 'scissors': ")
+choice = "hoya"
 
 if choice not in options:
     raise ValueError("OOPS - Please type 'rock', or 'paper', or 'scissors'.")
+#> ValueError
 ```
 
 ### Defining and Raising Custom Errors
@@ -73,49 +74,59 @@ class MyCustomError(Exception):
    pass
 
 raise MyCustomError("My custom message")
+#> MyCustomError
 ```
 
 ## Common Errors and Explanations
 
 ### Syntax Error
 
-A `SyntaxError` occurs when the code is not written correctly according to the rules of the Python language. This can happen due to missing colons, parentheses, or incorrect indentation.
+A `SyntaxError` occurs when the code is not written correctly according to the rules of the Python language.
 
-Example:
+This can happen due to missing colons, parentheses, or incorrect indentation:
+
 ```python
-# Missing colon
-if True
-    print("This will cause a SyntaxError")
+if True  # OOPS, MISSING A COLON
+    print("Yep")
+
+#> SyntaxError
 ```
 
 ### Value Error
 
-A `ValueError` occurs when a function receives an argument of the correct type but an inappropriate value. This can happen when trying to convert a string to an integer, but the string does not represent a number.
+A `ValueError` occurs when a function receives an argument of the correct type but an inappropriate value.
+
+This can happen when trying to convert a string to an integer, but the string does not represent a number:
 
 Example:
 ```python
-# Trying to convert a non-numeric string to an integer
-int("hello")  # This will cause a ValueError
+int("hello")  # OOPS, INVALID CONVERSION
+
+#> ValueError
 ```
 
 ### Key Error
 
-A `KeyError` occurs when trying to access a dictionary with a key that does not exist. This can happen when trying to retrieve a value from a dictionary using a key that is not present.
+A `KeyError` occurs when trying to access a dictionary with a key that does not exist.
 
-Example:
+This can happen when trying to retrieve a value from a dictionary using a key that is not present:
+
 ```python
-# Accessing a non-existent key in a dictionary
 my_dict = {"name": "Alice"}
-print(my_dict["age"])  # This will cause a KeyError
+print(my_dict["age"])  # OOPS, "AGE" IS NOT A KEY!
+
+#> KeyError
 ```
 
 ### Index Error
 
-An `IndexError` occurs when trying to access an index that is out of range for a list or other sequence. This can happen when trying to access an element at an index that does not exist.
+An `IndexError` occurs when trying to access an index that is out of range for a list or other sequence.
 
-Example:
+This can happen when trying to access an element at an index that does not exist:
+
 ```python
-# Accessing an index that is out of range
 my_list = [1, 2, 3]
-print(my_list[5])  # This will cause an IndexError
+print(my_list[5])  # OOPS, INDEX OUT OF RANGE!
+
+#> IndexError
 ```

@@ -91,10 +91,10 @@ In HTTP, there are certain types of requests that we can make, each for its own 
 
 Request Method | Purpose
 --- | ---
-GET | Request to receive some information from the server
-POST | Request to create some information on the server
-PUT/PATCH | Request to update some information on the server
-DELETE | Request to remove some information from the server
+GET | Request to receive some information from the server.
+POST | Request to create some information on the server.
+PUT/PATCH | Request to update some information on the server.
+DELETE | Request to remove some information from the server.
 
 : Table 2: HTTP Request Methods {.striped .hover}
 
