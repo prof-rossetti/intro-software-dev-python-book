@@ -96,11 +96,10 @@ if True  # OOPS, MISSING A COLON
 
 A `ValueError` occurs when a function receives an argument of the correct type but an inappropriate value.
 
-This can happen when trying to convert a string to an integer, but the string does not represent a number:
+For example, trying to convert a string to an integer, but the string is not numeric:
 
-Example:
 ```python
-int("hello")  # OOPS, INVALID CONVERSION
+int("hello")  # OOPS, INVALID VALUE PASSED TO THE FUNCTION
 
 #> ValueError
 ```
