@@ -57,6 +57,7 @@ Rendering the site (writes local HTML files to the "docs/_build" directory, whic
 quarto render docs/ --verbose
 ```
 
+FYI: see the [Makefile](Makefile) for shortcut commands used for managing the repo and building content.
 
 ## GitHub Actions Workflows
 

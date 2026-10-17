@@ -181,7 +181,8 @@ book:
         #- href: notes/api-integrations/pokemon-api-demo.ipynb
         - href: notes/api-integrations/spotify.ipynb
           text: "Spotify API"
-        #- href: notes/api-integrations/sending-email-demo.ipynb
+        - href: notes/api-integrations/resend.ipynb
+          text: 'Sending Email via "Resend"'
         - href: notes/api-integrations/google-drive.ipynb
           text: "Google Drive"
         - href: notes/api-integrations/google-sheets.ipynb
