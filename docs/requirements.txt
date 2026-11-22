@@ -14,12 +14,12 @@ jupyter-cache
 # packages required by any python code / notebooks:
 #numpy
 #matplotlib
-plotly==6.1.1
+plotly==5.24.1 # <--colab | local: 6.1.1 (202604). problematic GH Actions: 6.7.0
 statsmodels==0.14.2 # used by plotly for trendline parameter
 kaleido # used by plotly for saving figures to file and rendering as static images
 scipy==1.14.0
 requests
-pandas
+pandas==2.2.2 # local and colab (202604). problematic GH Actions: 3.0.2
 beautifulsoup4
 lxml # bs4 needs this to parse XML
 
