@@ -8,6 +8,24 @@ execute:
   cache: true # re-render only when source changes
 ---
 
+```{python}
+#| include: false
+import json
+import os
+import plotly.io as pio
+
+is_static_format = False
+if "QUARTO_EXECUTE_INFO" in os.environ:
+    with open(os.environ["QUARTO_EXECUTE_INFO"]) as f:
+        fmt = json.load(f).get("format", {}).get("identifier", {}).get("base-format", "")
+    is_static_format = fmt in ("pdf", "latex", "docx")
+elif os.getenv("QUARTO_FIG_FORMAT") == "pdf":
+    is_static_format = True
+
+if is_static_format:
+    pio.renderers.default = "png"
+```
+
 # Scatter Plot Trendlines w/ `plotly`
 
 In many cases, it may be helpful to add a trendline to a chart, to help examine relationships between variables.
@@ -40,8 +58,6 @@ for item in scatter_data:
 ```
 
 ```{python}
-#| output: false
-
 from plotly.express import scatter
 
 fig = scatter(x=incomes, y=expectancies, height=350,
@@ -51,20 +67,6 @@ fig = scatter(x=incomes, y=expectancies, height=350,
 fig.show()
 ```
 
-::: {.content-visible when-format="html"}
-```{python}
-#| echo: false
-fig.show()
-```
-:::
-
-::: {.content-visible when-format="pdf"}
-```{python}
-#| echo: false
-fig.show(renderer="png")
-```
-:::
-
 Upon viewing the chart, looks like there may be evidence of a trend.
 
 ## Linear Trends
@@ -72,8 +74,6 @@ Upon viewing the chart, looks like there may be evidence of a trend.
 The [`scatter` function](https://plotly.com/python-api-reference/generated/plotly.express.scatter) has some trend-line related parameters:
 
 ```{python}
-#| output: false
-
 from plotly.express import scatter
 
 fig = scatter(x=incomes, y=expectancies, height=350,
@@ -83,20 +83,6 @@ fig = scatter(x=incomes, y=expectancies, height=350,
 )
 fig.show()
 ```
-
-::: {.content-visible when-format="html"}
-```{python}
-#| echo: false
-fig.show()
-```
-:::
-
-::: {.content-visible when-format="pdf"}
-```{python}
-#| echo: false
-fig.show(renderer="png")
-```
-:::
 
 :::{.callout-note title="FYI"}
 Under the hood, `plotly` uses the `statsmodels` package to calculate the trend, so you may have to install that package as well.
@@ -125,11 +111,9 @@ Linear regression is simple and interpretable but can be overly restrictive when
 
 ## Non-linear Trends
 
-In addition to the \"ols\" (Ordinary Least Squares) linear trend, we can use a \"lowess\" (Locally Weighted Scatterplot Smoothing) trend, which may be a better fit for non-linear relationships.
+In addition to the "ols" (Ordinary Least Squares) linear trend, we can use a "lowess" (Locally Weighted Scatterplot Smoothing) trend, which may be a better fit for non-linear relationships.
 
 ```{python}
-#| output: false
-
 from plotly.express import scatter
 
 fig = scatter(x=incomes, y=expectancies, height=350,
@@ -139,20 +123,5 @@ fig = scatter(x=incomes, y=expectancies, height=350,
 )
 fig.show()
 ```
-
-
-::: {.content-visible when-format="html"}
-```{python}
-#| echo: false
-fig.show()
-```
-:::
-
-::: {.content-visible when-format="pdf"}
-```{python}
-#| echo: false
-fig.show(renderer="png")
-```
-:::
 
 [LOWESS](https://en.wikipedia.org/wiki/Local_regression) is a [non-parametric method](https://www.investopedia.com/terms/n/nonparametric-statistics.asp) that fits multiple local regressions to different segments of the data. Instead of assuming a global linear relationship, it captures local patterns by fitting simple models in small neighborhoods around each point. These local models are then combined to create a smooth curve that adjusts to non-linearities in the data. A LOWESS trend can adapt to sudden changes, curves, and other complex behaviors in the data, making it ideal for datasets where the relationship between variables changes over time.

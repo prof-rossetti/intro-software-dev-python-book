@@ -1,86 +1,54 @@
-
-# https://jupyterbook.org/en/stable/publish/gh-pages.html
-
 name: deploy
 
 on:
   push:
     branches:
-    - main
-    # If your git repository has the Jupyter Book within some-subfolder next to
-    # unrelated files, you can make this run only if a file within that specific
-    # folder has been modified.
-    #
-    #paths:
-    #- docs/**
-
-  # make this workflow manually runnable
-  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
+      - main
   workflow_dispatch:
 
+permissions:
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-    - uses: actions/checkout@v3
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-    #
-    # PYTHON STUFF
-    #
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+          cache-dependency-path: docs/requirements.txt
 
-    # INSTALL PYTHON
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
+      - name: Install docs dependencies
+        run: |
+          pip install -r docs/requirements.txt
 
-    # INSTALL PACKAGE DEPENDENCIES (IF YOU ARE DOCUMENTING YOUR PACKAGE)
-    #- name: Install dependencies
-    #  run: |
-    #    pip install -r requirements.txt
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
 
-    # INSTALL DOCUMENTATION DEPENDENCIES
-    - name: Install docs dependencies
-      run: |
-        pip install -r docs/requirements.txt
+      - name: Build the book
+        run: |
+          quarto render docs/ --to html
 
-    #
-    # QUARTO STUFF
-    #
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "docs/_build"
 
-    # INSTALL QUARTO
-    # https://github.com/quarto-dev/quarto-actions/blob/main/examples/quarto-publish-example.yml
-    - name: Set up Quarto
-      uses: quarto-dev/quarto-actions/setup@v2
-      #env:
-      #  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        # To install LaTeX to build PDF book
-        # (to get past errors on the CI build)
-        tinytex: true
-        # uncomment below and fill to pin a version
-        # version: SPECIFIC-QUARTO-VERSION-HERE
-
-    # RENDER WEBSITE CONTENTS TO DOCS/_BUILD
-    - name: Build the book
-      run: |
-        quarto render docs/ --to html
-
-    #
-    # GITHUB PAGES STUFF
-    #
-
-    # UPLOAD CONTENTS OF DOCS/_BUILD
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: "docs/_build"
-
-    # DEPLOY WEBSITE CONTENTS TO GITHUB PAGES
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

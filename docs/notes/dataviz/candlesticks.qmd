@@ -7,6 +7,24 @@ execute:
   cache: true # re-render only when source changes
 ---
 
+```{python}
+#| include: false
+import json
+import os
+import plotly.io as pio
+
+is_static_format = False
+if "QUARTO_EXECUTE_INFO" in os.environ:
+    with open(os.environ["QUARTO_EXECUTE_INFO"]) as f:
+        fmt = json.load(f).get("format", {}).get("identifier", {}).get("base-format", "")
+    is_static_format = fmt in ("pdf", "latex", "docx")
+elif os.getenv("QUARTO_FIG_FORMAT") == "pdf":
+    is_static_format = True
+
+if is_static_format:
+    pio.renderers.default = "png"
+```
+
 # Candlestick Charts with `plotly`
 
 In financial applications, we may have access to OHLC data (containing the open, high, low, and closing prices on each day).
@@ -84,8 +102,6 @@ Finally, creating and displaying the chart:
 
 
 ```{python}
-#| output: false
-
 from plotly.graph_objects import Figure, Candlestick
 
 stick = Candlestick(x=dates, open=opens, high=highs, low=lows, close=closes)
@@ -94,17 +110,3 @@ fig = Figure(data=[stick])
 fig.update_layout(title="Example Candlestick Chart")
 fig.show()
 ```
-
-::: {.content-visible when-format="html"}
-```{python}
-#| echo: false
-fig.show()
-```
-:::
-
-::: {.content-visible when-format="pdf"}
-```{python}
-#| echo: false
-fig.show(renderer="png")
-```
-:::
